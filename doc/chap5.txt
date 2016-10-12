@@ -287,30 +287,16 @@
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XAGa4 := AutomorphismGroupOfGroupoid( Ga4 ); [127X[104X
-    [4X[28X<group with 10 generators>[128X[104X
-    [4X[25Xgap>[125X [27XNGa4 := NiceObject( AGa4 ); [127X[104X
-    [4X[28XGroup([ f6, f3, f11*f12, f12, f2, f1, f4*f9, f4^2, f5*f9*f10*f11*f12, f5^2 ])[128X[104X
-    [4X[25Xgap>[125X [27XMGa4 := NiceMonomorphism( AGa4 );; [127X[104X
-    [4X[25Xgap>[125X [27XSize( AGa4 ); [127X[104X
-    [4X[28X20736[128X[104X
-    [4X[25Xgap>[125X [27XSetName( AGa4, "AGa4" ); [127X[104X
-    [4X[25Xgap>[125X [27XSetName( NGa4, "NGa4" ); [127X[104X
-    [4X[25Xgap>[125X [27XPrint( MGa4, "\n" ); [127X[104X
-    [4X[28XGroupHomomorphismByImages( AGa4, Group( [ f1, f2, f3, f4, f5, f6, f7, f8, f9, [128X[104X
-    [4X[28X  f10, f11, f12 ] ), [ groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ InnerAutomorphism( a4, (2,4,3) ), [ -15, -13, -11 ], [ (), (), () ] ] [128X[104X
-    [4X[28X     ], groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ ConjugatorAutomorphism( a4, (3,4) ), [ -15, -13, -11 ], [128X[104X
+    [4X[28X<group with 8 generators>[128X[104X
+    [4X[25Xgap>[125X [27XPrint( GeneratorsOfGroup( AGa4 ), "\n" ); [127X[104X
+    [4X[28X[ groupoid homomorphism : Ga4 -> Ga4[128X[104X
+    [4X[28X    [ [ ConjugatorAutomorphism( a4, (2,4,3) ), [ -15, -13, -11 ], [128X[104X
     [4X[28X          [ (), (), () ] ] ], groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ InnerAutomorphism( a4, (1,2)(3,4) ), [ -15, -13, -11 ], [128X[104X
+    [4X[28X    [ [ ConjugatorAutomorphism( a4, (1,2) ), [ -15, -13, -11 ], [128X[104X
     [4X[28X          [ (), (), () ] ] ], groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ InnerAutomorphism( a4, (1,4)(2,3) ), [ -15, -13, -11 ], [128X[104X
-    [4X[28X          [ (), (), () ] ] ], groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ GroupHomomorphismByImages( a4, a4, [ (1,2,3), (2,3,4) ], [128X[104X
-    [4X[28X            [ (1,2,3), (2,3,4) ] ), [ -13, -11, -15 ], [ (), (), () ] ] ], [128X[104X
+    [4X[28X    [ [ InnerAutomorphism( a4, () ), [ -13, -11, -15 ], [ (), (), () ] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ GroupHomomorphismByImages( a4, a4, [ (1,2,3), (2,3,4) ], [128X[104X
-    [4X[28X            [ (1,2,3), (2,3,4) ] ), [ -13, -15, -11 ], [ (), (), () ] ] ], [128X[104X
+    [4X[28X    [ [ InnerAutomorphism( a4, () ), [ -13, -15, -11 ], [ (), (), () ] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X
     [4X[28X    [ [ IdentityMapping( a4 ), [ -15, -13, -11 ], [ (), (1,2,3), () ] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X
@@ -318,9 +304,16 @@
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X
     [4X[28X    [ [ IdentityMapping( a4 ), [ -15, -13, -11 ], [ (), (), (1,2,3) ] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ IdentityMapping( a4 ), [ -15, -13, -11 ], [ (), (), (2,3,4) ] ] ] ], [128X[104X
-    [4X[28X[ f4*f5*f6, f3, f9*f10*f11, f7*f8*f11*f12, f2, f1*f2, f5*f11, f5^2, f4*f9, [128X[104X
-    [4X[28X  f4^2 ] )[128X[104X
+    [4X[28X    [ [ IdentityMapping( a4 ), [ -15, -13, -11 ], [ (), (), (2,3,4) ] ] ] ][128X[104X
+    [4X[25Xgap>[125X [27XNGa4 := NiceObject( AGa4 ); [127X[104X
+    [4X[28XGroup([ f6, f3, f11*f12, f12, f2, f1, f4*f9, f4^2, f5*f9*f10*f11*f12, f5^2 ])[128X[104X
+    [4X[25Xgap>[125X [27XMGa4 := NiceMonomorphism( AGa4 );; [127X[104X
+    [4X[25Xgap>[125X [27XSize( AGa4 ); [127X[104X
+    [4X[28X20736[128X[104X
+    [4X[25Xgap>[125X [27XSetName( AGa4, "AGa4" ); [127X[104X
+    [4X[25Xgap>[125X [27XSetName( NGa4, "NGa4" ); [127X[104X
+    [4X[25Xgap>[125X [27XPrint( Image( MGa4 ), "\n" ); [127X[104X
+    [4X[28XGroup( [ f4*f5*f6, f3*f9*f10*f11, f2, f1*f2, f5*f11, f5^2, f4*f9, f4^2 ] )[128X[104X
     [4X[25Xgap>[125X [27X##  Now do some tests![127X[104X
     [4X[25Xgap>[125X [27Xmgi := MappingGeneratorsImages( MGa4 );; [127X[104X
     [4X[25Xgap>[125X [27Xautgen := mgi[1];; [127X[104X

@@ -10,7 +10,7 @@
   for [13Xfree products with amalgamation[113X, and for [13XHNN-extensions[113X when the initial
   groups have rewriting systems.[133X
   
-  [33X[0;0YThe current version is 1.44 for [5XGAP[105X 4.8, released on 27th September 2016.[133X
+  [33X[0;0YThe current version is 1.44 for [5XGAP[105X 4.8, released on 12th October 2016.[133X
   
   [33X[0;0YThe  package may be obtained as a compressed tar file [11Xgpd-1.44.tar.gz[111X by ftp
   from one of the following sites:[133X
