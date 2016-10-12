@@ -1,102 +1,113 @@
 #############################################################################
-##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
+##
+##  PackageInfo.g  file for the package Gpd 
+##  Emma Moore and Chris Wensley 
 ##
 
 SetPackageInfo( rec(
+PackageName := "gpd",
+Subtitle := "Groupoids, graphs of groups, and graphs of groupoids",
 
-PackageName := "GitHubPagesForGAP",
+Version := "1.44",
+Date := "12/10/2016", 
 
-Subtitle := "A GitHubPages generator for GAP packages",
-Version := "0.1",
-Date := "21/03/2014", # dd/mm/yyyy format
+##  duplicate these values for inclusion in the manual: 
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY GPDVERSION "1.44">
+##  <!ENTITY GPDRELEASEDATE "12/10/2016">
+##  <!ENTITY GPDTARFILENAME "gpd-1.44.tar.gz">
+##  <!ENTITY GPDHTMLFILENAME "gpd.html">
+##  <!ENTITY GPDLONGRELEASEDATE "12th October 2016">
+##  <!ENTITY GPDCOPYRIGHTYEARS "2000-2016">
+##  <#/GAPDoc>
 
 Persons := [
   rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "max.horn@math.uni-giessen.de",
-    WWWHome       := "http://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "AG Algebra\n",
-                       "Mathematisches Institut\n",
-                       "Justus-Liebig-Universität Gießen\n",
-                       "Arndtstraße 2\n",
-                       "35392 Gießen\n",
-                       "Germany" ),
-    Place         := "Gießen",
-    Institution   := "Justus-Liebig-Universität Gießen"
-  ),
-
-  rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
+    LastName      := "Moore",
+    FirstNames    := "Emma J.",
     IsAuthor      := true,
     IsMaintainer  := false,
-    #Email         := "author@example.com",
+    ## Email         := "",
+    ## WWWHome       := "",
+    ## PostalAddress := Concatenation( ["\n", "UK"] ),
+    ## Place         := "",
+    ## Institution   := ""
   ),
-
   rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
+    LastName      := "Wensley",
+    FirstNames    := "Christopher D.",
+    IsAuthor      := true,
     IsMaintainer  := true,
-    #Email         := "janitor@example.com",
-  ),
+    Email         := "cdwensley.maths@btinternet.com",
+    WWWHome       := "http://pages.bangor.ac.uk/~mas023/",
+    ## PostalAddress := Concatenation( [
+    ##                    "Dr. C.D. Wensley\n",
+    ##                    "School of Computer Science\n",
+    ##                    "Bangor University\n",
+    ##                    "Dean Street\n",
+    ##                    "Bangor\n",
+    ##                    "Gwynedd LL57 1UT\n",
+    ##                    "UK"] ),
+    Place         := "Llanfairfechan",
+    Institution   := "University of Wales, Bangor"
+  )
 ],
 
-Status := "other",
+Status := "accepted",
+CommunicatedBy := "Derek Holt (Warwick)",
+AcceptDate := "05/2015",
 
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "fingolfin",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
+SourceRepository := rec( 
+  Type := "git", 
+  URL := "https://github.com/gap-packages/gpd"
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+PackageWWWHome  := "http://gap-packages.github.io/gpd/",
+README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL, 
+                                  "/releases/download/v", ~.Version, 
+                                  "/", ~.PackageName, "-", ~.Version ), 
+SupportEmail := "cdwensley.maths@btinternet.com",
+ArchiveFormats  := ".tar.gz",
 
-PackageWWWHome := Concatenation("http://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
-
-ArchiveFormats := ".tar.gz .tar.bz2",
-
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub pages.",
+AbstractHTML :=
+"The Gpd package provides a collection of functions for computing with \
+finite groupoids, graph of groups, and graphs of groupoids. \
+These are based on the more basic structures of magmas with objects \
+and their mappings. \
+It provides functions for normal forms of elements in Free Products with \
+Amalgamation and in HNN extensions.",
 
 PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
+  BookName  := "Gpd",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "A GitHubPages generator for GAP packages",
+  LongTitle := "Finite Groupoids and Graphs of Groups",
+  Autoload  := true
 ),
 
-# The following dependencies are fake and for testing / demo purposes
 Dependencies := rec(
-  GAP := ">=4.5.5",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
+  GAP := ">=4.8",
+  NeededOtherPackages := [ [ "GAPDoc", ">= 1.5.1" ], 
+                           [ "fga", ">= 1.3.0" ] ],
+  SuggestedOtherPackages := [ [ "semigroups", ">= 2.7.2"] ],
+  ExternalConditions := [ ]
 ),
 
 AvailabilityTest := ReturnTrue,
 
-Keywords := ["GitHub pages", "GAP"]
+BannerString := Concatenation(
+    "Loading Gpd ", String( ~.Version ), " (algorithms for finite groupoids)\n", 
+    "by Emma Moore and Chris Wensley (http://pages.bangor.ac.uk/~mas023/)\n",
+    "--------------------------------------------------------------------\n" ),
+
+TestFile := "tst/testall.g", 
+
+Keywords := [ "magma with objects", "groupoid", "graph of groups", 
+              "free product with amalgamation", "HNN extension", 
+              "automorphisms" ]
 
 ));
-
-
