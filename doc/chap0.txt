@@ -68,6 +68,9 @@
   [33X[0;0YThis  documentation was prepared with the [5XGAPDoc[105X package of Frank Lübeck and
   Max Neunhöffer.[133X
   
+  [33X[0;0YThe  procedure  used  to  mount  new  releases  on  GitHub uses the packages
+  [5XGitHubPagesForGAP[105X and [5XReleaseTools[105X of Max Horn.[133X
+  
   
   -------------------------------------------------------
   
