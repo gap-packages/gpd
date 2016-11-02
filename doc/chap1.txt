@@ -10,17 +10,15 @@
   for [13Xfree products with amalgamation[113X, and for [13XHNN-extensions[113X when the initial
   groups have rewriting systems.[133X
   
-  [33X[0;0YThe current version is 1.44 for [5XGAP[105X 4.8, released on 12th October 2016.[133X
+  [33X[0;0YThe  latest  version is 1.45 for [5XGAP[105X 4.8, released on 2nd November 2016, and
+  may be more recent than the release on the [5XGAP[105X archive.[133X
   
-  [33X[0;0YThe  package may be obtained as a compressed tar file [11Xgpd-1.44.tar.gz[111X by ftp
+  [33X[0;0YThe  package may be obtained as a compressed tar file [11Xgpd-1.45.tar.gz[111X by ftp
   from one of the following sites:[133X
   
-  [30X    [33X[0;6Yany                  [5XGAP[105X                 archive,                 e.g.
-        [7Xhttp://www.gap-system.org/Packages/packages.html[107X;[133X
+  [30X    [33X[0;6Yany [5XGAP[105X archive, e.g. [7Xhttp://www.gap-system.org/Packages/gpd.html[107X;[133X
   
-  [30X    [33X[0;6Ythe Bangor site: [7Xhttp://www.maths.bangor.ac.uk/chda/gap4/gpd/gpd.html[107X;[133X
-  
-  [30X    [33X[0;6Ythe package GitHub repository: [7Xhttps://github.com/gap-packages/gpd[107X.[133X
+  [30X    [33X[0;6Ythe package GitHub repository: [7Xhttps://gap-packages.github.io/gpd[107X.[133X
   
   [33X[0;0YThe  information  parameter  [10XInfoGpd[110X  takes  default  value [10X1[110X which, for the
   benefit of new users, causes more messages to be printed out when operations
@@ -44,4 +42,7 @@
   by  running  the  test  suite  of the package with the command [10X ReadPackage(
   "gpd",  "tst/testall.g"  );  [110X  You  may reference this package by mentioning
   [BMPW02], [Moo01] and [AW10].[133X
+  
+  [33X[0;0YAdditional  information can be found on the [13XComputational Higher Dimensional
+  Algebra[113X website at: [7Xhttp://pages.bangor.ac.uk/~mas023/chda/intro.html[107X.[133X
   

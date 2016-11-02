@@ -1,6 +1,6 @@
 name: gpd
-version: 1.44
-date: 12/10/2016
+version: 1.45
+date: 02/11/2016
 description: Groupoids, graphs of groups, and graphs of groupoids
 
 authors:
@@ -33,7 +33,7 @@ packageinfo: http://gap-packages.github.io/gpd/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/gpd/releases/download/v1.44/gpd-1.44.tar.gz
+      url: https://github.com/gap-packages/gpd/releases/download/v1.45/gpd-1.45.tar.gz
 
 abstract: The Gpd package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions.
 
