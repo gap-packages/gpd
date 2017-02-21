@@ -284,16 +284,18 @@
   [1X5.4-3 AutomorphismGroupOfGroupoid[101X
   
   [29X[2XAutomorphismGroupOfGroupoid[102X( [3Xgpd[103X ) [32X operation
-  [29X[2XNiceObjectAutoGroupGroupoid[102X( [3Xgpd[103X ) [32X operation
+  [29X[2XNiceObjectAutoGroupGroupoid[102X( [3Xgpd[103X, [3Xaut[103X ) [32X operation
   
   [33X[0;0YThe [10XAutomorphismGroup[110X of [22XG[122X is isomorphic to the quotient of [22XS_n × A × g^n[122X by
   a  subgroup  isomorphic to [22Xg[122X, where [22XA[122X is the automorphism group of [22Xg[122X and [22XS_n[122X
   is  the  symmetric group on the [22Xn[122X objects. This is one of the main topics in
   [AW10].[133X
   
-  [33X[0;0YThe  current  implementation  is experimental, producing a [13Xnice monomorphism[113X
-  from  the  automorphism  group  to  a pc-group, if one is available. However
-  [10XImageElm[110X at present only works on generating elements.[133X
+  [33X[0;0YThe  function [10XNiceObjectAutoGroupGroupoid[110X takes a groupoid and a subgroup of
+  its automorphism group and retuns a [13Xnice monomorphism[113X from this automorphism
+  group  to  a  pc-group,  if  one is available. The current implementation is
+  experimental.  Note  that  [10XImageElm[110X  at  present  only  works  on generating
+  elements.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -301,13 +303,15 @@
     [4X[28X<group with 8 generators>[128X[104X
     [4X[25Xgap>[125X [27XPrint( GeneratorsOfGroup( AGa4 ), "\n" ); [127X[104X
     [4X[28X[ groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ ConjugatorAutomorphism( a4, (2,4,3) ), [ -15, -13, -11 ], [128X[104X
+    [4X[28X    [ [ ConjugatorAutomorphism( a4, (2,3,4) ), [ -15, -13, -11 ], [128X[104X
     [4X[28X          [ (), (), () ] ] ], groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ ConjugatorAutomorphism( a4, (1,2) ), [ -15, -13, -11 ], [128X[104X
+    [4X[28X    [ [ ConjugatorAutomorphism( a4, (1,4,2,3) ), [ -15, -13, -11 ], [128X[104X
     [4X[28X          [ (), (), () ] ] ], groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ InnerAutomorphism( a4, () ), [ -13, -11, -15 ], [ (), (), () ] ] ], [128X[104X
+    [4X[28X    [ [ GroupHomomorphismByImages( a4, a4, [ (1,2,3), (2,3,4) ], [128X[104X
+    [4X[28X            [ (1,2,3), (2,3,4) ] ), [ -13, -11, -15 ], [ (), (), () ] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X
-    [4X[28X    [ [ InnerAutomorphism( a4, () ), [ -13, -15, -11 ], [ (), (), () ] ] ], [128X[104X
+    [4X[28X    [ [ GroupHomomorphismByImages( a4, a4, [ (1,2,3), (2,3,4) ], [128X[104X
+    [4X[28X            [ (1,2,3), (2,3,4) ] ), [ -13, -15, -11 ], [ (), (), () ] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X
     [4X[28X    [ [ IdentityMapping( a4 ), [ -15, -13, -11 ], [ (), (1,2,3), () ] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Ga4 -> Ga4[128X[104X

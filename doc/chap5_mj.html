@@ -329,10 +329,10 @@ false
 <h5>5.4-3 AutomorphismGroupOfGroupoid</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroupOfGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NiceObjectAutoGroupGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NiceObjectAutoGroupGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">aut</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>The <code class="code">AutomorphismGroup</code> of <span class="SimpleMath">\(G\)</span> is isomorphic to the quotient of <span class="SimpleMath">\(S_n \times A \times g^n\)</span> by a subgroup isomorphic to <span class="SimpleMath">\(g\)</span>, where <span class="SimpleMath">\(A\)</span> is the automorphism group of <span class="SimpleMath">\(g\)</span> and <span class="SimpleMath">\(S_n\)</span> is the symmetric group on the <span class="SimpleMath">\(n\)</span> objects. This is one of the main topics in <a href="chapBib_mj.html#biBAlWe">[AW10]</a>.</p>
 
-<p>The current implementation is experimental, producing a <em>nice monomorphism</em> from the automorphism group to a pc-group, if one is available. However <code class="code">ImageElm</code> at present only works on generating elements.</p>
+<p>The function <code class="code">NiceObjectAutoGroupGroupoid</code> takes a groupoid and a subgroup of its automorphism group and retuns a <em>nice monomorphism</em> from this automorphism group to a pc-group, if one is available. The current implementation is experimental. Note that <code class="code">ImageElm</code> at present only works on generating elements.</p>
 
 
 <div class="example"><pre>
@@ -341,13 +341,15 @@ false
 &lt;group with 8 generators&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( GeneratorsOfGroup( AGa4 ), "\n" ); </span>
 [ groupoid homomorphism : Ga4 -&gt; Ga4
-    [ [ ConjugatorAutomorphism( a4, (2,4,3) ), [ -15, -13, -11 ], 
+    [ [ ConjugatorAutomorphism( a4, (2,3,4) ), [ -15, -13, -11 ], 
           [ (), (), () ] ] ], groupoid homomorphism : Ga4 -&gt; Ga4
-    [ [ ConjugatorAutomorphism( a4, (1,2) ), [ -15, -13, -11 ], 
+    [ [ ConjugatorAutomorphism( a4, (1,4,2,3) ), [ -15, -13, -11 ], 
           [ (), (), () ] ] ], groupoid homomorphism : Ga4 -&gt; Ga4
-    [ [ InnerAutomorphism( a4, () ), [ -13, -11, -15 ], [ (), (), () ] ] ], 
+    [ [ GroupHomomorphismByImages( a4, a4, [ (1,2,3), (2,3,4) ], 
+            [ (1,2,3), (2,3,4) ] ), [ -13, -11, -15 ], [ (), (), () ] ] ], 
   groupoid homomorphism : Ga4 -&gt; Ga4
-    [ [ InnerAutomorphism( a4, () ), [ -13, -15, -11 ], [ (), (), () ] ] ], 
+    [ [ GroupHomomorphismByImages( a4, a4, [ (1,2,3), (2,3,4) ], 
+            [ (1,2,3), (2,3,4) ] ), [ -13, -15, -11 ], [ (), (), () ] ] ], 
   groupoid homomorphism : Ga4 -&gt; Ga4
     [ [ IdentityMapping( a4 ), [ -15, -13, -11 ], [ (), (1,2,3), () ] ] ], 
   groupoid homomorphism : Ga4 -&gt; Ga4

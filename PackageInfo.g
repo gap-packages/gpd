@@ -8,17 +8,17 @@ SetPackageInfo( rec(
 PackageName := "gpd",
 Subtitle := "Groupoids, graphs of groups, and graphs of groupoids",
 
-Version := "1.45",
-Date := "02/11/2016", 
+Version := "1.46",
+Date := "21/02/2017", 
 
 ##  duplicate these values for inclusion in the manual: 
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY GPDVERSION "1.45">
-##  <!ENTITY GPDRELEASEDATE "02/11/2016">
-##  <!ENTITY GPDTARFILENAME "gpd-1.45.tar.gz">
+##  <!ENTITY GPDVERSION "1.46">
+##  <!ENTITY GPDRELEASEDATE "21/02/2017">
+##  <!ENTITY GPDTARFILENAME "gpd-1.46.tar.gz">
 ##  <!ENTITY GPDHTMLFILENAME "gpd.html">
-##  <!ENTITY GPDLONGRELEASEDATE "2nd November 2016">
-##  <!ENTITY GPDCOPYRIGHTYEARS "2000-2016">
+##  <!ENTITY GPDLONGRELEASEDATE "21st February 2017">
+##  <!ENTITY GPDCOPYRIGHTYEARS "2000-2017">
 ##  <#/GAPDoc>
 
 Persons := [
@@ -62,7 +62,7 @@ SourceRepository := rec(
   URL := "https://github.com/gap-packages/gpd"
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
-PackageWWWHome  := "http://gap-packages.github.io/gpd/",
+PackageWWWHome  := "https://gap-packages.github.io/gpd/",
 README_URL      := Concatenation( ~.PackageWWWHome, "README" ),
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL, 
@@ -92,8 +92,8 @@ PackageDoc := rec(
 Dependencies := rec(
   GAP := ">=4.8",
   NeededOtherPackages := [ [ "GAPDoc", ">= 1.5.1" ], 
-                           [ "fga", ">= 1.3.0" ] ],
-  SuggestedOtherPackages := [ [ "semigroups", ">= 2.7.2"] ],
+                           [ "fga", ">= 1.3.1" ] ],
+  SuggestedOtherPackages := [ [ "semigroups", ">= 2.8.0"] ],
   ExternalConditions := [ ]
 ),
 

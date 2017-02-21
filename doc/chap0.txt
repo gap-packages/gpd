@@ -6,10 +6,10 @@
               [1XGroupoids, graphs of groups, and graphs of groupoids[101X
   
   
-                                  Version 1.45
+                                  Version 1.46
   
   
-                                   02/11/2016
+                                   21/02/2017
   
   
                                    Emma Moore
@@ -45,7 +45,7 @@
   [33X[0;0YVersion  1.07  was released in July 2011, to be tested with [5XGAP[105X 4.5. Version
   1.15  came  out  with  the  first  release  of [5XGAP[105X 4.5 in June 2012, and was
   submitted  for  official acceptance as a [5XGAP[105X package. [5XGpd[105X became an accepted
-  [5XGAP[105X  package  in  May 2015. The latest version is 1.45 of 2nd November 2016,
+  [5XGAP[105X  package  in May 2015. The latest version is 1.46 of 21st February 2017,
   prepared for [5XGAP[105X 4.8.[133X
   
   [33X[0;0YRecent  versions  implement many of the constructions described in the paper
@@ -58,7 +58,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2000-2016 Emma Moore and Chris Wensley[133X
+  [33X[0;0Y© 2000-2017 Emma Moore and Chris Wensley[133X
   
   [33X[0;0Y[5XGpd[105X  is  free  software;  you can redistribute it and/or modify it under the
   terms        of       the       GNU       General       Public       License

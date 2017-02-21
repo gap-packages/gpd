@@ -34,7 +34,7 @@
   
   [33X[0;0Y[5XGpd[105X became an accepted [5XGAP[105X package in May 2015.[133X
   
-  [33X[0;0YThe latest version is 1.45 of 2nd November 2016, for [5XGAP[105X 4.8.[133X
+  [33X[0;0YThe latest version is 1.46 of 21st February 2017, for [5XGAP[105X 4.8.[133X
   
   [33X[0;0Y(In  this  temporary version there have been a number of changes of function
   name,  such  as  [10XIsDigraph[110X  becoming [10XGpdIsDigraph[110X. This is in order to avoid
