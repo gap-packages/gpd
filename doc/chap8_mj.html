@@ -8,7 +8,7 @@
 <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<title>GAP (Gpd) - Chapter 8: Development History</title>
+<title>GAP (groupoids) - Chapter 8: Development History</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="GAPDoc2HTML" />
 <link rel="stylesheet" type="text/css" href="manual.css" />
@@ -45,7 +45,7 @@
 
 <p>In April 2006 the manual was converted to <strong class="pkg">GAPDoc</strong> format. Variables <code class="code">Star</code>, <code class="code">Costar</code> and <code class="code">CoveringGroup</code> were found to conflict with usage in other packages, and were renamed <code class="code">VertexStar</code>, <code class="code">VertexCostar</code> and <code class="code">CoveringGroupOfGroupoid</code> respectively. Similarly, the <code class="code">Vertices</code> and <code class="code">Arcs</code> of an <code class="code">FpWeightedDigraph</code> were changed from attributes to record components.</p>
 
-<p>In the spring of 2006 the package was extensively rewritten and renamed <strong class="pkg">Gpd</strong>. Version 1.01 was submitted as a deposited package in June 2006. Version 1.03, of October 2007, fixed some file protections, and introduced the test file <code class="file">gpd_manual.tst</code>.</p>
+<p>In the spring of 2006 the package was extensively rewritten and renamed <strong class="pkg">gpd</strong>. Version 1.01 was submitted as a deposited package in June 2006. Version 1.03, of October 2007, fixed some file protections, and introduced the test file <code class="file">gpd_manual.tst</code>.</p>
 
 <p>Version 1.05, of November 2008, was released when the website at Bangor changed.</p>
 
@@ -53,15 +53,19 @@
 
 <p>Versions 1.09 to 1.15 were prepared for the anticipated release of <strong class="pkg">GAP</strong> 4.5 in June 2012.</p>
 
-<p><strong class="pkg">Gpd</strong> became an accepted <strong class="pkg">GAP</strong> package in May 2015.</p>
+<p><strong class="pkg">gpd</strong> became an accepted <strong class="pkg">GAP</strong> package in May 2015.</p>
 
-<p>The latest version is 1.46 of 21st February 2017, for <strong class="pkg">GAP</strong> 4.8.</p>
+<p>In April 2017 the package was renamed again, as <strong class="pkg">groupoids</strong>.</p>
 
-<p>(In this temporary version there have been a number of changes of function name, such as <code class="code">IsDigraph</code> becoming <code class="code">GpdIsDigraph</code>. This is in order to avoid conflicts with the new <strong class="pkg">Digraphs</strong> package. Further changes will be made once the <strong class="pkg">Digraphs</strong> package becomes part of the general GAP distribution.)</p>
+<p>The latest version is 1.51 of 6th August 2017, for <strong class="pkg">GAP</strong> 4.8.8 or 4.9.</p>
+
+<p>In the current version there have been a number of changes of function name, such as <code class="code">IsDigraph</code> becoming <code class="code">GroupoidIsDigraph</code>. This is in order to avoid conflicts with the <strong class="pkg">Digraphs</strong> package. The intention is that these functions can revert to the original names in due course.</p>
 
 <p><a id="X82148FB77CC3CCC0" name="X82148FB77CC3CCC0"></a></p>
 
 <h4>8.2 <span class="Heading">What needs to be done next?</span></h4>
+
+<p>The urgent requirement is for a new implementation of groupoid homomorphisms to eliminate the errors mention in section <a href="chap5_mj.html#X7DE9C2D384323239"><span class="RefLink">5.4</span></a>.</p>
 
 <p>Computationally, there are three types of connected groupoid:</p>
 
@@ -77,9 +81,9 @@
 
 </li>
 </ul>
-<p><strong class="pkg">GraphGpd</strong> attempted to implement the second case, while <strong class="pkg">Gpd</strong> 1.01 and 1.03 considered only the first case, and <strong class="pkg">Gpd</strong> 1.05 extended 1.03 to the second case.</p>
+<p><strong class="pkg">GraphGpd</strong> attempted to implement the second case, while <strong class="pkg">gpd</strong> 1.01 and 1.03 considered only the first case, and <strong class="pkg">gpd</strong> 1.05 extended 1.03 to the second case.</p>
 
-<p>The third case has not yet been considered for implementation, and there does not appear to be much need to do so.</p>
+<p>The third case has not yet been considered for implementation, and there does not appear to be any need to do so.</p>
 
 <p>Here are some other immediate requirements:</p>
 
@@ -109,7 +113,7 @@
 <li><p>convert <code class="code">GraphOfGroupsRewritingSystem</code> to the category <code class="code">IsRewritingSystem</code>;</p>
 
 </li>
-<li><p>in <strong class="pkg">XMod</strong>, implement crossed modules over groupoids (a start has been made).</p>
+<li><p>in <strong class="pkg">XMod</strong>, continue to work on crossed modules over groupoids.</p>
 
 </li>
 </ul>

@@ -708,5 +708,5 @@
   [4X[32X[104X
   
   [33X[0;0YMore  examples  of  all  these  operations  may be found in the example file
-  [11Xgpd/examples/gpd.g[111X.[133X
+  [11Xgroupoids/examples/gpd.g[111X.[133X
   

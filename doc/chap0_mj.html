@@ -8,7 +8,7 @@
 <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<title>GAP (Gpd) - Contents</title>
+<title>GAP (groupoids) - Contents</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="GAPDoc2HTML" />
 <link rel="stylesheet" type="text/css" href="manual.css" />
@@ -26,14 +26,14 @@
 <p><a id="X7D2C85EC87DD46E5" name="X7D2C85EC87DD46E5"></a></p>
 <div class="pcenter">
 
-<h1><strong class="pkg">Gpd</strong></h1>
+<h1><strong class="pkg">groupoids</strong></h1>
 
 
 <h2>Groupoids, graphs of groups, and graphs of groupoids</h2>
 
-<p>Version 1.46</p>
+<p>Version 1.51</p>
 
-<p>21/02/2017</p>
+<p>06/08/2017</p>
 
 </div>
 <p><b> Emma Moore 
@@ -50,23 +50,29 @@
 
 <p><a id="X7AA6C5737B711C89" name="X7AA6C5737B711C89"></a></p>
 <h3>Abstract</h3>
-<p>The <strong class="pkg">Gpd</strong> package for <strong class="pkg">GAP</strong>4 provides functions for the computation with groupoids (categories with every arrow invertible) and their morphisms; for graphs of groups, and graphs of groupoids. The most basic structure introduced is that of <em>magma with objects</em>, followed by <em>semigroup with objects</em>, then <em>monoid with objects</em> and finally <em>groupoid</em> which is a <em>group with objects</em>.</p>
+<p>The <strong class="pkg">groupoids</strong> package for <strong class="pkg">GAP</strong>4 provides functions for the computation with groupoids (categories with every arrow invertible) and their morphisms; for graphs of groups, and graphs of groupoids. The most basic structure introduced is that of <em>magma with objects</em>, followed by <em>semigroup with objects</em>, then <em>monoid with objects</em> and finally <em>groupoid</em> which is a <em>group with objects</em>.</p>
 
 <p>It provides normal forms for Free Products with Amalgamation and for HNN-extensions when the initial groups have rewrite systems and the subgroups have finite index.</p>
 
-<p>The <strong class="pkg">Gpd</strong> package was originally implemented in 2000 (as <strong class="pkg">GraphGpd</strong>) when the first author was studying for a Ph.D. in Bangor.</p>
+<p>The <strong class="pkg">groupoids</strong> package was originally implemented in 2000 (as <strong class="pkg">GraphGpd</strong>) when the first author was studying for a Ph.D. in Bangor.</p>
 
-<p>Version 1.07 was released in July 2011, to be tested with <strong class="pkg">GAP</strong> 4.5. Version 1.15 came out with the first release of <strong class="pkg">GAP</strong> 4.5 in June 2012, and was submitted for official acceptance as a <strong class="pkg">GAP</strong> package. <strong class="pkg">Gpd</strong> became an accepted <strong class="pkg">GAP</strong> package in May 2015. The latest version is 1.46 of 21st February 2017, prepared for <strong class="pkg">GAP</strong> 4.8.</p>
+<p>The package was then renamed <strong class="pkg">Gpd</strong> and version 1.07 was released in July 2011, to be tested with <strong class="pkg">GAP</strong> 4.5. <strong class="pkg">Gpd</strong> became an accepted <strong class="pkg">GAP</strong> package in May 2015.</p>
+
+<p>In April 2017 the package was renamed again, as <strong class="pkg">groupoids</strong>.</p>
 
 <p>Recent versions implement many of the constructions described in the paper <a href="chapBib_mj.html#biBAlWe">[AW10]</a> for automorphisms of groupoids.</p>
 
-<p>Bug reports, suggestions and comments are, of course, welcome. Please submit an issue at <span class="URL"><a href="http://github.com/gap-packages/gpd/issues/">http://github.com/gap-packages/gpd/issues/</a></span> or send an email to the last author at <span class="URL"><a href="mailto:c.d.wensley@bangor.ac.uk">c.d.wensley@bangor.ac.uk</a></span>.</p>
+<p>The latest version is 1.51 of 6th August 2017.</p>
+
+<p>A major redesign of groupoid homomorphisms is planned for the next version. This should deal with a number of bugs in the various homomorphism functions.</p>
+
+<p>Bug reports, suggestions and comments are, of course, welcome. Please submit an issue at <span class="URL"><a href="http://github.com/gap-packages/groupoids/issues/">http://github.com/gap-packages/groupoids/issues/</a></span> or send an email to the last author at <span class="URL"><a href="mailto:c.d.wensley@bangor.ac.uk">c.d.wensley@bangor.ac.uk</a></span>.</p>
 
 <p><a id="X81488B807F2A1CF1" name="X81488B807F2A1CF1"></a></p>
 <h3>Copyright</h3>
 <p>© 2000-2017 Emma Moore and Chris Wensley</p>
 
-<p><strong class="pkg">Gpd</strong> is free software; you can redistribute it and/or modify it under the terms of the <span class="URL"><a href="http://www.fsf.org/licenses/gpl.html">GNU General Public License</a></span> as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+<p><strong class="pkg">groupoids</strong> is free software; you can redistribute it and/or modify it under the terms of the <span class="URL"><a href="http://www.fsf.org/licenses/gpl.html">GNU General Public License</a></span> as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
 
 <p><a id="X82A988D47DFAFCFA" name="X82A988D47DFAFCFA"></a></p>
 <h3>Acknowledgements</h3>

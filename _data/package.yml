@@ -1,6 +1,6 @@
-name: gpd
-version: 1.46
-date: 21/02/2017
+name: groupoids
+version: 1.51
+date: 06/08/2017
 description: Groupoids, graphs of groups, and graphs of groupoids
 
 authors:
@@ -12,7 +12,7 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.8"
+GAP: ">=4.8.7"
 
 needed-pkgs:
     - name: "GAPDoc"
@@ -27,15 +27,15 @@ suggested-pkgs:
       version: ">= 2.8.0"
       url: "https://gap-packages.github.io/Semigroups"
 
-www: https://gap-packages.github.io/gpd/
-readme: https://gap-packages.github.io/gpd/README
-packageinfo: https://gap-packages.github.io/gpd/PackageInfo.g
+www: https://gap-packages.github.io/groupoids/
+readme: https://gap-packages.github.io/groupoids/README.md
+packageinfo: https://gap-packages.github.io/groupoids/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/gpd/releases/download/v1.46/gpd-1.46.tar.gz
+      url: https://github.com/gap-packages/groupoids/releases/download/v1.51/groupoids-1.51.tar.gz
 
-abstract: The Gpd package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions.
+abstract: The groupoids package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions. Up until April 2017 this package was named Gpd.
 
 status: accepted
 doc-html: doc/chap0.html

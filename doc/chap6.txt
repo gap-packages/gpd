@@ -505,5 +505,5 @@
   [4X[32X[104X
   
   [33X[0;0YMore  examples  of  these  operations  may  be  found  in  the  example file
-  [11Xgpd/examples/ggraph.g[111X.[133X
+  [11Xgroupoids/examples/ggraph.g[111X.[133X
   

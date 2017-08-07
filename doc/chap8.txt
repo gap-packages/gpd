@@ -17,7 +17,7 @@
   [10XCoveringGroupOfGroupoid[110X respectively. Similarly, the [10XVertices[110X and [10XArcs[110X of an
   [10XFpWeightedDigraph[110X were changed from attributes to record components.[133X
   
-  [33X[0;0YIn the spring of 2006 the package was extensively rewritten and renamed [5XGpd[105X.
+  [33X[0;0YIn the spring of 2006 the package was extensively rewritten and renamed [5Xgpd[105X.
   Version  1.01  was  submitted  as  a deposited package in June 2006. Version
   1.03,  of October 2007, fixed some file protections, and introduced the test
   file [11Xgpd_manual.tst[111X.[133X
@@ -32,17 +32,22 @@
   [33X[0;0YVersions  1.09  to 1.15 were prepared for the anticipated release of [5XGAP[105X 4.5
   in June 2012.[133X
   
-  [33X[0;0Y[5XGpd[105X became an accepted [5XGAP[105X package in May 2015.[133X
+  [33X[0;0Y[5Xgpd[105X became an accepted [5XGAP[105X package in May 2015.[133X
   
-  [33X[0;0YThe latest version is 1.46 of 21st February 2017, for [5XGAP[105X 4.8.[133X
+  [33X[0;0YIn April 2017 the package was renamed again, as [5Xgroupoids[105X.[133X
   
-  [33X[0;0Y(In  this  temporary version there have been a number of changes of function
-  name,  such  as  [10XIsDigraph[110X  becoming [10XGpdIsDigraph[110X. This is in order to avoid
-  conflicts  with  the new [5XDigraphs[105X package. Further changes will be made once
-  the [5XDigraphs[105X package becomes part of the general GAP distribution.)[133X
+  [33X[0;0YThe latest version is 1.51 of 6th August 2017, for [5XGAP[105X 4.8.8 or 4.9.[133X
+  
+  [33X[0;0YIn the current version there have been a number of changes of function name,
+  such  as  [10XIsDigraph[110X  becoming  [10XGroupoidIsDigraph[110X.  This is in order to avoid
+  conflicts  with  the [5XDigraphs[105X package. The intention is that these functions
+  can revert to the original names in due course.[133X
   
   
   [1X8.2 [33X[0;0YWhat needs to be done next?[133X[101X
+  
+  [33X[0;0YThe urgent requirement is for a new implementation of groupoid homomorphisms
+  to eliminate the errors mention in section [14X5.4[114X.[133X
   
   [33X[0;0YComputationally, there are three types of connected groupoid:[133X
   
@@ -52,12 +57,12 @@
   
   [30X    [33X[0;6Ythose with object groups which are simply isomorphic.[133X
   
-  [33X[0;0Y[5XGraphGpd[105X  attempted  to  implement  the second case, while [5XGpd[105X 1.01 and 1.03
-  considered  only  the  first  case, and [5XGpd[105X 1.05 extended 1.03 to the second
+  [33X[0;0Y[5XGraphGpd[105X  attempted  to  implement  the second case, while [5Xgpd[105X 1.01 and 1.03
+  considered  only  the  first  case, and [5Xgpd[105X 1.05 extended 1.03 to the second
   case.[133X
   
   [33X[0;0YThe  third  case  has  not yet been considered for implementation, and there
-  does not appear to be much need to do so.[133X
+  does not appear to be any need to do so.[133X
   
   [33X[0;0YHere are some other immediate requirements:[133X
   
@@ -81,6 +86,5 @@
   [30X    [33X[0;6Yconvert      [10XGraphOfGroupsRewritingSystem[110X      to     the     category
         [10XIsRewritingSystem[110X;[133X
   
-  [30X    [33X[0;6Yin  [5XXMod[105X,  implement  crossed modules over groupoids (a start has been
-        made).[133X
+  [30X    [33X[0;6Yin [5XXMod[105X, continue to work on crossed modules over groupoids.[133X
   
