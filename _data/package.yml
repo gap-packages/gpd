@@ -12,7 +12,7 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.8.7"
+GAP: ">=4.8.8"
 
 needed-pkgs:
     - name: "GAPDoc"
