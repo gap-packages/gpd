@@ -49,3 +49,4 @@ Contact
 If you have a question relating to groupoids, encounter any problems, or have a suggestion for extending the package in any way, please 
  * email c.d.wensley@bangor.ac.uk 
  * or report an issue at https://github.com/gap-packages/groupoids/issues/new 
+

@@ -29,8 +29,8 @@
   
   [30X    [33X[0;6Y[10XDeclareCategory( "IsDomainWithObjects", IsDomain ); [110X[133X
   
-  [30X    [33X[0;6Y[10XDeclareCategory( "IsMagmaWithObjects", IsDomainWithObjects and IsMagma
-        and IsMultiplicativeElementWithObjectsCollection );[110X[133X
+  [30X    [33X[0;6Y[10XDeclareCategory(    "IsMagmaWithObjects",    IsDomainWithObjects   and
+        IsMultiplicativeElementWithObjectsCollection );[110X[133X
   
   [30X    [33X[0;6Y[10XDeclareCategory(  "IsMagmaWithObjectsAndOnes",  IsMagmaWithObjects and
         IsMultiplicativeElementWithObjectsAndOnesCollection ); [110X[133X
@@ -123,7 +123,7 @@
   
   [30X    [33X[0;6Y[10XDeclareRepresentation(                    "IsMappingToSinglePieceRep",
         IsMagmaWithObjectsHomomorphism     and    IsAttributeStoringRep    and
-        IsGeneralMapping, [ "Source", "Range", "PieceImages" ] ); [110X[133X
+        IsGeneralMapping, [ "Source", "Range", "SinglePieceMappingData" ] ); [110X[133X
   
   [30X    [33X[0;6Y[10XDeclareRepresentation(                      "IsMappingWithObjectsRep",
         IsMagmaWithObjectsHomomorphism     and    IsAttributeStoringRep    and
@@ -140,7 +140,7 @@
     [4X[28XNewFamily( "GeneralMappingWithObjectsFamily", [ 2726 ], [128X[104X
     [4X[28X[ 79, 80, 81, 82, 116, 119, 122, 126, 130, 149, 412, 2726 ] )[128X[104X
     [4X[25Xgap>[125X [27XKnownAttributesOfObject( hom1 );[127X[104X
-    [4X[28X[ "Range", "Source", "PieceImages" ][128X[104X
+    [4X[28X[ "Range", "Source", "SinglePieceMappingData" ][128X[104X
     [4X[25Xgap>[125X [27XKnownTruePropertiesOfObject( hom1 );[127X[104X
     [4X[28X[ "CanEasilyCompareElements", "CanEasilySortElements", "IsTotal", [128X[104X
     [4X[28X  "IsSingleValued", "RespectsMultiplication", "IsGeneralMappingToSinglePiece",[128X[104X
@@ -152,10 +152,10 @@
     [4X[28X  "IsAssociativeElement", "IsGeneralMapping", "IsGeneralMappingWithObjects", [128X[104X
     [4X[28X  "IsGroupoidHomomorphism" ][128X[104X
     [4X[25Xgap>[125X [27XKnownAttributesOfObject( homd8 );[127X[104X
-    [4X[28X[ "Range", "Source", "PieceImages", "ImagesOfObjects", "ImageElementsOfRays", [128X[104X
+    [4X[28X[ "Range", "Source", "SinglePieceMappingData", "ImagesOfObjects", "ImageElementsOfRays", [128X[104X
     [4X[28X  "ObjectTransformationOfGroupoidHomomorphism", "RootGroupHomomorphism" ][128X[104X
     [4X[25Xgap>[125X [27XKnownAttributesOfObject( aut3 );[127X[104X
-    [4X[28X[ "Order", "Range", "Source", "PieceImages", "ImagesOfObjects", [128X[104X
+    [4X[28X[ "Order", "Range", "Source", "SinglePieceMappingData", "ImagesOfObjects", [128X[104X
     [4X[28X  "ImageElementsOfRays", "ObjectTransformationOfGroupoidHomomorphism", [128X[104X
     [4X[28X  "RootGroupHomomorphism" ][128X[104X
     [4X[28X[128X[104X

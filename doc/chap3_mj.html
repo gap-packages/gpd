@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (groupoids) - Chapter 3: Homomorphisms of many-object structures</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -37,6 +37,7 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X86F313DB7EC4D9E7">3.3-1 HomomorphismByUnion</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7C053B0379DDCE13">3.3-2 IsInjectiveOnObjects</a></span>
 </div></div>
 </div>
 
@@ -61,7 +62,7 @@ f_A(a : u \to v) * f_A(b : v \to w) ~=~ f_A(a*b : u \to w)
 
 <p>with tail <span class="SimpleMath">\(f_O(u)\)</span> and head <span class="SimpleMath">\(f_O(w)\)</span>.</p>
 
-<p>When <span class="SimpleMath">\(M\)</span> is a monoid or group, the map <span class="SimpleMath">\(f_A\)</span> is required to preserve object identities and inverses.</p>
+<p>When the underlying magma of <span class="SimpleMath">\(M\)</span> is a monoid or group, the map <span class="SimpleMath">\(f_A\)</span> is required to preserve identities and inverses.</p>
 
 <p><a id="X82F856A086B93832" name="X82F856A086B93832"></a></p>
 
@@ -74,17 +75,16 @@ f_A(a : u \to v) * f_A(b : v \to w) ~=~ f_A(a*b : u \to w)
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MagmaWithObjectsHomomorphism</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismFromSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">hom</var>, <var class="Arg">imobs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismToSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">images</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PieceImages</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomsOfMapping</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingToSinglePieceData</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PiecesOfMapping</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismNewObjects</code>( <var class="Arg">src</var>, <var class="Arg">objlist</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <p>There are a variety of homomorphism constructors.</p>
 
-<p>The simplest construction gives a homomorphism <span class="SimpleMath">\(M \to N\)</span> with both <span class="SimpleMath">\(M\)</span> and <span class="SimpleMath">\(N\)</span> connected. It is implemented as <code class="code">IsMappingToSinglePieceRep</code> with attributes <code class="code">Source</code>, <code class="code">Range</code> and <code class="code">PieceImages</code>. The operation requires the following information:</p>
+<p>The simplest construction gives a homomorphism <span class="SimpleMath">\(M \to N\)</span> with both <span class="SimpleMath">\(M\)</span> and <span class="SimpleMath">\(N\)</span> connected. It is implemented as <code class="code">IsMappingToSinglePieceRep</code> with attributes <code class="code">Source</code>, <code class="code">Range</code> and <code class="code">MappingToSinglePieceData</code>. The operation requires the following information:</p>
 
 
 <ul>
-<li><p>a magma homomorphism <code class="code">f</code> from the underlying magma of <span class="SimpleMath">\(M\)</span> to the underlying magma of <span class="SimpleMath">\(N\)</span>,</p>
+<li><p>a magma homomorphism <code class="code">hom</code> from the underlying magma of <span class="SimpleMath">\(M\)</span> to the underlying magma of <span class="SimpleMath">\(N\)</span>,</p>
 
 </li>
 <li><p>a list <code class="code">imobs</code> of the images of the objects of <span class="SimpleMath">\(M\)</span>.</p>
@@ -103,7 +103,8 @@ true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hom1 := MagmaWithObjectsHomomorphism( M78, M78, f1, [-8,-7] );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( hom1 );</span>
 homomorphism to single piece magma: M78 -&gt; M78
-magma hom: &lt;mapping: m -&gt; m &gt;, object map: [ -8, -7 ] -&gt; [ -8, -7 ]
+ magma hom: &lt;mapping: m -&gt; m &gt; 
+object map: [ -8, -7 ] -&gt; [ -8, -7 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ Source( hom1 ), Range( hom1 ) ]; </span>
 [ M78, M78 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b87;</span>
@@ -113,13 +114,13 @@ magma hom: &lt;mapping: m -&gt; m &gt;, object map: [ -8, -7 ] -&gt; [ -8, -7 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i56 := IsomorphismNewObjects( M78, [-5,-6] ); </span>
 magma with objects homomorphism : 
 [ [ IdentityMapping( m ), [ -5, -6 ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ib87 := ImageElm( i56, b87 );</span>
+[m4 : -5 -&gt; -6]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M65 := Range( i56);; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( M65, "M65" ); </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">j56 := InverseGeneralMapping( i56 );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImagesOfObjects( j56 ); </span>
 [ -7, -8 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ib87 := ImageElm( i56, b87 );</span>
-[m4 : -5 -&gt; -6]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">comp := j56 * hom1;</span>
 magma with objects homomorphism : M65 -&gt; M78
 [ [ &lt;mapping: m -&gt; m &gt;, [ -7, -8 ] ] ]
@@ -134,7 +135,8 @@ magma with objects homomorphism : M65 -&gt; M78
 <div class="example"><pre>
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M4 := UnionOfPieces( [ M78, M65 ] );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">images := [ PieceImages( hom1 )[1], PieceImages( j56 )[1] ]; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">images := [ MappingToSinglePieceData( hom1 )[1], </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">MappingToSinglePieceData( j56 )[1] ]; </span>
 [ [ &lt;mapping: m -&gt; m &gt;, [ -8, -7 ] ], [ IdentityMapping( m ), [ -7, -8 ] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">map4 := HomomorphismToSinglePiece( M4, M78, images ); </span>
 magma with objects homomorphism : 
@@ -210,11 +212,6 @@ true
 <h5>3.3-1 HomomorphismByUnion</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismByUnion</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">homs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsBijectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEndomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAutomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p>When <span class="SimpleMath">\(f : M \to N\)</span> and <span class="SimpleMath">\(N\)</span> has more than one connected component, then <span class="SimpleMath">\(f\)</span> is a union of homomorphisms, one for each piece in the range.</p>
 
 
@@ -231,27 +228,37 @@ magma with objects homomorphism :
 [ magma with objects homomorphism : M78 -&gt; M78
     [ [ &lt;mapping: m -&gt; m &gt;, [ -8, -7 ] ] ], magma with objects homomorphism : 
     [ [ smap, [ -11, -12, -13 ] ] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( h14, a78 );</span>
+[m1 : -7 -&gt; -8]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( h14, r31 );</span>
+[Transformation( [ 4, 1, 3, 3 ] ) : -11 -&gt; -13]
+
+</pre></div>
+
+<p><a id="X7C053B0379DDCE13" name="X7C053B0379DDCE13"></a></p>
+
+<h5>3.3-2 IsInjectiveOnObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsBijectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEndomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAutomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<p>The meaning of these five properties is obvious.</p>
+
+
+<div class="example"><pre>
+
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsInjectiveOnObjects( h14 );</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSurjectiveOnObjects( h14 );</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsBijectiveOnObjects( h14 ); </span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( h14, t12 );</span>
-[Transformation( [ 2, 2, 4, 1 ] ) : -13 -&gt; -12]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h45 := IsomorphismNewObjects( N4, [ [-103,-102,-101], [-108,-107] ] );</span>
-magma with objects homomorphism : 
-[ magma with objects homomorphism : 
-    [ [ IdentityMapping( m ), [ -108, -107 ] ] ], 
-  magma with objects homomorphism : 
-    [ [ IdentityMapping( sgp&lt;t2,s2,r2&gt; ), [ -103, -102, -101 ] ] ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N5 := Range( h45 );;  SetName( N5, "N5" ); </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">h15 := h14 * h45;</span>
-magma with objects homomorphism : 
-[ magma with objects homomorphism : [ [ &lt;mapping: m -&gt; m &gt;, [ -108, -107 ] ] ]
-    , magma with objects homomorphism : [ [ smap, [ -101, -102, -103 ] ] ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ImageElm( h15, t12 ); </span>
-[Transformation( [ 2, 2, 4, 1 ] ) : -103 -&gt; -102]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsEndomorphismWithObjects( h14 ); </span>
+false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAutomorphismWithObjects( h14 ); </span>
+false
 
 </pre></div>
 

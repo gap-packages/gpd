@@ -1,7 +1,8 @@
 name: groupoids
 version: 1.52
-date: 13/09/2017
-description: Calculations with finite groupoids and their homomorphisms
+date: 21/09/2017
+description: |
+    Calculations with finite groupoids and their homomorphisms
 
 authors:
     - name: Emma J. Moore
@@ -28,14 +29,15 @@ suggested-pkgs:
       url: "https://gap-packages.github.io/Semigroups"
 
 www: https://gap-packages.github.io/groupoids/
-readme: https://gap-packages.github.io/groupoids/README.md
+readme: README.md
 packageinfo: https://gap-packages.github.io/groupoids/PackageInfo.g
 
 downloads:
     - name: .tar.gz
       url: https://github.com/gap-packages/groupoids/releases/download/v1.52/groupoids-1.52.tar.gz
 
-abstract: The groupoids package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions. Up until April 2017 this package was named Gpd.
+abstract: |
+    The groupoids package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions. Up until April 2017 this package was named Gpd.
 
 status: accepted
 doc-html: doc/chap0.html

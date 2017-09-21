@@ -51,13 +51,13 @@
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27Xfg3 := FreeGroup( 3, "z" );;[127X[104X
     [4X[25Xgap>[125X [27Xz1 := fg3.1;;  z2 := fg3.2;;  z3 := fg3.3;;[127X[104X
-    [4X[25Xgap>[125X [27XV3 := [ 7, 8, 9 ];;[127X[104X
+    [4X[25Xgap>[125X [27Xob3 := [ 7, 8, 9 ];;[127X[104X
     [4X[25Xgap>[125X [27XA3 := [[z1,7,8],[z2,8,9],[z3,9,7],[z1^-1,8,7],[z2^-1,9,8],[z3^-1,7,9]];;[127X[104X
-    [4X[25Xgap>[125X [27XD3 := FpWeightedDigraph( fg3, V3, A3 );[127X[104X
+    [4X[25Xgap>[125X [27XD3 := FpWeightedDigraph( fg3, ob3, A3 );[127X[104X
     [4X[28Xweighted digraph with vertices: [ 7, 8, 9 ][128X[104X
     [4X[28Xand arcs: [ [ z1, 7, 8 ], [ z2, 8, 9 ], [ z3, 9, 7 ], [ z1^-1, 8, 7 ],[128X[104X
     [4X[28X  [ z2^-1, 9, 8 ], [ z3^-1, 7, 9 ] ][128X[104X
-    [4X[28X[gap> inv3 := InvolutoryArcs( D3 );[128X[104X
+    [4X[28X[gap> inob3 := InvolutoryArcs( D3 );[128X[104X
     [4X[28X[ 4, 5, 6, 1, 2, 3 ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
@@ -151,8 +151,7 @@
     [4X[25Xgap>[125X [27XIsGraphOfFpGroups( G1 );[127X[104X
     [4X[28Xtrue[128X[104X
     [4X[25Xgap>[125X [27XIsomorphismsOfGraphOfGroups( G1 );[127X[104X
-    [4X[28X[ GroupHomomorphismByImages( hy, hybar, [ a^3 ], [ b^2 ] ), [128X[104X
-    [4X[28X  GroupHomomorphismByImages( hybar, hy, [ b^2 ], [ a^3 ] ) ][128X[104X
+    [4X[28X[ [ a^3 ] -> [ b^2 ], [ b^2 ] -> [ a^3 ] ][128X[104X
     [4X[28X[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
@@ -191,8 +190,8 @@
   [29X[2XIsGraphOfGroupsWord[102X( [3Xw[103X ) [32X property
   [29X[2XGraphOfGroupsOfWord[102X( [3Xw[103X ) [32X attribute
   [29X[2XWordOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute
-  [29X[2XGGTail[102X( [3Xw[103X ) [32X attribute
-  [29X[2XGGHead[102X( [3Xw[103X ) [32X attribute
+  [29X[2XTailOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute
+  [29X[2XHeadOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute
   
   [33X[0;0YIf [10XG[110X is a graph of groups with underlying digraph [10XD[110X, the following groupoids
   may  be  considered. First there is the free groupoid or path groupoid on [10XD[110X.
@@ -210,9 +209,6 @@
   an  arc  of  [10XD[110X;  the head of [22Xy_i-1[122X is a vertex [22Xv_i[122X which is also the tail of
   [22Xy_i[122X; and [22Xg_i[122X is an element of the vertex group at [22Xv_i[122X.[133X
   
-  [33X[0;0YThe  attributes  [10XGGTail[110X and [10XGGHead[110X are [13Xtemporary[113X names for the tail and head
-  of a graph of groups word, and are likely to be replaced in future versions.[133X
-  
   [33X[0;0YSo  a  graph  of  groups word requires as data the graph of groups; the tail
   vertex  for  the word; and a list of arcs and group elements. We may specify
   each arc by its position in the list of arcs.[133X
@@ -228,7 +224,7 @@
     [4X[28X(5)a^7.y.b^-6.y^-1.a^-11.y.b^9.y^-1.a^7(5)[128X[104X
     [4X[25Xgap>[125X [27XIsGraphOfGroupsWord( gw1 );[127X[104X
     [4X[28Xtrue[128X[104X
-    [4X[25Xgap>[125X [27X[ GGTail(gw1), GGHead(gw1) ];[127X[104X
+    [4X[25Xgap>[125X [27X[ TailOfGraphOfGroupsWord(gw1), HeadOfGraphOfGroupsWord(gw1) ];[127X[104X
     [4X[28X[ 5, 5 ][128X[104X
     [4X[25Xgap>[125X [27XGraphOfGroupsOfWord(gw1);[127X[104X
     [4X[28XGraph of Groups: 2 vertices; 2 arcs; groups [ fa, fb ][128X[104X
@@ -259,10 +255,10 @@
   The four stages of the reduction are as follows:[133X
   
   
-        [33X[1;6Y[24X[33X[0;0Ya^7b^{-6}a^{-11}b^9a^7 ~\mapsto~ a^{-2}b^0a^{-11}b^9a^7 ~\mapsto~
-        a^{-13}b^9a^7 ~\mapsto~ a^{-1}b^{-8}b^9a^7 ~\mapsto~
-        a^{-1}b^{-1}a^{10}.[133X [124X[133X
+  [24X[33X[0;6Ya^7b^{-6}a^{-11}b^9a^7     ~\mapsto~     a^{-2}b^0a^{-11}b^9a^7    ~\mapsto~
+  a^{-13}b^9a^7 ~\mapsto~ a^{-1}b^{-8}b^9a^7 ~\mapsto~ a^{-1}b^{-1}a^{10}.[133X
   
+  [124X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -435,17 +431,24 @@
     [4X[25Xgap>[125X [27XGfa := SinglePieceGroupoid( fa, [-2,-1] );;[127X[104X
     [4X[25Xgap>[125X [27Xofa := One( fa );;[127X[104X
     [4X[25Xgap>[125X [27XSetName( Gfa, "Gfa" );[127X[104X
-    [4X[25Xgap>[125X [27XUhy := Subgroupoid( Gfa, [ [[-2,-1], hy ] ] );;[127X[104X
+    [4X[25Xgap>[125X [27XUhy := Subgroupoid( Gfa, [ [ hy, [-2,-1] ] ] );;[127X[104X
     [4X[25Xgap>[125X [27XSetName( Uhy, "Uhy" );[127X[104X
     [4X[25Xgap>[125X [27XGfb := SinglePieceGroupoid( fb, [-4,-3] );;[127X[104X
     [4X[25Xgap>[125X [27Xofb := One( fb );;[127X[104X
     [4X[25Xgap>[125X [27XSetName( Gfb, "Gfb" );[127X[104X
-    [4X[25Xgap>[125X [27XUhybar := Subgroupoid( Gfb, [ [[-4,-3], hybar ] ] );;[127X[104X
+    [4X[25Xgap>[125X [27XUhybar := Subgroupoid( Gfb, [ [ hybar, [-4,-3] ] ] );;[127X[104X
     [4X[25Xgap>[125X [27XSetName( Uhybar, "Uhybar" );[127X[104X
-    [4X[25Xgap>[125X [27Xmory := GroupoidMappingOfSinglePieces( [127X[104X
-    [4X[25Xgap>[125X [27X     Uhy, Uhybar, homy, [-4,-3], [ofb,ofb] );;[127X[104X
-    [4X[25Xgap>[125X [27Xmorybar := GroupoidMappingOfSinglePieces( [127X[104X
-    [4X[25Xgap>[125X [27X     Uhybar, Uhy, homybar, [-2,-1], [ofa,ofa] );;[127X[104X
+    [4X[25Xgap>[125X [27Xgens := GeneratorsOfGroupoid( Uhy );; [127X[104X
+    [4X[25Xgap>[125X [27Xgensbar := GeneratorsOfGroupoid( Uhybar );;[127X[104X
+    [4X[25Xgap>[125X [27Xmory := GroupoidHomomorphismFromSinglePiece( [127X[104X
+    [4X[25X>[125X [27X               Uhy, Uhybar, gens, gensbar );[127X[104X
+    [4X[28Xgroupoid homomorphism : Uhy -> Uhybar[128X[104X
+    [4X[28X[ [ [a^3 : -2 -> -2], [<identity ...> : -2 -> -1] ], [128X[104X
+    [4X[28X  [ [b^2 : -4 -> -4], [<identity ...> : -4 -> -3] ] ][128X[104X
+    [4X[25Xgap>[125X [27Xmorybar := InverseGeneralMapping( mory );[127X[104X
+    [4X[28Xgroupoid homomorphism : Uhybar -> Uhy[128X[104X
+    [4X[28X[ [ [b^2 : -4 -> -4], [<identity ...> : -4 -> -3] ], [128X[104X
+    [4X[28X  [ [a^3 : -2 -> -2], [<identity ...> : -2 -> -1] ] ][128X[104X
     [4X[25Xgap>[125X [27Xgg3 := GraphOfGroupoids( D1, [Gfa,Gfb], [Uhy,Uhybar], [mory,morybar] );;[127X[104X
     [4X[25Xgap>[125X [27XDisplay( gg3 );[127X[104X
     [4X[28XGraph of Groupoids with :- [128X[104X
@@ -465,11 +468,11 @@
     [4X[28X  objects: [ -4, -3 ][128X[104X
     [4X[28X    group: hybar = <[ b^2 ]>[128X[104X
     [4X[28Xisomorphisms: [ groupoid homomorphism : Uhy -> Uhybar[128X[104X
-    [4X[28X    [ [ GroupHomomorphismByImages( hy, hybar, [ a^3 ], [ b^2 ] ), [ -4, -3 ], [128X[104X
-    [4X[28X          [ <identity ...>, <identity ...> ] ] ], [128X[104X
+    [4X[28X    [ [ [a^3 : -2 -> -2], [<identity ...> : -2 -> -1] ], [128X[104X
+    [4X[28X      [ [b^2 : -4 -> -4], [<identity ...> : -4 -> -3] ] ], [128X[104X
     [4X[28X  groupoid homomorphism : Uhybar -> Uhy[128X[104X
-    [4X[28X    [ [ GroupHomomorphismByImages( hybar, hy, [ b^2 ], [ a^3 ] ), [ -2, -1 ], [128X[104X
-    [4X[28X          [ <identity ...>, <identity ...> ] ] ] ][128X[104X
+    [4X[28X    [ [ [b^2 : -4 -> -4], [<identity ...> : -4 -> -3] ], [128X[104X
+    [4X[28X      [ [a^3 : -2 -> -2], [<identity ...> : -2 -> -1] ] ] ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

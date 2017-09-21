@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (groupoids) - Chapter 2: Many-object structures</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -42,11 +42,15 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A271B1A7F2FF245">2.3-1 MonoidWithObjects</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X87B3A56F8231D0F3">2.4 <span class="Heading">Structures with one or more pieces</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X842D1B0C7A76CC15">2.4 <span class="Heading">Generators of magmas with objects</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X788262F87EDA9816">2.4-1 DomainWithSingleObject</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79877FAA8556A726">2.4-2 UnionOfPieces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83239B307EE95054">2.4-1 GeneratorsOfMagmaWithObjects</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7C7007207FD91BB0">2.5 <span class="Heading">Structures with more than one piece</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79877FAA8556A726">2.5-1 UnionOfPieces</a></span>
 </div></div>
 </div>
 
@@ -75,14 +79,16 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MagmaWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceMagmaWithObjects</code>( <var class="Arg">magma</var>, <var class="Arg">obs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ObjectList</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootObject</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootObject</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>The simplest construction for a magma with objects <span class="SimpleMath">\(M\)</span> is to take a magma <span class="SimpleMath">\(m\)</span> and an ordered set <span class="SimpleMath">\(s\)</span>, and form arrows <span class="SimpleMath">\((u,a,v)\)</span> for every <span class="SimpleMath">\(a\)</span> in <span class="SimpleMath">\(m\)</span> and <span class="SimpleMath">\(u,v\)</span> in <span class="SimpleMath">\(s\)</span>. Multiplication is defined by <span class="SimpleMath">\((u,a,v)*(v,b,w) = (u,a*b,w)\)</span>. In this package we prefer to write <span class="SimpleMath">\((u,a,v)\)</span> as <span class="SimpleMath">\((a : u \to v)\)</span>, so that the multiplication rule becomes <span class="SimpleMath">\((a : u \to v)*(b : v \to w) = (a*b : u \to w)\)</span>.</p>
 
 <p>Any finite, ordered set is in principle acceptable as the object list of <span class="SimpleMath">\(M\)</span>, but most of the time we find it convenient to restrict ourselves to sets of non-positive integers.</p>
 
 <p>This is the only construction implemented here for magmas, semigroups, and monoids with objects, and these all have the property <code class="code">IsDirectProductWithCompleteGraph</code>. There are other constructions implemented for groupoids.</p>
 
-<p>The output from function <code class="code">MagmaWithObjects</code> lies in the categories <code class="code">IsDomainWithObjects</code>, <code class="code">IsMagmaWithObjects</code>, <code class="code">CategoryCollections(IsMultiplicativeElementWithObjects)</code> and <code class="code">IsMagma</code>. The <em>root object</em> of <span class="SimpleMath">\(M\)</span> is the first element in <span class="SimpleMath">\(s\)</span>.</p>
+<p>The output from function <code class="code">MagmaWithObjects</code> lies in the categories <code class="code">IsDomainWithObjects</code>, <code class="code">IsMagmaWithObjects</code> and <code class="code">CategoryCollections(IsMultiplicativeElementWithObjects)</code>. As composition is only partial, the output does <em>not</em> lie in the category <code class="code">IsMagma</code>.</p>
+
+<p>The <em>root object</em> of <span class="SimpleMath">\(M\)</span> is the first element in <span class="SimpleMath">\(s\)</span>.</p>
 
 
 <div class="example"><pre>
@@ -101,8 +107,10 @@ magma with objects :-
     magma = m
   objects = [ -8, -7 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( M78, "M78" ); </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsAssociative(M78), IsCommutative(M78), IsDomainWithObjects(M78) ]; </span>
-[ false, false, true ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsAssociative(M78), IsCommutative(M78) ]; </span>
+[ false, false ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsDomainWithObjects(M78), IsMagmaWithObjects(M78), IsMagma(M78) ]; </span>
+[ true, true, false ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ RootObject( M78 ), ObjectList( M78 ) ]; </span>
 [ -8, [ -8, -7 ] ]
 
@@ -113,21 +121,18 @@ magma with objects :-
 <h5>2.1-2 Arrow</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Arrow</code>( <var class="Arg">mwo</var>, <var class="Arg">elt</var>, <var class="Arg">tail</var>, <var class="Arg">head</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElementOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TailOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeadOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsArrowIn</code>( <var class="Arg">arr</var>, <var class="Arg">mwo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Arrows in a magma with objects lie in the category <code class="code">IsMultiplicativeElementWithObjects</code>. An attempt to multiply two arrows which do not compose resuts in <code class="code">fail</code> being returned. Each arrow <span class="SimpleMath">\(arr = (a : u \to v)\)</span> has three components. The magma <em>element</em> <span class="SimpleMath">\(a \in m\)</span> may be accessed by <code class="code">ElementOfArrow(arr)</code>. Similarly, the <em>tail</em> object <span class="SimpleMath">\(u\)</span> and the <em>head</em> object <span class="SimpleMath">\(v\)</span> may be obtained using <code class="code">TailOfArrow(arr)</code> and <code class="code">HeadOfArrow(arr)</code> respectively.</p>
-
-<p>The operation <code class="code">IsArrowIn</code> is added due to difficulties found when attempting to write a method for <code class="code">\in</code>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElementOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TailOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeadOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>Arrows in a magma with objects lie in the category <code class="code">IsMultiplicativeElementWithObjects</code>. An attempt to multiply two arrows which do not compose resuts in <code class="code">fail</code> being returned. Each arrow <span class="SimpleMath">\(arr = (a : u \to v)\)</span> has three components. The magma <em>element</em> <span class="SimpleMath">\(a \in m\)</span> may be accessed by <code class="code">ElementOfArrow(arr)</code>. Similarly, the <em>tail</em> object <span class="SimpleMath">\(u\)</span> and the <em>head</em> object <span class="SimpleMath">\(v\)</span> may be obtained using <code class="code">TailOfArrow(arr)</code> and <code class="code">HeadOfArrow(arr)</code> respectively. The operation <code class="code">MultiplicativeElementWithObjects</code> is a synonym for <code class="code">Arrow</code> since this was used in older versions of the package.</p>
 
 
 <div class="example"><pre>
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a78 := Arrow( M78, m2, -7, -8 ); </span>
 [m2 : -7 -&gt; -8]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ a78 in M78, IsArrowIn( a78, M78 ) ]; </span>
-[ false, true ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a78 in M78; </span>
+true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b87 := Arrow( M78, m4, -8, -7 );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ ElementOfArrow( b87 ), TailOfArrow( b87 ), HeadOfArrow( b87 ) ]; </span>
 [ m4, -8, -7 ]
@@ -172,13 +177,16 @@ false
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceSemigroupWithObjects</code>( <var class="Arg">sgp</var>, <var class="Arg">obs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>When the magma is a semigroup the construction gives a <code class="code">SinglePieceSemigroupWithObjects</code>. In the example we use a transformation semigroup and <span class="SimpleMath">\(3\)</span> objects.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DomainWithSingleObject</code>( <var class="Arg">dom</var>, <var class="Arg">obj</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>The constructions in section <a href="chap2_mj.html#X7920BF45828AE5DE"><span class="RefLink">2.1</span></a> give a <code class="code">SinglePieceSemigroupWithObjects</code> when the magma is a semigroup. In the example we use a transformation semigroup and <span class="SimpleMath">\(3\)</span> objects.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t := Transformation( [1,1,2,3] );;  s := Transformation( [2,2,3,3] );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r := Transformation( [2,3,4,4] );;  sgp := Semigroup( t, s, r );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t := Transformation( [1,1,2,3] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s := Transformation( [2,2,3,3] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">r := Transformation( [2,3,4,4] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">sgp := Semigroup( t, s, r );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( sgp, "sgp&lt;t,s,r&gt;" ); </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S123 := SemigroupWithObjects( sgp, [-3,-2,-1] ); </span>
 semigroup with objects :-
@@ -198,8 +206,24 @@ semigroup with objects :-
 [Transformation( [ 3, 3, 4, 4 ] ) : -2 -&gt; -1]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">rt32 := r31 * t12;</span>
 [Transformation( [ 1, 2, 3, 3 ] ) : -3 -&gt; -2]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> tsr1 := ts13 * r31;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">tsr1 := ts13 * r31;</span>
 [Transformation( [ 3, 3, 3 ] ) : -1 -&gt; -1]
+
+</pre></div>
+
+<p>A magma, semigroup, monoid, or group can be made into a magma with objects by the addition of a single object. The two are algebraically isomorphic, and there is one arrow (a loop) for each element in <span class="SimpleMath">\(dom\)</span>. In the example we take the semigroup <code class="code">sgp</code> of size <span class="SimpleMath">\(17\)</span> at the object <span class="SimpleMath">\(0\)</span>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S0 := DomainWithSingleObject( sgp, 0 );</span>
+semigroup with objects :-
+    magma = sgp&lt;t,s,r&gt;
+  objects = [ 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">t0 := Arrow( S0, t, 0, 0 );            </span>
+[Transformation( [ 1, 1, 2, 3 ] ) : 0 -&gt; 0]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size( S0 );</span>
+17
 
 </pre></div>
 
@@ -213,10 +237,7 @@ semigroup with objects :-
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonoidWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceMonoidWithObjects</code>( <var class="Arg">mon</var>, <var class="Arg">obs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfMagmaWithObjects</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>When the semigroup is a monoid the construction gives a <code class="code">SinglePieceMonoidWithObjects</code>. The example uses a finitely presented monoid with <span class="SimpleMath">\(2\)</span> generators and <span class="SimpleMath">\(2\)</span> objects.</p>
-
-<p>When the construction is the direct product of a monoid and the complete graph on the objects, the generating set consists of two parts. Firstly, there is a loop at the root object for each generator of the monoid. Secondly, for each pair of objects <span class="SimpleMath">\(u,v\)</span>, there are arrows <span class="SimpleMath">\((1 : u \to v)\)</span> and <span class="SimpleMath">\((1 : v \to u)\)</span>.</p>
+<p>The constructions in section <a href="chap2_mj.html#X7920BF45828AE5DE"><span class="RefLink">2.1</span></a> give a <code class="code">SinglePieceMonoidWithObjects</code> when the magma is a monoid. The example uses a finitely presented monoid with <span class="SimpleMath">\(2\)</span> generators and <span class="SimpleMath">\(2\)</span> objects.</p>
 
 
 <div class="example"><pre>
@@ -230,67 +251,102 @@ monoid with objects :-
     magma = Monoid( [ f1, f2 ] )
   objects = [ -9, -4 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ktpo := KnownTruePropertiesOfObject( M49 );</span>
-[ "CanEasilyCompareElements", "CanEasilySortElements", "IsDuplicateFree", 
-  "IsAssociative", "IsSinglePieceDomain", 
+[ "IsDuplicateFree", "IsAssociative", "IsSinglePieceDomain", 
   "IsDirectProductWithCompleteGraphDomain" ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">genM := GeneratorsOfMagmaWithObjects( M49 );</span>
-[ [&lt;identity ...&gt; : -9 -&gt; -9], [f1 : -9 -&gt; -9], [f2 : -9 -&gt; -9],
-  [&lt;identity ...&gt; : -9 -&gt; -4], [&lt;identity ...&gt; : -4 -&gt; -9] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g2:=genM[2];; g3:=genM[3];; g4:=genM[4];; g5:=genM[5];; </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[g5,g3,g2,g4];</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">catobj := CategoriesOfObject( M49 );; </span>
+[ "IsListOrCollection", "IsCollection", "IsExtLElement", 
+  "CategoryCollections(IsExtLElement)", "IsExtRElement", 
+  "CategoryCollections(IsExtRElement)", 
+  "CategoryCollections(IsMultiplicativeElement)", "IsGeneralizedDomain", 
+  "IsDomainWithObjects", 
+  "CategoryCollections(IsMultiplicativeElementWithObjects)", 
+  "CategoryCollections(IsMultiplicativeElementWithObjectsAndOnes)", 
+  "CategoryCollections(IsMultiplicativeElementWithObjectsAndInverses)", 
+  "IsMagmaWithObjects", "IsSemigroupWithObjects", "IsMonoidWithObjects" ]
+
+</pre></div>
+
+<p><a id="X842D1B0C7A76CC15" name="X842D1B0C7A76CC15"></a></p>
+
+<h4>2.4 <span class="Heading">Generators of magmas with objects</span></h4>
+
+<p><a id="X83239B307EE95054" name="X83239B307EE95054"></a></p>
+
+<h5>2.4-1 GeneratorsOfMagmaWithObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfMagmaWithObjects</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfSemigroupWithObjects</code>( <var class="Arg">swo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfMonoidWithObjects</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>For a magma or semigroup with objects, the generating set consists of arrows <span class="SimpleMath">\((g : u \to v)\)</span> for every pair of objects <span class="SimpleMath">\(u,v\)</span> and every generating element for the magma or semigroup.</p>
+
+<p>For a monoid with objects, the generating set consists of two parts. Firstly, there is a loop at the root object <span class="SimpleMath">\(r\)</span> for each generator of the monoid. Secondly, for each object <span class="SimpleMath">\(u\)</span> distinct from <span class="SimpleMath">\(r\)</span>, there are arrows <span class="SimpleMath">\((1 : r \to u)\)</span> and <span class="SimpleMath">\((1 : u \to r)\)</span>. (Perhaps only one of each pair is required?) Then</p>
+
+<p class="center">\[
+(e : u \to v ) = (1 : u \to r)*(e : r \to r)*(1 : r \to v). 
+\]</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfMagmaWithObjects( M78 );</span>
+[ [m1 : -8 -&gt; -8], [m2 : -8 -&gt; -8], [m3 : -8 -&gt; -8], [m4 : -8 -&gt; -8], 
+  [m1 : -8 -&gt; -7], [m2 : -8 -&gt; -7], [m3 : -8 -&gt; -7], [m4 : -8 -&gt; -7], 
+  [m1 : -7 -&gt; -8], [m2 : -7 -&gt; -8], [m3 : -7 -&gt; -8], [m4 : -7 -&gt; -8], 
+  [m1 : -7 -&gt; -7], [m2 : -7 -&gt; -7], [m3 : -7 -&gt; -7], [m4 : -7 -&gt; -7] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">genS := GeneratorsOfSemigroupWithObjects( S123 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length( genS );                                   </span>
+27
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">genM := GeneratorsOfMonoidWithObjects( M49 );</span>
+[ [f1 : -9 -&gt; -9], [f2 : -9 -&gt; -9], [&lt;identity ...&gt; : -9 -&gt; -4], 
+  [&lt;identity ...&gt; : -4 -&gt; -9] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g1:=genM[2];; g2:=genM[3];; g3:=genM[4];; g4:=genM[5];; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[g4,g2,g1,g3];</span>
 [ [&lt;identity ...&gt; : -4 -&gt; -9], [f2 : -9 -&gt; -9], [f1 : -9 -&gt; -9], 
   [&lt;identity ...&gt; : -9 -&gt; -4] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g5*g3*g2*g4;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g4*g2*g1*g3;</span>
 [f2*f1 : -4 -&gt; -4]
 
 </pre></div>
 
-<p><a id="X87B3A56F8231D0F3" name="X87B3A56F8231D0F3"></a></p>
+<p><a id="X7C7007207FD91BB0" name="X7C7007207FD91BB0"></a></p>
 
-<h4>2.4 <span class="Heading">Structures with one or more pieces</span></h4>
-
-<p><a id="X788262F87EDA9816" name="X788262F87EDA9816"></a></p>
-
-<h5>2.4-1 DomainWithSingleObject</h5>
-
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DomainWithSingleObject</code>( <var class="Arg">dom</var>, <var class="Arg">obj</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>A magma, semigroup, monoid, or group can be made into a magma with objects by the addition of a single object. The two are algebraically isomorphic, and there is one arrow (a loop) for each element in the group. In the example we take the dihedral group of size <span class="SimpleMath">\(8\)</span> at the object <span class="SimpleMath">\(0\)</span>.</p>
-
-
-<div class="example"><pre>
-
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">d8 := Group( (1,2,3,4), (1,3) );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( d8, "d8" );</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D0 := DomainWithSingleObject( d8, 0 );</span>
-single piece groupoid: &lt; d8, [ 0 ] &gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GeneratorsOfMagmaWithInverses( D0 );</span>
-[ [(1,2,3,4) : 0 -&gt; 0], [(1,3) : 0 -&gt; 0] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Size( D0 );</span>
-8
-
-</pre></div>
+<h4>2.5 <span class="Heading">Structures with more than one piece</span></h4>
 
 <p><a id="X79877FAA8556A726" name="X79877FAA8556A726"></a></p>
 
-<h5>2.4-2 UnionOfPieces</h5>
+<h5>2.5-1 UnionOfPieces</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnionOfPieces</code>( <var class="Arg">pieces</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Pieces</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<p>A magma with objects whose underlying digraph has two or more connected components can be constructed by taking the union of two or more connected structures. These, in turn, can be combined together. The only requirement is that all the object lists should be disjoint.</p>
-
-<p>Structures <code class="code">S123, M49, D0</code> generated above have, respectively, <code class="code">GeneratorsOfMagma</code>, <code class="code">GeneratorsOfMagmaWithOne</code> and <code class="code">GeneratorsOfMagmaWithInverses</code>. The generators of a structure with several pieces is the union of the generators of the individual pieces.</p>
+<p>A magma with objects whose underlying digraph has two or more connected components can be constructed by taking the union of two or more connected structures. These, in turn, can be combined together. The only requirement is that all the object lists should be disjoint. The pieces are ordered by the order of their root objects.</p>
 
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N1 := UnionOfPieces( [ M78, S123 ] );;  ObjectList( N1 );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N1 := UnionOfPieces( [ M78, S123 ] ); </span>
+magma with objects having 2 pieces :-
+1: M78
+2: semigroup with objects :-
+    magma = sgp&lt;t,s,r&gt;
+  objects = [ -3, -2, -1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ObjectList( N1 ); </span>
 [ -8, -7, -3, -2, -1 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N2 := UnionOfPieces( [ M49, D0 ] );;  Pieces( N2 );</span>
-[ monoid with objects :-
-        magma = Monoid( [ f1, f2 ] )
-      objects = [ -9, -4 ]
-    , single piece groupoid: &lt; d8, [ 0 ] &gt; ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N3 := UnionOfPieces( [ N1, N2 ] );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Pieces(N1);</span>
+[ M78, semigroup with objects :-
+        magma = sgp&lt;t,s,r&gt;
+      objects = [ -3, -2, -1 ]
+     ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N2 := UnionOfPieces( [ M49, S0 ] );  </span>
+semigroup with objects having 2 pieces :-
+1: monoid with objects :-
+    magma = Monoid( [ f1, f2 ] )
+  objects = [ -9, -4 ]
+2: semigroup with objects :-
+    magma = sgp&lt;t,s,r&gt;
+  objects = [ 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ObjectList( N2 ); </span>
+[ -9, -4, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N3 := UnionOfPieces( [ N1, N2] );  </span>
 magma with objects having 4 pieces :-
 1: monoid with objects :-
     magma = Monoid( [ f1, f2 ] )
@@ -299,13 +355,15 @@ magma with objects having 4 pieces :-
 3: semigroup with objects :-
     magma = sgp&lt;t,s,r&gt;
   objects = [ -3, -2, -1 ]
-4: single piece groupoid: &lt; d8, [ 0 ] &gt;
+4: semigroup with objects :-
+    magma = sgp&lt;t,s,r&gt;
+  objects = [ 0 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ObjectList( N3 ); </span>
 [ -9, -8, -7, -4, -3, -2, -1, 0 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length( GeneratorsOfMagmaWithObjects( N3 ) ); </span>
 50
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## the next command returns fail since the object sets are not disjoint: </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N4 := UnionOfPieces( [ S123, DomainWithSingleObject( d8, -2 ) ] );  </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N4 := UnionOfPieces( [ S123, DomainWithSingleObject( sgp, -2 ) ] );  </span>
 fail
 
 </pre></div>

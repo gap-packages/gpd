@@ -36,35 +36,19 @@
   
   [33X[0;0YIn April 2017 the package was renamed again, as [5Xgroupoids[105X.[133X
   
-  [33X[0;0YThe latest version is 1.51 of 6th August 2017, for [5XGAP[105X 4.8.8 or 4.9.[133X
+  [33X[0;0YIn  August  2017 the implementation of groupoid homomorphisms was completely
+  revised  with  the emphasis now on a mapping from a set of generating arrows
+  to their images.[133X
   
-  [33X[0;0YIn the current version there have been a number of changes of function name,
+  [33X[0;0YThe latest version is 1.52 of 21st September 2017, for [5XGAP[105X 4.9.[133X
+  
+  [33X[0;0YIn  recent  versions  there  have been a number of changes of function name,
   such  as  [10XIsDigraph[110X  becoming  [10XGroupoidIsDigraph[110X.  This is in order to avoid
   conflicts  with  the [5XDigraphs[105X package. The intention is that these functions
   can revert to the original names in due course.[133X
   
   
   [1X8.2 [33X[0;0YWhat needs to be done next?[133X[101X
-  
-  [33X[0;0YThe urgent requirement is for a new implementation of groupoid homomorphisms
-  to eliminate the errors mention in section [14X5.4[114X.[133X
-  
-  [33X[0;0YComputationally, there are three types of connected groupoid:[133X
-  
-  [30X    [33X[0;6Ythose with identical object groups,[133X
-  
-  [30X    [33X[0;6Ythose with object groups conjugate in some supergroup,[133X
-  
-  [30X    [33X[0;6Ythose with object groups which are simply isomorphic.[133X
-  
-  [33X[0;0Y[5XGraphGpd[105X  attempted  to  implement  the second case, while [5Xgpd[105X 1.01 and 1.03
-  considered  only  the  first  case, and [5Xgpd[105X 1.05 extended 1.03 to the second
-  case.[133X
-  
-  [33X[0;0YThe  third  case  has  not yet been considered for implementation, and there
-  does not appear to be any need to do so.[133X
-  
-  [33X[0;0YHere are some other immediate requirements:[133X
   
   [30X    [33X[0;6Ymore work on automorphism groups of groupoids;[133X
   

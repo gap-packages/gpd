@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (groupoids) - Chapter 7: Technical Notes</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -67,7 +67,7 @@
 <li><p><code class="code">DeclareCategory( "IsDomainWithObjects", IsDomain ); </code></p>
 
 </li>
-<li><p><code class="code">DeclareCategory( "IsMagmaWithObjects", IsDomainWithObjects and IsMagma and IsMultiplicativeElementWithObjectsCollection );</code></p>
+<li><p><code class="code">DeclareCategory( "IsMagmaWithObjects", IsDomainWithObjects and IsMultiplicativeElementWithObjectsCollection );</code></p>
 
 </li>
 <li><p><code class="code">DeclareCategory( "IsMagmaWithObjectsAndOnes", IsMagmaWithObjects and IsMultiplicativeElementWithObjectsAndOnesCollection ); </code></p>
@@ -166,7 +166,7 @@ NewFamily( "GroupoidElementFamily", [ 2714 ],
 
 
 <ul>
-<li><p><code class="code">DeclareRepresentation( "IsMappingToSinglePieceRep", IsMagmaWithObjectsHomomorphism and IsAttributeStoringRep and IsGeneralMapping, [ "Source", "Range", "PieceImages" ] ); </code></p>
+<li><p><code class="code">DeclareRepresentation( "IsMappingToSinglePieceRep", IsMagmaWithObjectsHomomorphism and IsAttributeStoringRep and IsGeneralMapping, [ "Source", "Range", "SinglePieceMappingData" ] ); </code></p>
 
 </li>
 <li><p><code class="code">DeclareRepresentation( "IsMappingWithObjectsRep", IsMagmaWithObjectsHomomorphism and IsAttributeStoringRep and IsGeneralMapping, [ "Source", "Range", "PiecesOfMapping" ] ); </code></p>
@@ -182,7 +182,7 @@ NewFamily( "GroupoidElementFamily", [ 2714 ],
 NewFamily( "GeneralMappingWithObjectsFamily", [ 2726 ], 
 [ 79, 80, 81, 82, 116, 119, 122, 126, 130, 149, 412, 2726 ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownAttributesOfObject( hom1 );</span>
-[ "Range", "Source", "PieceImages" ]
+[ "Range", "Source", "SinglePieceMappingData" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownTruePropertiesOfObject( hom1 );</span>
 [ "CanEasilyCompareElements", "CanEasilySortElements", "IsTotal", 
   "IsSingleValued", "RespectsMultiplication", "IsGeneralMappingToSinglePiece",
@@ -194,10 +194,10 @@ NewFamily( "GeneralMappingWithObjectsFamily", [ 2726 ],
   "IsAssociativeElement", "IsGeneralMapping", "IsGeneralMappingWithObjects", 
   "IsGroupoidHomomorphism" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownAttributesOfObject( homd8 );</span>
-[ "Range", "Source", "PieceImages", "ImagesOfObjects", "ImageElementsOfRays", 
+[ "Range", "Source", "SinglePieceMappingData", "ImagesOfObjects", "ImageElementsOfRays", 
   "ObjectTransformationOfGroupoidHomomorphism", "RootGroupHomomorphism" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">KnownAttributesOfObject( aut3 );</span>
-[ "Order", "Range", "Source", "PieceImages", "ImagesOfObjects", 
+[ "Order", "Range", "Source", "SinglePieceMappingData", "ImagesOfObjects", 
   "ImageElementsOfRays", "ObjectTransformationOfGroupoidHomomorphism", 
   "RootGroupHomomorphism" ]
 

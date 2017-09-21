@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (groupoids) - Chapter 1: Introduction</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -33,9 +33,9 @@
 
 <p>It was used by Emma Moore in her thesis <a href="chapBib_mj.html#biBemma-thesis">[Moo01]</a> to calculate normal forms for <em>free products with amalgamation</em>, and for <em>HNN-extensions</em> when the initial groups have rewriting systems.</p>
 
-<p>The latest version is 1.51 for <strong class="pkg">GAP</strong> 4.8, released on 6th August 2017, and may be more recent than the release on the <strong class="pkg">GAP</strong> archive.</p>
+<p>The latest version is 1.52 for <strong class="pkg">GAP</strong> 4.8, released on 21st September 2017, and may be more recent than the release on the <strong class="pkg">GAP</strong> archive.</p>
 
-<p>The package may be obtained as a compressed tar file <code class="file">groupoids-1.51.tar.gz</code> by ftp from one of the following sites:</p>
+<p>The package may be obtained as a compressed tar file <code class="file">groupoids-1.52.tar.gz</code> by ftp from one of the following sites:</p>
 
 
 <ul>
@@ -59,7 +59,9 @@
 
 <p>For version 1.05 the package was completely restructured, starting with <em>magmas with objects</em> and their mappings, and building up to groupoids via semigroups with objects and monoids with objects. From version 1.07 the package includes some functions to implement constructions contained in <a href="chapBib_mj.html#biBAlWe">[AW10]</a>. More functions will be released as soon as possible.</p>
 
-<p>Once the package is loaded, it is possible to check the correct installation by running the test suite of the package with the command <code class="code"> ReadPackage( "groupoids", "tst/testall.g" ); </code> You may reference this package by mentioning <a href="chapBib_mj.html#biBBrMoPoWe">[BMPW02]</a>, <a href="chapBib_mj.html#biBemma-thesis">[Moo01]</a> and <a href="chapBib_mj.html#biBAlWe">[AW10]</a>.</p>
+<p>Once the package is loaded, it is possible to check the correct installation by running the test suite of the package with the command <code class="code"> ReadPackage("groupoids","tst/testing.g"); </code>. Additional tests may be run using <code class="code"> ReadPackage("groupoids","tst/testextra.g");.</code> (The file <code class="code">"tst/testall.g"</code> is used for automated testing.)</p>
+
+<p>You may reference this package by mentioning <a href="chapBib_mj.html#biBBrMoPoWe">[BMPW02]</a>, <a href="chapBib_mj.html#biBemma-thesis">[Moo01]</a> and <a href="chapBib_mj.html#biBAlWe">[AW10]</a>.</p>
 
 <p>Additional information can be found on the <em>Computational Higher Dimensional Algebra</em> website at: <span class="URL"><a href="http://pages.bangor.ac.uk/~mas023/chda/intro.html">http://pages.bangor.ac.uk/~mas023/chda/intro.html</a></span>.</p>
 

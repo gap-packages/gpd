@@ -54,35 +54,15 @@
 
 <p>In April 2017 the package was renamed again, as <strong class="pkg">groupoids</strong>.</p>
 
-<p>The latest version is 1.51 of 6th August 2017, for <strong class="pkg">GAP</strong> 4.8.8 or 4.9.</p>
+<p>In August 2017 the implementation of groupoid homomorphisms was completely revised with the emphasis now on a mapping from a set of generating arrows to their images.</p>
 
-<p>In the current version there have been a number of changes of function name, such as <code class="code">IsDigraph</code> becoming <code class="code">GroupoidIsDigraph</code>. This is in order to avoid conflicts with the <strong class="pkg">Digraphs</strong> package. The intention is that these functions can revert to the original names in due course.</p>
+<p>The latest version is 1.52 of 21st September 2017, for <strong class="pkg">GAP</strong> 4.9.</p>
+
+<p>In recent versions there have been a number of changes of function name, such as <code class="code">IsDigraph</code> becoming <code class="code">GroupoidIsDigraph</code>. This is in order to avoid conflicts with the <strong class="pkg">Digraphs</strong> package. The intention is that these functions can revert to the original names in due course.</p>
 
 <p><a id="X82148FB77CC3CCC0" name="X82148FB77CC3CCC0"></a></p>
 
 <h4>8.2 <span class="Heading">What needs to be done next?</span></h4>
-
-<p>The urgent requirement is for a new implementation of groupoid homomorphisms to eliminate the errors mention in section <a href="chap5.html#X7DE9C2D384323239"><span class="RefLink">5.4</span></a>.</p>
-
-<p>Computationally, there are three types of connected groupoid:</p>
-
-
-<ul>
-<li><p>those with identical object groups,</p>
-
-</li>
-<li><p>those with object groups conjugate in some supergroup,</p>
-
-</li>
-<li><p>those with object groups which are simply isomorphic.</p>
-
-</li>
-</ul>
-<p><strong class="pkg">GraphGpd</strong> attempted to implement the second case, while <strong class="pkg">gpd</strong> 1.01 and 1.03 considered only the first case, and <strong class="pkg">gpd</strong> 1.05 extended 1.03 to the second case.</p>
-
-<p>The third case has not yet been considered for implementation, and there does not appear to be any need to do so.</p>
-
-<p>Here are some other immediate requirements:</p>
 
 
 <ul>

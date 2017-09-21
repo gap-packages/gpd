@@ -93,13 +93,13 @@ and arcs: [ [ y, 5, 6 ], [ y^-1, 6, 5 ] ]
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">fg3 := FreeGroup( 3, "z" );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">z1 := fg3.1;;  z2 := fg3.2;;  z3 := fg3.3;;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V3 := [ 7, 8, 9 ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ob3 := [ 7, 8, 9 ];;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A3 := [[z1,7,8],[z2,8,9],[z3,9,7],[z1^-1,8,7],[z2^-1,9,8],[z3^-1,7,9]];;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D3 := FpWeightedDigraph( fg3, V3, A3 );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D3 := FpWeightedDigraph( fg3, ob3, A3 );</span>
 weighted digraph with vertices: [ 7, 8, 9 ]
 and arcs: [ [ z1, 7, 8 ], [ z2, 8, 9 ], [ z3, 9, 7 ], [ z1^-1, 8, 7 ],
   [ z2^-1, 9, 8 ], [ z3^-1, 7, 9 ] ]
-[gap&gt; inv3 := InvolutoryArcs( D3 );
+[gap&gt; inob3 := InvolutoryArcs( D3 );
 [ 4, 5, 6, 1, 2, 3 ]
 
 </pre></div>
@@ -200,8 +200,7 @@ isomorphisms: [ [ [ a^3 ], [ b^2 ] ], [ [ b^2 ], [ a^3 ] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGraphOfFpGroups( G1 );</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsomorphismsOfGraphOfGroups( G1 );</span>
-[ GroupHomomorphismByImages( hy, hybar, [ a^3 ], [ b^2 ] ), 
-  GroupHomomorphismByImages( hybar, hy, [ b^2 ], [ a^3 ] ) ]
+[ [ a^3 ] -&gt; [ b^2 ], [ b^2 ] -&gt; [ a^3 ] ]
 
 
 </pre></div>
@@ -238,13 +237,11 @@ true
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGraphOfGroupsWord</code>( <var class="Arg">w</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphOfGroupsOfWord</code>( <var class="Arg">w</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WordOfGraphOfGroupsWord</code>( <var class="Arg">w</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GGTail</code>( <var class="Arg">w</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GGHead</code>( <var class="Arg">w</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TailOfGraphOfGroupsWord</code>( <var class="Arg">w</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeadOfGraphOfGroupsWord</code>( <var class="Arg">w</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
 <p>If <code class="code">G</code> is a graph of groups with underlying digraph <code class="code">D</code>, the following groupoids may be considered. First there is the free groupoid or path groupoid on <code class="code">D</code>. Since we want each involutory pair of arcs to represent inverse elements in the groupoid, we quotient out by the relations <code class="code">y^-1 = ybar</code> to obtain <code class="code">PG(D)</code>. Secondly, there is the discrete groupoid <code class="code">VG(D)</code>, namely the union of all the vertex groups. Since these two groupoids have the same object set (the vertices of <code class="code">D</code>) we can form <code class="code">A(G)</code>, the free product of <code class="code">PG(D)</code> and <code class="code">VG(D)</code> amalgamated over the vertices. For further details of this universal groupoid construction see <a href="chapBib.html#biBemma-thesis">[Moo01]</a>. (Note that these groupoids are not implemented in this package.)</p>
 
 <p>An element of <code class="code">A(G)</code> is a graph of groups word which may be represented by a list of the form <span class="SimpleMath">w = [g_1,y_1,g_2,y_2,...,g_n,y_n,g_n+1]</span>. Here each <span class="SimpleMath">y_i</span> is an arc of <code class="code">D</code>; the head of <span class="SimpleMath">y_i-1</span> is a vertex <span class="SimpleMath">v_i</span> which is also the tail of <span class="SimpleMath">y_i</span>; and <span class="SimpleMath">g_i</span> is an element of the vertex group at <span class="SimpleMath">v_i</span>.</p>
-
-<p>The attributes <code class="code">GGTail</code> and <code class="code">GGHead</code> are <em>temporary</em> names for the tail and head of a graph of groups word, and are likely to be replaced in future versions.</p>
 
 <p>So a graph of groups word requires as data the graph of groups; the tail vertex for the word; and a list of arcs and group elements. We may specify each arc by its position in the list of arcs.</p>
 
@@ -258,7 +255,7 @@ true
 (5)a^7.y.b^-6.y^-1.a^-11.y.b^9.y^-1.a^7(5)
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsGraphOfGroupsWord( gw1 );</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ GGTail(gw1), GGHead(gw1) ];</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ TailOfGraphOfGroupsWord(gw1), HeadOfGraphOfGroupsWord(gw1) ];</span>
 [ 5, 5 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GraphOfGroupsOfWord(gw1);</span>
 Graph of Groups: 2 vertices; 2 arcs; groups [ fa, fb ]
@@ -437,17 +434,24 @@ rec( group := a4, isomorphism := [ b1 ] -&gt; [ b2 ] )
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Gfa := SinglePieceGroupoid( fa, [-2,-1] );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ofa := One( fa );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Gfa, "Gfa" );</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Uhy := Subgroupoid( Gfa, [ [[-2,-1], hy ] ] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Uhy := Subgroupoid( Gfa, [ [ hy, [-2,-1] ] ] );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Uhy, "Uhy" );</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Gfb := SinglePieceGroupoid( fb, [-4,-3] );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ofb := One( fb );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Gfb, "Gfb" );</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Uhybar := Subgroupoid( Gfb, [ [[-4,-3], hybar ] ] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Uhybar := Subgroupoid( Gfb, [ [ hybar, [-4,-3] ] ] );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Uhybar, "Uhybar" );</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mory := GroupoidMappingOfSinglePieces( </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">     Uhy, Uhybar, homy, [-4,-3], [ofb,ofb] );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">morybar := GroupoidMappingOfSinglePieces( </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">     Uhybar, Uhy, homybar, [-2,-1], [ofa,ofa] );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens := GeneratorsOfGroupoid( Uhy );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gensbar := GeneratorsOfGroupoid( Uhybar );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mory := GroupoidHomomorphismFromSinglePiece( </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">               Uhy, Uhybar, gens, gensbar );</span>
+groupoid homomorphism : Uhy -&gt; Uhybar
+[ [ [a^3 : -2 -&gt; -2], [&lt;identity ...&gt; : -2 -&gt; -1] ], 
+  [ [b^2 : -4 -&gt; -4], [&lt;identity ...&gt; : -4 -&gt; -3] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">morybar := InverseGeneralMapping( mory );</span>
+groupoid homomorphism : Uhybar -&gt; Uhy
+[ [ [b^2 : -4 -&gt; -4], [&lt;identity ...&gt; : -4 -&gt; -3] ], 
+  [ [a^3 : -2 -&gt; -2], [&lt;identity ...&gt; : -2 -&gt; -1] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gg3 := GraphOfGroupoids( D1, [Gfa,Gfb], [Uhy,Uhybar], [mory,morybar] );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( gg3 );</span>
 Graph of Groupoids with :- 
@@ -467,11 +471,11 @@ single piece groupoid: Uhybar
   objects: [ -4, -3 ]
     group: hybar = &lt;[ b^2 ]&gt;
 isomorphisms: [ groupoid homomorphism : Uhy -&gt; Uhybar
-    [ [ GroupHomomorphismByImages( hy, hybar, [ a^3 ], [ b^2 ] ), [ -4, -3 ], 
-          [ &lt;identity ...&gt;, &lt;identity ...&gt; ] ] ], 
+    [ [ [a^3 : -2 -&gt; -2], [&lt;identity ...&gt; : -2 -&gt; -1] ], 
+      [ [b^2 : -4 -&gt; -4], [&lt;identity ...&gt; : -4 -&gt; -3] ] ], 
   groupoid homomorphism : Uhybar -&gt; Uhy
-    [ [ GroupHomomorphismByImages( hybar, hy, [ b^2 ], [ a^3 ] ), [ -2, -1 ], 
-          [ &lt;identity ...&gt;, &lt;identity ...&gt; ] ] ] ]
+    [ [ [b^2 : -4 -&gt; -4], [&lt;identity ...&gt; : -4 -&gt; -3] ], 
+      [ [a^3 : -2 -&gt; -2], [&lt;identity ...&gt; : -2 -&gt; -1] ] ] ]
 
 </pre></div>
 
