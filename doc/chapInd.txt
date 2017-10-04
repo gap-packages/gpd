@@ -63,7 +63,7 @@
   [2XInvolutoryArcs[102X 6.1-1 
   [2XIsAutomorphismWithObjects[102X 3.3-2 
   [2XIsBijectiveOnObjects[102X 3.3-2 
-  [2XIsDirectProductWithCompleteGraph[102X 2.1-3 
+  [2XIsDirectProductWithCompleteDigraph[102X 2.1-3 
   [2XIsDiscrete[102X 2.1-3 
   [10XIsDomainWithObjects[110X 2.1-1 
   [2XIsEndomorphismWithObjects[102X 3.3-2 
@@ -110,6 +110,7 @@
   [2XMagmaWithObjects[102X 2.1-1 
   [2XMagmaWithObjectsHomomorphism[102X 3.1-1 
   [2XMappingToSinglePieceData[102X 3.1-1 
+  matrix representation 5.5 
   [2XMaximalDiscreteSubgroupoid[102X 4.3-3 
   [2XMonoidWithObjects[102X 2.3-1 
   [2XNiceObjectAutoGroupGroupoid[102X 5.4-3 
@@ -130,6 +131,7 @@
   [2XReducedGraphOfGroupoidsWord[102X 6.5-2 
   [2XReducedGraphOfGroupsWord[102X 6.3-2 
   [2XReplaceOnePieceInUnion[102X 4.1-4 
+  representation by matrices 5.5 
   [2XRightCoset[102X 4.4-1 
   [2XRightCosetRepresentatives[102X 4.4-1 
   [2XRightTransversalsOfGraphOfGroupoids[102X 6.5-1 

@@ -84,7 +84,7 @@
 
 <p>Any finite, ordered set is in principle acceptable as the object list of <span class="SimpleMath">\(M\)</span>, but most of the time we find it convenient to restrict ourselves to sets of non-positive integers.</p>
 
-<p>This is the only construction implemented here for magmas, semigroups, and monoids with objects, and these all have the property <code class="code">IsDirectProductWithCompleteGraph</code>. There are other constructions implemented for groupoids.</p>
+<p>This is the only construction implemented here for magmas, semigroups, and monoids with objects, and these all have the property <code class="code">IsDirectProductWithCompleteDigraph</code>. There are other constructions implemented for groupoids.</p>
 
 <p>The output from function <code class="code">MagmaWithObjects</code> lies in the categories <code class="code">IsDomainWithObjects</code>, <code class="code">IsMagmaWithObjects</code> and <code class="code">CategoryCollections(IsMultiplicativeElementWithObjects)</code>. As composition is only partial, the output does <em>not</em> lie in the category <code class="code">IsMagma</code>.</p>
 
@@ -151,7 +151,7 @@ true
 <h5>2.1-3 IsSinglePiece</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSinglePiece</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDirectProductWithCompleteGraph</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDirectProductWithCompleteDigraph</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDiscrete</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p>If the partial composition is forgotten, then what remains is a digraph (usually with multiple edges and loops). Thus the notion of <em>connected component</em> may be inherited by magmas with objects from digraphs. Unfortunately the terms <code class="code">Component</code> and <code class="code">Constituent</code> are already in considerable use elsewhere in <strong class="pkg">GAP</strong>, so (and this may change if a more suitable word is suggested) we use the term <code class="code">IsSinglePiece</code> to describe a connected magma with objects. When each connected component has a single object, and there is more than one component, the magma with objects is <em>discrete</em>.</p>
 
@@ -160,7 +160,7 @@ true
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSinglePiece( M78 ); </span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDirectProductWithCompleteGraph( M78 );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDirectProductWithCompleteDigraph( M78 );</span>
 true
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsDiscrete( M78 ); </span>
 false
@@ -252,7 +252,7 @@ monoid with objects :-
   objects = [ -9, -4 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ktpo := KnownTruePropertiesOfObject( M49 );</span>
 [ "IsDuplicateFree", "IsAssociative", "IsSinglePieceDomain", 
-  "IsDirectProductWithCompleteGraphDomain" ]
+  "IsDirectProductWithCompleteDigraphDomain" ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">catobj := CategoriesOfObject( M49 );; </span>
 [ "IsListOrCollection", "IsCollection", "IsExtLElement", 
   "CategoryCollections(IsExtLElement)", "IsExtRElement", 

@@ -6,10 +6,10 @@
            [1XCalculations with finite groupoids and their homomorphisms[101X
   
   
-                                  Version 1.52
+                                  Version 1.53
   
   
-                                   21/09/2017
+                                   04/10/2017
   
   
                                    Emma Moore
@@ -50,7 +50,7 @@
   [33X[0;0YRecent  versions  implement many of the constructions described in the paper
   [AW10] for automorphisms of groupoids.[133X
   
-  [33X[0;0YThe latest version is 1.52 of 21st September 2017.[133X
+  [33X[0;0YThe latest version is 1.53 of 4th October 2017.[133X
   
   [33X[0;0YBug  reports,  comments,  suggestions for additional features, and offers to
   implement some of these, will all be very welcome.[133X
@@ -144,11 +144,12 @@
       5.2-1 HomomorphismToSinglePiece
     5.3 [33X[0;0YHomomorphisms to more than one piece[133X
       5.3-1 HomomorphismByUnion
-    5.4 [33X[0;0YGroupoid automorphisms[133X
+    5.4 [33X[0;0YAutomorphisms of groupoids[133X
       5.4-1 GroupoidAutomorphismByObjectPerm
       5.4-2 [33X[0;0YAutomorphisms of a groupoid with rays[133X
       5.4-3 AutomorphismGroupOfGroupoid
       5.4-4 GroupoidAutomorphismByGroupAutos
+    5.5 [33X[0;0YMatrix representations of groupoids[133X
   6 [33X[0;0YGraphs of Groups and Groupoids[133X
     6.1 [33X[0;0YDigraphs[133X
       6.1-1 FpWeightedDigraph

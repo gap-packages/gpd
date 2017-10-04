@@ -40,7 +40,12 @@
   revised  with  the emphasis now on a mapping from a set of generating arrows
   to their images.[133X
   
-  [33X[0;0YThe latest version is 1.52 of 21st September 2017, for [5XGAP[105X 4.9.[133X
+  [33X[0;0YIn  September  2017  various  functions  were  revised so that, at last, the
+  operation   [10XDiscreteNormalPreXModWithObjects[110X   in  [5XXMod[105X  works  again.  This
+  constructs  a  crossed  module  of  groupoids  with  a connected range and a
+  homogeneous, discrete source.[133X
+  
+  [33X[0;0YThe latest version is 1.53 of 4th October 2017, for [5XGAP[105X 4.9.[133X
   
   [33X[0;0YIn  recent  versions  there  have been a number of changes of function name,
   such  as  [10XIsDigraph[110X  becoming  [10XGroupoidIsDigraph[110X.  This is in order to avoid
