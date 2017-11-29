@@ -30,6 +30,7 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X8511D3EE845CC930">4.1-3 IsPermGroupoid</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X79877FAA8556A726">4.1-4 UnionOfPieces</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X855F318181808814">4.1-5 HomogeneousGroupoid</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X78E8FE0C7F599F5A">4.1-6 DirectProductOp</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X7F23BE3F85C9BA06">4.2 <span class="Heading">Groupoid elements; stars; costars; homsets</span></a>
 </span>
@@ -162,7 +163,7 @@ single piece groupoid: &lt; d8, [ "a", "b", "c" ] &gt;
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFreeGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( property )</td></tr></table></div>
 <p>A groupoid is a permutation groupoid if all its pieces have permutation groups. Most of the examples in this chapter are permutation groupoids, but in principle any type of group known to <strong class="pkg">GAP</strong> may be used.</p>
 
-<p>In the following example <code class="code">Gf2</code> is an fp-groupoid and also a free groupoid, <code class="code">Gq8</code> is a pc-groupoid, and <code class="code">Ggl43</code> is a matrix groupoid. See section <a href="chap5.html#X8003AF117B956D16"><span class="RefLink">5.5</span></a> for matrix representations of groupoids.</p>
+<p>In the following example <code class="code">Gf2</code> is an fp-groupoid and also a free groupoid, <code class="code">Gq8</code> is a pc-groupoid, and <code class="code">Ggl43</code> is a matrix groupoid. See section <a href="chap5.html#X8003AF117B956D16"><span class="RefLink">5.7</span></a> for matrix representations of groupoids.</p>
 
 
 <div class="example"><pre>
@@ -294,6 +295,49 @@ true
 
 </pre></div>
 
+<p><a id="X78E8FE0C7F599F5A" name="X78E8FE0C7F599F5A"></a></p>
+
+<h5>4.1-6 DirectProductOp</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DirectProductOp</code>( <var class="Arg">list</var>, <var class="Arg">gpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Projection</code>( <var class="Arg">gpd</var>, <var class="Arg">pos</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Embedding</code>( <var class="Arg">gpd</var>, <var class="Arg">pos</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<p>The direct product of groupoids <span class="SimpleMath">G,H</span> has as group the direct product of the groups in <span class="SimpleMath">G</span> and <span class="SimpleMath">H</span> and as object list the cartesian product of their object lists.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">prod := DirectProductOp( [Gd8,Gc6], Gd8 );</span>
+single piece groupoid: &lt; Group( [ (1,2,3,4), (1,3), (5,6,7)(8,9) ] ), 
+[ [ -9, -6 ], [ -8, -6 ], [ -7, -6 ] ] &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Projection( prod, 1 );                    </span>
+groupoid homomorphism : 
+[ [ [(1,2,3,4) : [ -9, -6 ] -&gt; [ -9, -6 ]], [(1,3) : [ -9, -6 ] -&gt; [ -9, -6 ]]
+        , [(5,6,7)(8,9) : [ -9, -6 ] -&gt; [ -9, -6 ]], 
+      [() : [ -9, -6 ] -&gt; [ -8, -6 ]], [() : [ -9, -6 ] -&gt; [ -7, -6 ]] ], 
+  [ [(1,2,3,4) : -9 -&gt; -9], [(1,3) : -9 -&gt; -9], [() : -9 -&gt; -9], 
+      [() : -9 -&gt; -8], [() : -9 -&gt; -7] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Embedding(prod,2);                        </span>
+groupoid homomorphism : 
+[ [ [(5,6,7)(8,9) : -6 -&gt; -6] ], 
+  [ [(5,6,7)(8,9) : [ -9, -6 ] -&gt; [ -9, -6 ]] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DirectProductInfo( prod );</span>
+rec( embeddings := [ , groupoid homomorphism : 
+        [ [ [(5,6,7)(8,9) : -6 -&gt; -6] ], 
+          [ [(5,6,7)(8,9) : [ -9, -6 ] -&gt; [ -9, -6 ]] ] ] ], first := Gd8, 
+  groupoids := [ Gd8, Gc6 ], groups := [ d8, c6 ], 
+  objectlists := [ [ -9, -8, -7 ], [ -6 ] ], 
+  projections := [ groupoid homomorphism : 
+        [ [ [(1,2,3,4) : [ -9, -6 ] -&gt; [ -9, -6 ]], 
+              [(1,3) : [ -9, -6 ] -&gt; [ -9, -6 ]], 
+              [(5,6,7)(8,9) : [ -9, -6 ] -&gt; [ -9, -6 ]], 
+              [() : [ -9, -6 ] -&gt; [ -8, -6 ]], 
+              [() : [ -9, -6 ] -&gt; [ -7, -6 ]] ], 
+          [ [(1,2,3,4) : -9 -&gt; -9], [(1,3) : -9 -&gt; -9], [() : -9 -&gt; -9], 
+              [() : -9 -&gt; -8], [() : -9 -&gt; -7] ] ] ] )
+
+</pre></div>
+
 <p><a id="X7F23BE3F85C9BA06" name="X7F23BE3F85C9BA06"></a></p>
 
 <h4>4.2 <span class="Heading">Groupoid elements; stars; costars; homsets</span></h4>
@@ -422,11 +466,9 @@ fail
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubgroupoidByPieces</code>( <var class="Arg">gpd</var>, <var class="Arg">obhoms</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSubgroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">sgpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWideSubgroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">sgpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>A <em>subgroupoid</em> <code class="code">sgpd</code> of a groupoid <code class="code">gpd</code> has as objects some subset of the objects of <code class="code">gpd</code>. It is <em>wide</em> if all the objects are included. It is <em>full</em> if, for any two objects in <code class="code">sgpd</code>, the <code class="code">Homset</code> is the same as that in <code class="code">gpd</code>. The arrows of <code class="code">sgpd</code> are a subset of those of <code class="code">gpd</code>, closed under multiplication and with tail and head in the chosen object set.</p>
+<p>A <em>subgroupoid</em> <span class="SimpleMath">S</span> of a groupoid <span class="SimpleMath">G</span> has as objects some subset of the objects of <span class="SimpleMath">G</span>. It is <em>wide</em> in <span class="SimpleMath">G</span> if both groupoids have the same object set. It is <em>full</em> if, for any two objects in <span class="SimpleMath">S</span>, the <code class="code">Homset</code> is the same as that in <span class="SimpleMath">G</span>. The arrows of <span class="SimpleMath">S</span> are a subset of those of <span class="SimpleMath">G</span>, closed under multiplication and with tail and head in the chosen object set.</p>
 
 <p>There are a variety of constructors for a subgroupoid of a standard groupoid, and the most general is the operation <code class="code">SubgroupoidByPieces</code>. Its two parameters are a groupoid and a list of pieces, each piece being specified as a list <code class="code">[sgp,obs]</code>, where <code class="code">sgp</code> is a subgroup of the root group in that piece, and <code class="code">obs</code> is a subset of the objects in that piece.</p>
-
-<p>A subgroupoid <code class="code">S</code> is <em>wide</em> in <code class="code">G</code> if <code class="code">S</code> anbd <code class="code">G</code> have the same object set.</p>
 
 
 <div class="example"><pre>
@@ -516,7 +558,7 @@ groupoid with 3 pieces:
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubgroupoidWithRays</code>( <var class="Arg">gpd</var>, <var class="Arg">sgp</var>, <var class="Arg">rays</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RaysOfGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RayElementsOfGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>If groupoid <span class="SimpleMath">G</span> is of type <code class="code">IsDirectProductWithCompleteGraph</code> with group <span class="SimpleMath">g</span> and <span class="SimpleMath">n</span> objects, then a typical wide subgroupoid <span class="SimpleMath">H</span> of <span class="SimpleMath">G</span> is formed by choosing a subgroup <span class="SimpleMath">h</span> of <span class="SimpleMath">g</span> to be the object group at the root object <span class="SimpleMath">q</span>, and an arrow <span class="SimpleMath">r : q -&gt; p</span> for each of the objects <span class="SimpleMath">p</span>. The chosen loop arrow at <span class="SimpleMath">q</span> must be the identity arrow. These <span class="SimpleMath">n</span> arrows are called the <em>rays</em> of the subgroupoid. The arrows in the homset from <span class="SimpleMath">p</span> to <span class="SimpleMath">p'</span> have the form <span class="SimpleMath">r^-1xr'</span> where <span class="SimpleMath">r,r'</span> are the rays from <span class="SimpleMath">q</span> to <span class="SimpleMath">p,p'</span> respectively, and <span class="SimpleMath">x ∈ h</span>.</p>
+<p>If groupoid <span class="SimpleMath">G</span> is of type <code class="code">IsDirectProductWithCompleteDigraph</code> with group <span class="SimpleMath">g</span> and <span class="SimpleMath">n</span> objects, then a typical wide subgroupoid <span class="SimpleMath">H</span> of <span class="SimpleMath">G</span> is formed by choosing a subgroup <span class="SimpleMath">h</span> of <span class="SimpleMath">g</span> to be the object group at the root object <span class="SimpleMath">q</span>, and an arrow <span class="SimpleMath">r : q -&gt; p</span> for each of the objects <span class="SimpleMath">p</span>. The chosen loop arrow at <span class="SimpleMath">q</span> must be the identity arrow. These <span class="SimpleMath">n</span> arrows are called the <em>rays</em> of the subgroupoid. The arrows in the homset from <span class="SimpleMath">p</span> to <span class="SimpleMath">p'</span> have the form <span class="SimpleMath">r^-1xr'</span> where <span class="SimpleMath">r,r'</span> are the rays from <span class="SimpleMath">q</span> to <span class="SimpleMath">p,p'</span> respectively, and <span class="SimpleMath">x ∈ h</span>.</p>
 
 <p>The operation <code class="code">RaysOfGroupoid</code> returns a list of arrows, one for each object, while the operation <code class="code">RayElementsOfGroupoid</code> returns the list of group elements in these arrows.</p>
 
@@ -642,7 +684,7 @@ RightCoset(single piece groupoid: &lt; c4, [ -8, -7 ] &gt;,[(1,3) : -8 -&gt; -7]
 <h5><code>4.5-1 \^</code></h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; \^</code>( <var class="Arg">e1</var>, <var class="Arg">e</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<p>Conjugation by an arrow <span class="SimpleMath">e = (c : p -&gt; q)</span> is the groupoid automorphism defined as follows. There are two cases to consider. In the case <span class="SimpleMath">p ≠ q</span>,</p>
+<p>Conjugation by an arrow <span class="SimpleMath">e = (c : p -&gt; q)</span> is the groupoid inner automorphism (see section <a href="chap5.html#X803E01577A2B37D2"><span class="RefLink">5.6</span></a>) defined as follows. There are two cases to consider. In the case <span class="SimpleMath">p ≠ q</span>,</p>
 
 
 <ul>
@@ -655,10 +697,10 @@ RightCoset(single piece groupoid: &lt; c4, [ -8, -7 ] &gt;,[(1,3) : -8 -&gt; -7]
 <li><p>arrows between <span class="SimpleMath">p</span> and <span class="SimpleMath">q</span>: <span class="SimpleMath">(b : p -&gt; q) ↦ (c^-1bc^-1 : q -&gt; p)</span> and <span class="SimpleMath">(b : q -&gt; p) ↦ (cbc : p -&gt; q)</span>;</p>
 
 </li>
-<li><p>costar at <span class="SimpleMath">p,q</span>: <span class="SimpleMath">(b : r -&gt; p) ↦ (bc : r -&gt; q)</span> and <span class="SimpleMath">(b : r -&gt; q) ↦ (bc^-1 : r -&gt; p)</span>;</p>
+<li><p>costars at <span class="SimpleMath">p,q</span>: <span class="SimpleMath">(b : r -&gt; p) ↦ (bc : r -&gt; q)</span> and <span class="SimpleMath">(b : r -&gt; q) ↦ (bc^-1 : r -&gt; p)</span>;</p>
 
 </li>
-<li><p>star at <span class="SimpleMath">p,q</span>: <span class="SimpleMath">(b : p -&gt; r) ↦ (c^-1b : -&gt; q)</span> and <span class="SimpleMath">(b : q -&gt; r) ↦ (cb : p -&gt; r)</span>;</p>
+<li><p>stars at <span class="SimpleMath">p,q</span>: <span class="SimpleMath">(b : p -&gt; r) ↦ (c^-1b : -&gt; q)</span> and <span class="SimpleMath">(b : q -&gt; r) ↦ (cb : p -&gt; r)</span>;</p>
 
 </li>
 <li><p>the remaining arrows are unchanged.</p>
@@ -672,17 +714,22 @@ RightCoset(single piece groupoid: &lt; c4, [ -8, -7 ] &gt;,[(1,3) : -8 -&gt; -7]
 <li><p>all the objects are fixed;</p>
 
 </li>
-<li><p>loops at <span class="SimpleMath">p</span> are conjugated by <span class="SimpleMath">c</span>, <span class="SimpleMath">(b : p -&gt; p) ↦ (b^c : p -&gt; p)</span>;</p>
+<li><p>loops at <span class="SimpleMath">p</span> are conjugated by <span class="SimpleMath">c</span>, so <span class="SimpleMath">(b : p -&gt; p) ↦ (b^c : p -&gt; p)</span>;</p>
 
 </li>
-<li><p>the rest of the costar and star at <span class="SimpleMath">p</span> are permuted, <span class="SimpleMath">(b : r -&gt; p) ↦ (bc : r -&gt; p)</span> and <span class="SimpleMath">(b : p -&gt; r) ↦ (c^-1b : p -&gt; r)</span>;</p>
+<li><p>the rest of the costar and star at <span class="SimpleMath">p</span> are permuted,</p>
+
+<p class="pcenter">
+(b : r \to p) \mapsto (bc : r \to p) 
+\quad\mbox{and}\quad (b : p \to r) \mapsto (c^{-1}b : p \to r); 
+</p>
 
 </li>
 <li><p>the remaining arrows are unchanged.</p>
 
 </li>
 </ul>
-<p>The details of this construction may be found in <a href="chapBib.html#biBAlWe">[AW10]</a>.</p>
+<p>The details of this construction may be found in section 3.2 of <a href="chapBib.html#biBAlWe">[AW10]</a>.</p>
 
 
 <div class="example"><pre>

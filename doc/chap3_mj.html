@@ -8,7 +8,7 @@
 <script type="text/javascript"
   src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<title>GAP (groupoids) - Chapter 3: Homomorphisms of many-object structures</title>
+<title>GAP (groupoids) - Chapter 3: Mappings of many-object structures</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="generator" content="GAPDoc2HTML" />
 <link rel="stylesheet" type="text/css" href="manual.css" />
@@ -23,8 +23,8 @@
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap2_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap4_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
 <p id="mathjaxlink" class="pcenter"><a href="chap3.html">[MathJax off]</a></p>
-<p><a id="X85297B407ACAED81" name="X85297B407ACAED81"></a></p>
-<div class="ChapSects"><a href="chap3_mj.html#X85297B407ACAED81">3 <span class="Heading">Homomorphisms of many-object structures</span></a>
+<p><a id="X78FC7902804CED8E" name="X78FC7902804CED8E"></a></p>
+<div class="ChapSects"><a href="chap3_mj.html#X78FC7902804CED8E">3 <span class="Heading">Mappings of many-object structures</span></a>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X82F856A086B93832">3.1 <span class="Heading">Homomorphisms of magmas with objects</span></a>
 </span>
 <div class="ContSSBlock">
@@ -39,9 +39,14 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X86F313DB7EC4D9E7">3.3-1 HomomorphismByUnion</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7C053B0379DDCE13">3.3-2 IsInjectiveOnObjects</a></span>
 </div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7B9D71BB7BAEFAAA">3.4 <span class="Heading">Mappings defined by a function</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X81B64F9A855D265F">3.4-1 MappingWithObjectsByFunction</a></span>
+</div></div>
 </div>
 
-<h3>3 <span class="Heading">Homomorphisms of many-object structures</span></h3>
+<h3>3 <span class="Heading">Mappings of many-object structures</span></h3>
 
 <p>A <em>homomorphism</em> <span class="SimpleMath">\(f\)</span> from a magma with objects <span class="SimpleMath">\(M\)</span> to a magma with objects <span class="SimpleMath">\(N\)</span> consists of</p>
 
@@ -259,6 +264,35 @@ true
 false
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAutomorphismWithObjects( h14 ); </span>
 false
+
+</pre></div>
+
+<p><a id="X7B9D71BB7BAEFAAA" name="X7B9D71BB7BAEFAAA"></a></p>
+
+<h4>3.4 <span class="Heading">Mappings defined by a function</span></h4>
+
+<p><a id="X81B64F9A855D265F" name="X81B64F9A855D265F"></a></p>
+
+<h5>3.4-1 MappingWithObjectsByFunction</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingWithObjectsByFunction</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">fun</var>, <var class="Arg">imobs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMappingWithObjectsByFunction</code>( <var class="Arg">map</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnderlyingFunction</code>( <var class="Arg">map</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<p>More general mappings, which need not preserve multiplication, are available using this operation. See section <a href="chap5_mj.html#X803E01577A2B37D2"><span class="RefLink">5.6</span></a> for an application.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">flip := function(a) return Arrow(M78,a![1],a![3],a![2]); end;      </span>
+function( a ) ... end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">flipmap := MappingWithObjectsByFunction( M78, M78, flip, [-8,-7] );</span>
+magma with objects mapping by function : M78 -&gt; M78
+function: function ( a )
+    return Arrow( M78, a![1], a![3], a![2] );
+end
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a78; ImageElm( flipmap, a78 );                                     </span>
+[m2 : -7 -&gt; -8]
+[m2 : -8 -&gt; -7]
 
 </pre></div>
 

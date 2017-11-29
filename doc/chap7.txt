@@ -65,11 +65,11 @@
     [4X[28X  117, 119, 120, 123, 205, 501, 2690, 2703, 2707, 2711, 2715, 2718, 2720, [128X[104X
     [4X[28X  2721, 2722 ] )[128X[104X
     [4X[25Xgap>[125X [27XKnownAttributesOfObject( Gd8 ); [127X[104X
-    [4X[28X[ "Name", "Size", "GeneratorsOfMagmaWithInverses", "ObjectList", "Pieces" ][128X[104X
+    [4X[28X[ "Name", "Size", "ObjectList", "GeneratorsOfMagmaWithObjects", [128X[104X
+    [4X[28X  "GeneratorsOfGroupoid" ][128X[104X
     [4X[25Xgap>[125X [27XKnownTruePropertiesOfObject( Gd8 ); [127X[104X
-    [4X[28X[ "IsNonTrivial", "IsFinite", "CanEasilyCompareElements", [128X[104X
-    [4X[28X  "CanEasilySortElements", "IsDuplicateFree", "IsAssociative", [128X[104X
-    [4X[28X  "IsSinglePieceDomain", "IsDirectProductWithCompleteGraphDomain" ][128X[104X
+    [4X[28X[ "IsNonTrivial", "IsFinite", "IsDuplicateFree", "IsAssociative", [128X[104X
+    [4X[28X  "IsSinglePieceDomain", "IsDirectProductWithCompleteDigraphDomain" ][128X[104X
     [4X[25Xgap>[125X [27XRepresentationsOfObject( Gd8 );[127X[104X
     [4X[28X[ "IsComponentObjectRep", "IsAttributeStoringRep", "IsMWOSinglePieceRep" ][128X[104X
     [4X[25Xgap>[125X [27XRepresentationsOfObject( U5 ); [127X[104X

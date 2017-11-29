@@ -1,5 +1,5 @@
   
-  [1X3 [33X[0;0YHomomorphisms of many-object structures[133X[101X
+  [1X3 [33X[0;0YMappings of many-object structures[133X[101X
   
   [33X[0;0YA  [13Xhomomorphism[113X  [22Xf[122X  from  a  magma  with objects [22XM[122X to a magma with objects [22XN[122X
   consists of[133X
@@ -207,6 +207,33 @@
     [4X[28Xfalse[128X[104X
     [4X[25Xgap>[125X [27XIsAutomorphismWithObjects( h14 ); [127X[104X
     [4X[28Xfalse[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X3.4 [33X[0;0YMappings defined by a function[133X[101X
+  
+  [1X3.4-1 MappingWithObjectsByFunction[101X
+  
+  [29X[2XMappingWithObjectsByFunction[102X( [3Xsrc[103X, [3Xrng[103X, [3Xfun[103X, [3Ximobs[103X ) [32X operation
+  [29X[2XIsMappingWithObjectsByFunction[102X( [3Xmap[103X ) [32X property
+  [29X[2XUnderlyingFunction[102X( [3Xmap[103X ) [32X attribute
+  
+  [33X[0;0YMore general mappings, which need not preserve multiplication, are available
+  using this operation. See section [14X5.6[114X for an application.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xflip := function(a) return Arrow(M78,a![1],a![3],a![2]); end;      [127X[104X
+    [4X[28Xfunction( a ) ... end[128X[104X
+    [4X[25Xgap>[125X [27Xflipmap := MappingWithObjectsByFunction( M78, M78, flip, [-8,-7] );[127X[104X
+    [4X[28Xmagma with objects mapping by function : M78 -> M78[128X[104X
+    [4X[28Xfunction: function ( a )[128X[104X
+    [4X[28X    return Arrow( M78, a![1], a![3], a![2] );[128X[104X
+    [4X[28Xend[128X[104X
+    [4X[25Xgap>[125X [27Xa78; ImageElm( flipmap, a78 );                                     [127X[104X
+    [4X[28X[m2 : -7 -> -8][128X[104X
+    [4X[28X[m2 : -8 -> -7][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   

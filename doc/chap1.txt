@@ -10,10 +10,10 @@
   for [13Xfree products with amalgamation[113X, and for [13XHNN-extensions[113X when the initial
   groups have rewriting systems.[133X
   
-  [33X[0;0YThe  latest  version  is 1.53 for [5XGAP[105X 4.8, released on 4th October 2017, and
+  [33X[0;0YThe  latest version is 1.54 for [5XGAP[105X 4.8, released on 29th November 2017, and
   may be more recent than the release on the [5XGAP[105X archive.[133X
   
-  [33X[0;0YThe  package  may be obtained as a compressed tar file [11Xgroupoids-1.53.tar.gz[111X
+  [33X[0;0YThe  package  may be obtained as a compressed tar file [11Xgroupoids-1.54.tar.gz[111X
   by ftp from one of the following sites:[133X
   
   [30X    [33X[0;6Yany                  [5XGAP[105X                 archive,                 e.g.

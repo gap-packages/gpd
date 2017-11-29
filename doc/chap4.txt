@@ -119,7 +119,7 @@
   in principle any type of group known to [5XGAP[105X may be used.[133X
   
   [33X[0;0YIn the following example [10XGf2[110X is an fp-groupoid and also a free groupoid, [10XGq8[110X
-  is a pc-groupoid, and [10XGgl43[110X is a matrix groupoid. See section [14X5.5[114X for matrix
+  is a pc-groupoid, and [10XGgl43[110X is a matrix groupoid. See section [14X5.7[114X for matrix
   representations of groupoids.[133X
   
   [4X[32X  Example  [32X[104X
@@ -271,6 +271,49 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
+  [1X4.1-6 DirectProductOp[101X
+  
+  [29X[2XDirectProductOp[102X( [3Xlist[103X, [3Xgpd[103X ) [32X operation
+  [29X[2XProjection[102X( [3Xgpd[103X, [3Xpos[103X ) [32X operation
+  [29X[2XEmbedding[102X( [3Xgpd[103X, [3Xpos[103X ) [32X operation
+  
+  [33X[0;0YThe  direct  product of groupoids [22XG,H[122X has as group the direct product of the
+  groups  in  [22XG[122X and [22XH[122X and as object list the cartesian product of their object
+  lists.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xprod := DirectProductOp( [Gd8,Gc6], Gd8 );[127X[104X
+    [4X[28Xsingle piece groupoid: < Group( [ (1,2,3,4), (1,3), (5,6,7)(8,9) ] ), [128X[104X
+    [4X[28X[ [ -9, -6 ], [ -8, -6 ], [ -7, -6 ] ] >[128X[104X
+    [4X[25Xgap>[125X [27XProjection( prod, 1 );                    [127X[104X
+    [4X[28Xgroupoid homomorphism : [128X[104X
+    [4X[28X[ [ [(1,2,3,4) : [ -9, -6 ] -> [ -9, -6 ]], [(1,3) : [ -9, -6 ] -> [ -9, -6 ]][128X[104X
+    [4X[28X        , [(5,6,7)(8,9) : [ -9, -6 ] -> [ -9, -6 ]], [128X[104X
+    [4X[28X      [() : [ -9, -6 ] -> [ -8, -6 ]], [() : [ -9, -6 ] -> [ -7, -6 ]] ], [128X[104X
+    [4X[28X  [ [(1,2,3,4) : -9 -> -9], [(1,3) : -9 -> -9], [() : -9 -> -9], [128X[104X
+    [4X[28X      [() : -9 -> -8], [() : -9 -> -7] ] ][128X[104X
+    [4X[25Xgap>[125X [27XEmbedding(prod,2);                        [127X[104X
+    [4X[28Xgroupoid homomorphism : [128X[104X
+    [4X[28X[ [ [(5,6,7)(8,9) : -6 -> -6] ], [128X[104X
+    [4X[28X  [ [(5,6,7)(8,9) : [ -9, -6 ] -> [ -9, -6 ]] ] ][128X[104X
+    [4X[25Xgap>[125X [27XDirectProductInfo( prod );[127X[104X
+    [4X[28Xrec( embeddings := [ , groupoid homomorphism : [128X[104X
+    [4X[28X        [ [ [(5,6,7)(8,9) : -6 -> -6] ], [128X[104X
+    [4X[28X          [ [(5,6,7)(8,9) : [ -9, -6 ] -> [ -9, -6 ]] ] ] ], first := Gd8, [128X[104X
+    [4X[28X  groupoids := [ Gd8, Gc6 ], groups := [ d8, c6 ], [128X[104X
+    [4X[28X  objectlists := [ [ -9, -8, -7 ], [ -6 ] ], [128X[104X
+    [4X[28X  projections := [ groupoid homomorphism : [128X[104X
+    [4X[28X        [ [ [(1,2,3,4) : [ -9, -6 ] -> [ -9, -6 ]], [128X[104X
+    [4X[28X              [(1,3) : [ -9, -6 ] -> [ -9, -6 ]], [128X[104X
+    [4X[28X              [(5,6,7)(8,9) : [ -9, -6 ] -> [ -9, -6 ]], [128X[104X
+    [4X[28X              [() : [ -9, -6 ] -> [ -8, -6 ]], [128X[104X
+    [4X[28X              [() : [ -9, -6 ] -> [ -7, -6 ]] ], [128X[104X
+    [4X[28X          [ [(1,2,3,4) : -9 -> -9], [(1,3) : -9 -> -9], [() : -9 -> -9], [128X[104X
+    [4X[28X              [() : -9 -> -8], [() : -9 -> -7] ] ] ] )[128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
   
   [1X4.2 [33X[0;0YGroupoid elements; stars; costars; homsets[133X[101X
   
@@ -404,19 +447,17 @@
   [29X[2XIsSubgroupoid[102X( [3Xgpd[103X, [3Xsgpd[103X ) [32X operation
   [29X[2XIsWideSubgroupoid[102X( [3Xgpd[103X, [3Xsgpd[103X ) [32X operation
   
-  [33X[0;0YA  [13Xsubgroupoid[113X  [10Xsgpd[110X  of  a  groupoid  [10Xgpd[110X has as objects some subset of the
-  objects  of  [10Xgpd[110X. It is [13Xwide[113X if all the objects are included. It is [13Xfull[113X if,
-  for  any  two  objects  in  [10Xsgpd[110X, the [10XHomset[110X is the same as that in [10Xgpd[110X. The
-  arrows of [10Xsgpd[110X are a subset of those of [10Xgpd[110X, closed under multiplication and
-  with tail and head in the chosen object set.[133X
+  [33X[0;0YA [13Xsubgroupoid[113X [22XS[122X of a groupoid [22XG[122X has as objects some subset of the objects of
+  [22XG[122X.  It  is  [13Xwide[113X in [22XG[122X if both groupoids have the same object set. It is [13Xfull[113X
+  if,  for  any  two  objects  in  [22XS[122X, the [10XHomset[110X is the same as that in [22XG[122X. The
+  arrows of [22XS[122X are a subset of those of [22XG[122X, closed under multiplication and with
+  tail and head in the chosen object set.[133X
   
   [33X[0;0YThere  are  a  variety  of  constructors  for  a  subgroupoid  of a standard
   groupoid, and the most general is the operation [10XSubgroupoidByPieces[110X. Its two
   parameters  are  a groupoid and a list of pieces, each piece being specified
   as  a  list  [10X[sgp,obs][110X,  where  [10Xsgp[110X  is a subgroup of the root group in that
   piece, and [10Xobs[110X is a subset of the objects in that piece.[133X
-  
-  [33X[0;0YA subgroupoid [10XS[110X is [13Xwide[113X in [10XG[110X if [10XS[110X anbd [10XG[110X have the same object set.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -507,8 +548,8 @@
   [29X[2XRaysOfGroupoid[102X( [3Xgpd[103X ) [32X operation
   [29X[2XRayElementsOfGroupoid[102X( [3Xgpd[103X ) [32X operation
   
-  [33X[0;0YIf groupoid [22XG[122X is of type [10XIsDirectProductWithCompleteGraph[110X with group [22Xg[122X and [22Xn[122X
-  objects,  then  a  typical  wide  subgroupoid [22XH[122X of [22XG[122X is formed by choosing a
+  [33X[0;0YIf groupoid [22XG[122X is of type [10XIsDirectProductWithCompleteDigraph[110X with group [22Xg[122X and
+  [22Xn[122X  objects,  then  a typical wide subgroupoid [22XH[122X of [22XG[122X is formed by choosing a
   subgroup  [22Xh[122X of [22Xg[122X to be the object group at the root object [22Xq[122X, and an arrow [22Xr
   :  q  -> p[122X for each of the objects [22Xp[122X. The chosen loop arrow at [22Xq[122X must be the
   identity  arrow.  These [22Xn[122X arrows are called the [13Xrays[113X of the subgroupoid. The
@@ -655,8 +696,9 @@
   
   [29X[2X\^[102X( [3Xe1[103X, [3Xe[103X ) [32X operation
   
-  [33X[0;0YConjugation  by  an  arrow  [22Xe  =  (c  : p -> q)[122X is the groupoid automorphism
-  defined as follows. There are two cases to consider. In the case [22Xp ≠ q[122X,[133X
+  [33X[0;0YConjugation  by an arrow [22Xe = (c : p -> q)[122X is the groupoid inner automorphism
+  (see  section  [14X5.6[114X)  defined as follows. There are two cases to consider. In
+  the case [22Xp ≠ q[122X,[133X
   
   [30X    [33X[0;6Yobjects [22Xp,q[122X are interchanged, and the remaining objects are fixed;[133X
   
@@ -666,10 +708,10 @@
   [30X    [33X[0;6Yarrows between [22Xp[122X and [22Xq[122X: [22X(b : p -> q) ↦ (c^-1bc^-1 : q -> p)[122X and [22X(b : q
         -> p) ↦ (cbc : p -> q)[122X;[133X
   
-  [30X    [33X[0;6Ycostar  at [22Xp,q[122X: [22X(b : r -> p) ↦ (bc : r -> q)[122X and [22X(b : r -> q) ↦ (bc^-1
+  [30X    [33X[0;6Ycostars at [22Xp,q[122X: [22X(b : r -> p) ↦ (bc : r -> q)[122X and [22X(b : r -> q) ↦ (bc^-1
         : r -> p)[122X;[133X
   
-  [30X    [33X[0;6Ystar  at [22Xp,q[122X: [22X(b : p -> r) ↦ (c^-1b : -> q)[122X and [22X(b : q -> r) ↦ (cb : p
+  [30X    [33X[0;6Ystars at [22Xp,q[122X: [22X(b : p -> r) ↦ (c^-1b : -> q)[122X and [22X(b : q -> r) ↦ (cb : p
         -> r)[122X;[133X
   
   [30X    [33X[0;6Ythe remaining arrows are unchanged.[133X
@@ -678,14 +720,19 @@
   
   [30X    [33X[0;6Yall the objects are fixed;[133X
   
-  [30X    [33X[0;6Yloops at [22Xp[122X are conjugated by [22Xc[122X, [22X(b : p -> p) ↦ (b^c : p -> p)[122X;[133X
+  [30X    [33X[0;6Yloops at [22Xp[122X are conjugated by [22Xc[122X, so [22X(b : p -> p) ↦ (b^c : p -> p)[122X;[133X
   
-  [30X    [33X[0;6Ythe  rest of the costar and star at [22Xp[122X are permuted, [22X(b : r -> p) ↦ (bc
-        : r -> p)[122X and [22X(b : p -> r) ↦ (c^-1b : p -> r)[122X;[133X
+  [30X    [33X[0;6Ythe rest of the costar and star at [22Xp[122X are permuted,[133X
+  
+  
+  [24X      [33X[0;6Y(b  :  r \to p) \mapsto (bc : r \to p) \quad\mbox{and}\quad (b : p \to
+        r) \mapsto (c^{-1}b : p \to r);[133X
+  
+  [124X
   
   [30X    [33X[0;6Ythe remaining arrows are unchanged.[133X
   
-  [33X[0;0YThe details of this construction may be found in [AW10].[133X
+  [33X[0;0YThe details of this construction may be found in section 3.2 of [AW10].[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
