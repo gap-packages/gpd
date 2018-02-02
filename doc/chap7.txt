@@ -32,15 +32,15 @@
   [30X    [33X[0;6Y[10XDeclareCategory(    "IsMagmaWithObjects",    IsDomainWithObjects   and
         IsMultiplicativeElementWithObjectsCollection );[110X[133X
   
-  [30X    [33X[0;6Y[10XDeclareCategory(  "IsMagmaWithObjectsAndOnes",  IsMagmaWithObjects and
-        IsMultiplicativeElementWithObjectsAndOnesCollection ); [110X[133X
+  [30X    [33X[0;6Y[10XDeclareCategory(   "IsSemigroupWithObjects",   IsMagmaWithObjects  and
+        IsAssociative ); [110X[133X
   
-  [30X    [33X[0;6Y[10XDeclareCategory(                      "IsMagmaWithObjectsAndInverses",
-        IsMagmaWithObjectsAndOnes and [110X[133X
+  [30X    [33X[0;6Y[10XDeclareCategory(   "IsMonoidWithObjects",  IsSemigroupWithObjects  and
+        IsMultiplicativeElementWithObjectsAndOnesCollection ); [110X[133X
   
         [33X[0;6Y[10XIsMultiplicativeElementWithObjectsAndInversesCollection ); [110X[133X
   
-  [30X    [33X[0;6Y[10XDeclareCategory(   "IsGroupoid",   IsMagmaWithObjectsAndInverses   and
+  [30X    [33X[0;6Y[10XDeclareCategory(       "IsGroupoid",      IsMonoidWithObjects      and
         IsGroupoidElementCollection ); [110X[133X
   
   [33X[0;0YAmong  the  groupoids  constructed  earlier are the single piece [10XGd8[110X and the

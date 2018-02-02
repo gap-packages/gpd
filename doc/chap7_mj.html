@@ -70,15 +70,15 @@
 <li><p><code class="code">DeclareCategory( "IsMagmaWithObjects", IsDomainWithObjects and IsMultiplicativeElementWithObjectsCollection );</code></p>
 
 </li>
-<li><p><code class="code">DeclareCategory( "IsMagmaWithObjectsAndOnes", IsMagmaWithObjects and IsMultiplicativeElementWithObjectsAndOnesCollection ); </code></p>
+<li><p><code class="code">DeclareCategory( "IsSemigroupWithObjects", IsMagmaWithObjects and IsAssociative ); </code></p>
 
 </li>
-<li><p><code class="code">DeclareCategory( "IsMagmaWithObjectsAndInverses", IsMagmaWithObjectsAndOnes and </code></p>
+<li><p><code class="code">DeclareCategory( "IsMonoidWithObjects", IsSemigroupWithObjects and IsMultiplicativeElementWithObjectsAndOnesCollection ); </code></p>
 
 <p><code class="code">IsMultiplicativeElementWithObjectsAndInversesCollection ); </code></p>
 
 </li>
-<li><p><code class="code">DeclareCategory( "IsGroupoid", IsMagmaWithObjectsAndInverses and IsGroupoidElementCollection ); </code></p>
+<li><p><code class="code">DeclareCategory( "IsGroupoid", IsMonoidWithObjects and IsGroupoidElementCollection ); </code></p>
 
 </li>
 </ul>

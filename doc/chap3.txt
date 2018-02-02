@@ -26,12 +26,12 @@
   
   [1X3.1-1 MagmaWithObjectsHomomorphism[101X
   
-  [29X[2XMagmaWithObjectsHomomorphism[102X( [3Xargs[103X ) [32X function
-  [29X[2XHomomorphismFromSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhom[103X, [3Ximobs[103X ) [32X operation
-  [29X[2XHomomorphismToSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Ximages[103X ) [32X operation
-  [29X[2XMappingToSinglePieceData[102X( [3Xmwohom[103X ) [32X attribute
-  [29X[2XPiecesOfMapping[102X( [3Xmwohom[103X ) [32X attribute
-  [29X[2XIsomorphismNewObjects[102X( [3Xsrc[103X, [3Xobjlist[103X ) [32X operation
+  [33X[1;0Y[29X[2XMagmaWithObjectsHomomorphism[102X( [3Xargs[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XHomomorphismFromSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhom[103X, [3Ximobs[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XHomomorphismToSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Ximages[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XMappingToSinglePieceData[102X( [3Xmwohom[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XPiecesOfMapping[102X( [3Xmwohom[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsomorphismNewObjects[102X( [3Xsrc[103X, [3Xobjlist[103X ) [32X operation[133X
   
   [33X[0;0YThere are a variety of homomorphism constructors.[133X
   
@@ -160,7 +160,7 @@
   
   [1X3.3-1 HomomorphismByUnion[101X
   
-  [29X[2XHomomorphismByUnion[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhoms[103X ) [32X operation
+  [33X[1;0Y[29X[2XHomomorphismByUnion[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhoms[103X ) [32X operation[133X
   
   [33X[0;0YWhen  [22Xf  :  M  -> N[122X and [22XN[122X has more than one connected component, then [22Xf[122X is a
   union of homomorphisms, one for each piece in the range.[133X
@@ -187,11 +187,11 @@
   
   [1X3.3-2 IsInjectiveOnObjects[101X
   
-  [29X[2XIsInjectiveOnObjects[102X( [3Xmwohom[103X ) [32X property
-  [29X[2XIsSurjectiveOnObjects[102X( [3Xmwohom[103X ) [32X property
-  [29X[2XIsBijectiveOnObjects[102X( [3Xmwohom[103X ) [32X property
-  [29X[2XIsEndomorphismWithObjects[102X( [3Xmwohom[103X ) [32X property
-  [29X[2XIsAutomorphismWithObjects[102X( [3Xmwohom[103X ) [32X property
+  [33X[1;0Y[29X[2XIsInjectiveOnObjects[102X( [3Xmwohom[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsSurjectiveOnObjects[102X( [3Xmwohom[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsBijectiveOnObjects[102X( [3Xmwohom[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsEndomorphismWithObjects[102X( [3Xmwohom[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsAutomorphismWithObjects[102X( [3Xmwohom[103X ) [32X property[133X
   
   [33X[0;0YThe meaning of these five properties is obvious.[133X
   
@@ -215,9 +215,9 @@
   
   [1X3.4-1 MappingWithObjectsByFunction[101X
   
-  [29X[2XMappingWithObjectsByFunction[102X( [3Xsrc[103X, [3Xrng[103X, [3Xfun[103X, [3Ximobs[103X ) [32X operation
-  [29X[2XIsMappingWithObjectsByFunction[102X( [3Xmap[103X ) [32X property
-  [29X[2XUnderlyingFunction[102X( [3Xmap[103X ) [32X attribute
+  [33X[1;0Y[29X[2XMappingWithObjectsByFunction[102X( [3Xsrc[103X, [3Xrng[103X, [3Xfun[103X, [3Ximobs[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsMappingWithObjectsByFunction[102X( [3Xmap[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XUnderlyingFunction[102X( [3Xmap[103X ) [32X attribute[133X
   
   [33X[0;0YMore general mappings, which need not preserve multiplication, are available
   using this operation. See section [14X5.6[114X for an application.[133X

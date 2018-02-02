@@ -47,19 +47,19 @@
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X855DB6C8815CDCC3">5.3-1 InclusionMappingGroupoids</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7946BC207D455A98">5.3-2 RestrictedMappingGroupoids</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X86B50F7F878C4A36">5.3-3 IsomorphismNewObjects</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X83B8AB6D7C9DB264">5.3-3 IsomorphismNewObjects</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7CF33CCD8278A904">5.3-4 IsomorphismPermGroupoid</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X7EAAB2A97E097FB6">5.4 <span class="Heading">Homomorphisms to a connected groupoid</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7BE552BE7A1CA981">5.4-1 HomomorphismToSinglePiece</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X8700B5977B2513C1">5.4-1 HomomorphismToSinglePiece</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X87225D86785DEBC2">5.4-2 GroupoidHomomorphismFromHomogeneousDiscrete</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X795C8DE37AED7B44">5.5 <span class="Heading">Homomorphisms to more than one piece</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X86F313DB7EC4D9E7">5.5-1 HomomorphismByUnion</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X847094F478113EA6">5.5-1 HomomorphismByUnion</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X803E01577A2B37D2">5.6 <span class="Heading">Automorphisms of groupoids</span></a>
 </span>
@@ -115,9 +115,9 @@ m(g1 : o1 \to o2)*m(g2 : o2 \to o3) ~=~ m(g1*g2 : o1 \to o3).
 
 <h5>5.1-1 GroupoidHomomorphismFromSinglePiece</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidHomomorphismFromSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">gens</var>, <var class="Arg">images</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidHomomorphism</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingToSinglePieceData</code>( <var class="Arg">map</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidHomomorphismFromSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">gens</var>, <var class="Arg">images</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidHomomorphism</code>( <var class="Arg">args</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingToSinglePieceData</code>( <var class="Arg">map</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>The simplest groupoid homomorphism is a mapping <span class="SimpleMath">\(\phi : G \to H\)</span> from a connected groupoid <span class="SimpleMath">\(G\)</span> to a connected groupoid <span class="SimpleMath">\(H\)</span>. There are two equivalent sets of input data which may be used. Both require the <code class="code">Source</code> <span class="SimpleMath">\(G\)</span> and the <code class="code">Range</code> <span class="SimpleMath">\(H\)</span>. The first then requires:</p>
 
 
@@ -255,21 +255,21 @@ true
 
 <h5>5.2-3 RootGroupHomomorphism</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootGroupHomomorphism</code>( <var class="Arg">hom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootGroupHomomorphism</code>( <var class="Arg">hom</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>This is the group homomorphism from the root group of the source groupoid to the group at the image object in the range groupoid of the root object in the source.</p>
 
 <p><a id="X837EEB9578EA1A78" name="X837EEB9578EA1A78"></a></p>
 
 <h5>5.2-4 ImagesOfObjects</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImagesOfObjects</code>( <var class="Arg">hom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImagesOfObjects</code>( <var class="Arg">hom</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>This is the list of objects in the range groupoid which are the images of the objects in the source.</p>
 
 <p><a id="X791DC3F3852A6422" name="X791DC3F3852A6422"></a></p>
 
 <h5>5.2-5 ImageElementsOfRays</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImageElementsOfRays</code>( <var class="Arg">hom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ImageElementsOfRays</code>( <var class="Arg">hom</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>This is the list of group elements in those arrows in the range groupoid which are the images of the rays in the source.</p>
 
 
@@ -288,7 +288,7 @@ true
 
 <h5>5.2-6 ObjectGroupHomomorphism</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ObjectGroupHomomorphism</code>( <var class="Arg">gpdhom</var>, <var class="Arg">obj</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ObjectGroupHomomorphism</code>( <var class="Arg">gpdhom</var>, <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>This operations gives the group homomorphism from an object group of the source to the object group at the image object in the range.</p>
 
 
@@ -309,7 +309,7 @@ true
 
 <h5>5.3-1 InclusionMappingGroupoids</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InclusionMappingGroupoids</code>( <var class="Arg">gpd</var>, <var class="Arg">sgpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; InclusionMappingGroupoids</code>( <var class="Arg">gpd</var>, <var class="Arg">sgpd</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The operation <code class="code">InclusionMappingGroupoids(gpd,sgpd)</code> returns the inclusion homomorphism from the subgroupoid <code class="code">sgpd</code> to <code class="code">gpd</code>.</p>
 
 
@@ -328,7 +328,7 @@ groupoid homomorphism : Hd8b -&gt; Hs4
 
 <h5>5.3-2 RestrictedMappingGroupoids</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RestrictedMappingGroupoids</code>( <var class="Arg">mor</var>, <var class="Arg">sgpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RestrictedMappingGroupoids</code>( <var class="Arg">mor</var>, <var class="Arg">sgpd</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The operation <code class="code">RestrictedMappingGroupoids(mor,sgpd)</code> returns the restriction of the homomorphism <code class="code">mor</code> to the subgroupoid <code class="code">sgpd</code> of its source. The range is usually set to the <code class="code">ImagesSource</code> of the restriction. For another example see section <a href="chap5_mj.html#X8003AF117B956D16"><span class="RefLink">5.7</span></a></p>
 
 
@@ -349,12 +349,12 @@ groupoid homomorphism :
 
 </pre></div>
 
-<p><a id="X86B50F7F878C4A36" name="X86B50F7F878C4A36"></a></p>
+<p><a id="X83B8AB6D7C9DB264" name="X83B8AB6D7C9DB264"></a></p>
 
 <h5>5.3-3 IsomorphismNewObjects</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismNewObjects</code>( <var class="Arg">src</var>, <var class="Arg">objlist</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismStandardGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">obs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismNewObjects</code>( <var class="Arg">src</var>, <var class="Arg">objlist</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismStandardGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">obs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The operation <code class="code">IsomorphismNewObjects(gpd,obs)</code> returns the isomorphism from a groupoid <code class="code">gpd</code> to a groupoid with the same object group and ray elements but with a different set <code class="code">obs</code> of objects.</p>
 
 <p>The operation <code class="code">IsomorphismStandardGroupoid(gpd,obs)</code> returns the isomorphism from a groupoid with rays to the groupoid of type <code class="code">IsDirectProductWithCompleteDigraphDomain</code> on the given set <code class="code">obs</code> of objects.</p>
@@ -393,8 +393,8 @@ groupoid homomorphism :
 
 <h5>5.3-4 IsomorphismPermGroupoid</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPermGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPcGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPermGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPcGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The operation <code class="code">IsomorphismPermGroupoid(gpd)</code> returns an isomorphism from a groupoid <code class="code">gpd</code> to a groupoid with the same objects but with an isomorphic permutation group. Similarly, <code class="code">IsomorphismPcGroupoid(gpd)</code> changes the group into a pc-group (if appropriate).</p>
 
 
@@ -416,11 +416,11 @@ groupoid homomorphism :
 
 <h4>5.4 <span class="Heading">Homomorphisms to a connected groupoid</span></h4>
 
-<p><a id="X7BE552BE7A1CA981" name="X7BE552BE7A1CA981"></a></p>
+<p><a id="X8700B5977B2513C1" name="X8700B5977B2513C1"></a></p>
 
 <h5>5.4-1 HomomorphismToSinglePiece</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismToSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">piecehoms</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismToSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">piecehoms</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>When <span class="SimpleMath">\(G\)</span> is made up of two or more pieces, all of which get mapped to a connected groupoid, we have a <em>homomorphism to a single piece</em>. The third input parameter in this case is a list of the individual homomorphisms <em>from</em> the single pieces (in the correct order!). See section <a href="chap3_mj.html#X82F856A086B93832"><span class="RefLink">3.1</span></a> for the corresponding operation on homomorphisms of magmas with objects.</p>
 
 <p>In the following example the source <code class="code">V3</code> of <code class="code">homV3</code> has three pieces, and one of the component homomorphisms is an <code class="code">IdentityMapping</code> .</p>
@@ -448,7 +448,7 @@ groupoid homomorphism : Gd8 -&gt; Gs3
       [() : -36 -&gt; -35], [() : -36 -&gt; -34] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hc6 := GroupHomomorphismByImages( c6, s3, </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">           [(5,6,7)(8,9)], [(15,16)(17,20)(18,19)] );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Fs3 := FullSubgroupoid( Gs3, [ -35 ] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Fs3 := SubgroupoidByObjects( Gs3, [ -35 ] );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Fs3, "Fs3" ); </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">homc6 := GroupoidHomomorphism( Gc6, Fs3, hc6 );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">incFs3 := InclusionMappingGroupoids( Gs3, Fs3 );; </span>
@@ -483,7 +483,7 @@ images of objects: [ -35 ]
 
 <h5>5.4-2 GroupoidHomomorphismFromHomogeneousDiscrete</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidHomomorphismFromHomogeneousDiscrete</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">homs</var>, <var class="Arg">oims</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidHomomorphismFromHomogeneousDiscrete</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">homs</var>, <var class="Arg">oims</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>This operation requires the source and range; a list of homomorphisms from object group to object group; and a list of the image objects.</p>
 
 
@@ -507,11 +507,11 @@ IdentityMapping( d8 )
 
 <h4>5.5 <span class="Heading">Homomorphisms to more than one piece</span></h4>
 
-<p><a id="X86F313DB7EC4D9E7" name="X86F313DB7EC4D9E7"></a></p>
+<p><a id="X847094F478113EA6" name="X847094F478113EA6"></a></p>
 
 <h5>5.5-1 HomomorphismByUnion</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismByUnion</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">homs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismByUnion</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">homs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>As in section <a href="chap3_mj.html#X795C8DE37AED7B44"><span class="RefLink">3.3</span></a>, when the range <span class="SimpleMath">\(H\)</span> has more than one connected component, a homomorphism is a union of homomorphisms, one for each piece in the range.</p>
 
 
@@ -560,10 +560,10 @@ images of objects: [ -35 ]
 
 <h5>5.6-1 GroupoidAutomorphismByObjectPerm</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByObjectPerm</code>( <var class="Arg">gpd</var>, <var class="Arg">imobs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByGroupAuto</code>( <var class="Arg">gpd</var>, <var class="Arg">gpiso</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByRayShifts</code>( <var class="Arg">gpd</var>, <var class="Arg">imrays</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidInnerAutomorphism</code>( <var class="Arg">gpd</var>, <var class="Arg">arrow</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByObjectPerm</code>( <var class="Arg">gpd</var>, <var class="Arg">imobs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByGroupAuto</code>( <var class="Arg">gpd</var>, <var class="Arg">gpiso</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByRayShifts</code>( <var class="Arg">gpd</var>, <var class="Arg">imrays</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidInnerAutomorphism</code>( <var class="Arg">gpd</var>, <var class="Arg">arrow</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>We first describe automorphisms of a groupoid <span class="SimpleMath">\(G\)</span> where <span class="SimpleMath">\(G\)</span> is the direct product of a group <span class="SimpleMath">\(g\)</span> and a complete digraph. The automorphism group is generated by three types of automorphism:</p>
 
 
@@ -644,8 +644,8 @@ images of objects: [ -15, -11, -13 ]
 
 <h5>5.6-3 AutomorphismGroupOfGroupoid</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroupOfGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NiceObjectAutoGroupGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">aut</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroupOfGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NiceObjectAutoGroupGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">aut</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The <code class="code">AutomorphismGroup</code> of <span class="SimpleMath">\(G\)</span> is isomorphic to the quotient of <span class="SimpleMath">\(S_n \times A \times g^n\)</span> by a subgroup isomorphic to <span class="SimpleMath">\(g\)</span>, where <span class="SimpleMath">\(A\)</span> is the automorphism group of <span class="SimpleMath">\(g\)</span> and <span class="SimpleMath">\(S_n\)</span> is the symmetric group on the <span class="SimpleMath">\(n\)</span> objects. This is one of the main topics in <a href="chapBib_mj.html#biBAlWe">[AW10]</a>.</p>
 
 <p>The function <code class="code">NiceObjectAutoGroupGroupoid</code> takes a groupoid and a subgroup of its automorphism group and retuns a <em>nice monomorphism</em> from this automorphism group to a pc-group, if one is available. The current implementation is experimental. Note that <code class="code">ImageElm</code> at present only works on generating elements.</p>
@@ -718,7 +718,7 @@ true
 
 <h5>5.6-5 GroupoidAutomorphismByGroupAutos</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByGroupAutos</code>( <var class="Arg">gpd</var>, <var class="Arg">auts</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidAutomorphismByGroupAutos</code>( <var class="Arg">gpd</var>, <var class="Arg">auts</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Homogeneous, discrete groupoids are the second type of groupoid for which a method is provided for <code class="code">AutomorphismGroupOfGroupoid</code>. This is used in the <strong class="pkg">XMod</strong> package for constructing crossed modules of groupoids. The two types of generating automorphism are <code class="code">GroupoidAutomorphismByGroupAutos</code>, which requires a list of group automorphisms, one for each object group, and <code class="code">GroupoidAutomorphismByObjectPerm</code>, which permutes the objects.</p>
 
 

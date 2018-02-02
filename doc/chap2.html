@@ -26,8 +26,9 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C51D7847BD23284">2.1-1 MagmaWithObjects</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86247DFC8242CEBE">2.1-2 Arrow</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7C0911667FF90DB2">2.1-3 IsSinglePiece</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X87D1C0BC86749E6D">2.1-2 IsDomainWithObjects</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X86247DFC8242CEBE">2.1-3 Arrow</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X7B3352148103FD05">2.1-4 IsSinglePieceDomain</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7FDF94E8791B9BC1">2.2 <span class="Heading">Semigroups with objects</span></a>
 </span>
@@ -47,7 +48,7 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7C7007207FD91BB0">2.5 <span class="Heading">Structures with more than one piece</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X79877FAA8556A726">2.5-1 UnionOfPieces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X781FB06382E08115">2.5-1 UnionOfPieces</a></span>
 </div></div>
 </div>
 
@@ -73,17 +74,15 @@
 
 <h5>2.1-1 MagmaWithObjects</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MagmaWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceMagmaWithObjects</code>( <var class="Arg">magma</var>, <var class="Arg">obs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ObjectList</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootObject</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MagmaWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceMagmaWithObjects</code>( <var class="Arg">magma</var>, <var class="Arg">obs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ObjectList</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RootObject</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>The simplest construction for a magma with objects <span class="SimpleMath">M</span> is to take a magma <span class="SimpleMath">m</span> and an ordered set <span class="SimpleMath">s</span>, and form arrows <span class="SimpleMath">(u,a,v)</span> for every <span class="SimpleMath">a</span> in <span class="SimpleMath">m</span> and <span class="SimpleMath">u,v</span> in <span class="SimpleMath">s</span>. Multiplication is defined by <span class="SimpleMath">(u,a,v)*(v,b,w) = (u,a*b,w)</span>. In this package we prefer to write <span class="SimpleMath">(u,a,v)</span> as <span class="SimpleMath">(a : u -&gt; v)</span>, so that the multiplication rule becomes <span class="SimpleMath">(a : u -&gt; v)*(b : v -&gt; w) = (a*b : u -&gt; w)</span>.</p>
 
 <p>Any finite, ordered set is in principle acceptable as the object list of <span class="SimpleMath">M</span>, but most of the time we find it convenient to restrict ourselves to sets of non-positive integers.</p>
 
 <p>This is the only construction implemented here for magmas, semigroups, and monoids with objects, and these all have the property <code class="code">IsDirectProductWithCompleteDigraph</code>. There are other constructions implemented for groupoids.</p>
-
-<p>The output from function <code class="code">MagmaWithObjects</code> lies in the categories <code class="code">IsDomainWithObjects</code>, <code class="code">IsMagmaWithObjects</code> and <code class="code">CategoryCollections(IsMultiplicativeElementWithObjects)</code>. As composition is only partial, the output does <em>not</em> lie in the category <code class="code">IsMagma</code>.</p>
 
 <p>The <em>root object</em> of <span class="SimpleMath">M</span> is the first element in <span class="SimpleMath">s</span>.</p>
 
@@ -106,21 +105,35 @@ magma with objects :-
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( M78, "M78" ); </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsAssociative(M78), IsCommutative(M78) ]; </span>
 [ false, false ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsDomainWithObjects(M78), IsMagmaWithObjects(M78), IsMagma(M78) ]; </span>
-[ true, true, false ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ RootObject( M78 ), ObjectList( M78 ) ]; </span>
 [ -8, [ -8, -7 ] ]
 
 </pre></div>
 
+<p><a id="X87D1C0BC86749E6D" name="X87D1C0BC86749E6D"></a></p>
+
+<h5>2.1-2 IsDomainWithObjects</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDomainWithObjects</code>( <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMagmaWithObjects</code>( <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>The output from function <code class="code">MagmaWithObjects</code> lies in the categories <code class="code">IsDomainWithObjects</code>, <code class="code">IsMagmaWithObjects</code> and <code class="code">CategoryCollections(IsMultiplicativeElementWithObjects)</code>. As composition is only partial, the output does <em>not</em> lie in the category <code class="code">IsMagma</code>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsDomainWithObjects(M78), IsMagmaWithObjects(M78), IsMagma(M78) ]; </span>
+[ true, true, false ]
+
+</pre></div>
+
 <p><a id="X86247DFC8242CEBE" name="X86247DFC8242CEBE"></a></p>
 
-<h5>2.1-2 Arrow</h5>
+<h5>2.1-3 Arrow</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Arrow</code>( <var class="Arg">mwo</var>, <var class="Arg">elt</var>, <var class="Arg">tail</var>, <var class="Arg">head</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElementOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TailOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeadOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Arrow</code>( <var class="Arg">mwo</var>, <var class="Arg">elt</var>, <var class="Arg">tail</var>, <var class="Arg">head</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ElementOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TailOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HeadOfArrow</code>( <var class="Arg">arr</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>Arrows in a magma with objects lie in the category <code class="code">IsMultiplicativeElementWithObjects</code>. An attempt to multiply two arrows which do not compose resuts in <code class="code">fail</code> being returned. Each arrow <span class="SimpleMath">arr = (a : u -&gt; v)</span> has three components. The magma <em>element</em> <span class="SimpleMath">a ∈ m</span> may be accessed by <code class="code">ElementOfArrow(arr)</code>. Similarly, the <em>tail</em> object <span class="SimpleMath">u</span> and the <em>head</em> object <span class="SimpleMath">v</span> may be obtained using <code class="code">TailOfArrow(arr)</code> and <code class="code">HeadOfArrow(arr)</code> respectively. The operation <code class="code">MultiplicativeElementWithObjects</code> is a synonym for <code class="code">Arrow</code> since this was used in older versions of the package.</p>
 
 
@@ -143,14 +156,15 @@ true
 
 </pre></div>
 
-<p><a id="X7C0911667FF90DB2" name="X7C0911667FF90DB2"></a></p>
+<p><a id="X7B3352148103FD05" name="X7B3352148103FD05"></a></p>
 
-<h5>2.1-3 IsSinglePiece</h5>
+<h5>2.1-4 IsSinglePieceDomain</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSinglePiece</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDirectProductWithCompleteDigraph</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDiscrete</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<p>If the partial composition is forgotten, then what remains is a digraph (usually with multiple edges and loops). Thus the notion of <em>connected component</em> may be inherited by magmas with objects from digraphs. Unfortunately the terms <code class="code">Component</code> and <code class="code">Constituent</code> are already in considerable use elsewhere in <strong class="pkg">GAP</strong>, so (and this may change if a more suitable word is suggested) we use the term <code class="code">IsSinglePiece</code> to describe a connected magma with objects. When each connected component has a single object, and there is more than one component, the magma with objects is <em>discrete</em>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSinglePieceDomain</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSinglePiece</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDirectProductWithCompleteDigraph</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsDiscrete</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>If the partial composition is forgotten, then what remains is a digraph (usually with multiple edges and loops). Thus the notion of <em>connected component</em> may be inherited by magmas with objects from digraphs. Unfortunately the terms <code class="code">Component</code> and <code class="code">Constituent</code> are already in considerable use elsewhere in <strong class="pkg">GAP</strong>, so (and this may change if a more suitable word is suggested) we use the term <code class="code">IsSinglePieceDomain</code> to describe an object with an underlying connected digraph. The property <code class="code">IsSinglePiece</code> is a synonym for <code class="code">IsSinglePieceDomain and IsMagmaWithObjects</code>. When each connected component has a single object, and there is more than one component, the magma with objects is <em>discrete</em>.</p>
 
 
 <div class="example"><pre>
@@ -172,9 +186,9 @@ false
 
 <h5>2.2-1 SemigroupWithObjects</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceSemigroupWithObjects</code>( <var class="Arg">sgp</var>, <var class="Arg">obs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DomainWithSingleObject</code>( <var class="Arg">dom</var>, <var class="Arg">obj</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SemigroupWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceSemigroupWithObjects</code>( <var class="Arg">sgp</var>, <var class="Arg">obs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DomainWithSingleObject</code>( <var class="Arg">dom</var>, <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The constructions in section <a href="chap2.html#X7920BF45828AE5DE"><span class="RefLink">2.1</span></a> give a <code class="code">SinglePieceSemigroupWithObjects</code> when the magma is a semigroup. In the example we use a transformation semigroup and <span class="SimpleMath">3</span> objects.</p>
 
 
@@ -232,8 +246,8 @@ semigroup with objects :-
 
 <h5>2.3-1 MonoidWithObjects</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonoidWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceMonoidWithObjects</code>( <var class="Arg">mon</var>, <var class="Arg">obs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MonoidWithObjects</code>( <var class="Arg">args</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceMonoidWithObjects</code>( <var class="Arg">mon</var>, <var class="Arg">obs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The constructions in section <a href="chap2.html#X7920BF45828AE5DE"><span class="RefLink">2.1</span></a> give a <code class="code">SinglePieceMonoidWithObjects</code> when the magma is a monoid. The example uses a finitely presented monoid with <span class="SimpleMath">2</span> generators and <span class="SimpleMath">2</span> objects.</p>
 
 
@@ -271,9 +285,9 @@ monoid with objects :-
 
 <h5>2.4-1 GeneratorsOfMagmaWithObjects</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfMagmaWithObjects</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfSemigroupWithObjects</code>( <var class="Arg">swo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfMonoidWithObjects</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfMagmaWithObjects</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfSemigroupWithObjects</code>( <var class="Arg">swo</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GeneratorsOfMonoidWithObjects</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>For a magma or semigroup with objects, the generating set consists of arrows <span class="SimpleMath">(g : u -&gt; v)</span> for every pair of objects <span class="SimpleMath">u,v</span> and every generating element for the magma or semigroup.</p>
 
 <p>For a monoid with objects, the generating set consists of two parts. Firstly, there is a loop at the root object <span class="SimpleMath">r</span> for each generator of the monoid. Secondly, for each object <span class="SimpleMath">u</span> distinct from <span class="SimpleMath">r</span>, there are arrows <span class="SimpleMath">(1 : r -&gt; u)</span> and <span class="SimpleMath">(1 : u -&gt; r)</span>. (Perhaps only one of each pair is required?) Then</p>
@@ -309,12 +323,12 @@ monoid with objects :-
 
 <h4>2.5 <span class="Heading">Structures with more than one piece</span></h4>
 
-<p><a id="X79877FAA8556A726" name="X79877FAA8556A726"></a></p>
+<p><a id="X781FB06382E08115" name="X781FB06382E08115"></a></p>
 
 <h5>2.5-1 UnionOfPieces</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnionOfPieces</code>( <var class="Arg">pieces</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Pieces</code>( <var class="Arg">mwo</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnionOfPieces</code>( <var class="Arg">pieces</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Pieces</code>( <var class="Arg">mwo</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>A magma with objects whose underlying digraph has two or more connected components can be constructed by taking the union of two or more connected structures. These, in turn, can be combined together. The only requirement is that all the object lists should be disjoint. The pieces are ordered by the order of their root objects.</p>
 
 

@@ -42,9 +42,9 @@
   
   [1X5.1-1 GroupoidHomomorphismFromSinglePiece[101X
   
-  [29X[2XGroupoidHomomorphismFromSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Xgens[103X, [3Ximages[103X ) [32X operation
-  [29X[2XGroupoidHomomorphism[102X( [3Xargs[103X ) [32X function
-  [29X[2XMappingToSinglePieceData[102X( [3Xmap[103X ) [32X operation
+  [33X[1;0Y[29X[2XGroupoidHomomorphismFromSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Xgens[103X, [3Ximages[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGroupoidHomomorphism[102X( [3Xargs[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XMappingToSinglePieceData[102X( [3Xmap[103X ) [32X attribute[133X
   
   [33X[0;0YThe  simplest groupoid homomorphism is a mapping [22Xϕ : G -> H[122X from a connected
   groupoid [22XG[122X to a connected groupoid [22XH[122X. There are two equivalent sets of input
@@ -173,7 +173,7 @@
   
   [1X5.2-3 RootGroupHomomorphism[101X
   
-  [29X[2XRootGroupHomomorphism[102X( [3Xhom[103X ) [32X attribute
+  [33X[1;0Y[29X[2XRootGroupHomomorphism[102X( [3Xhom[103X ) [32X attribute[133X
   
   [33X[0;0YThis is the group homomorphism from the root group of the source groupoid to
   the  group  at  the image object in the range groupoid of the root object in
@@ -181,14 +181,14 @@
   
   [1X5.2-4 ImagesOfObjects[101X
   
-  [29X[2XImagesOfObjects[102X( [3Xhom[103X ) [32X attribute
+  [33X[1;0Y[29X[2XImagesOfObjects[102X( [3Xhom[103X ) [32X attribute[133X
   
   [33X[0;0YThis  is  the  list of objects in the range groupoid which are the images of
   the objects in the source.[133X
   
   [1X5.2-5 ImageElementsOfRays[101X
   
-  [29X[2XImageElementsOfRays[102X( [3Xhom[103X ) [32X attribute
+  [33X[1;0Y[29X[2XImageElementsOfRays[102X( [3Xhom[103X ) [32X attribute[133X
   
   [33X[0;0YThis  is  the  list  of group elements in those arrows in the range groupoid
   which are the images of the rays in the source.[133X
@@ -206,7 +206,7 @@
   
   [1X5.2-6 ObjectGroupHomomorphism[101X
   
-  [29X[2XObjectGroupHomomorphism[102X( [3Xgpdhom[103X, [3Xobj[103X ) [32X operation
+  [33X[1;0Y[29X[2XObjectGroupHomomorphism[102X( [3Xgpdhom[103X, [3Xobj[103X ) [32X operation[133X
   
   [33X[0;0YThis  operations  gives  the  group homomorphism from an object group of the
   source to the object group at the image object in the range.[133X
@@ -228,7 +228,7 @@
   
   [1X5.3-1 InclusionMappingGroupoids[101X
   
-  [29X[2XInclusionMappingGroupoids[102X( [3Xgpd[103X, [3Xsgpd[103X ) [32X operation
+  [33X[1;0Y[29X[2XInclusionMappingGroupoids[102X( [3Xgpd[103X, [3Xsgpd[103X ) [32X operation[133X
   
   [33X[0;0YThe  operation  [10XInclusionMappingGroupoids(gpd,sgpd)[110X  returns  the  inclusion
   homomorphism from the subgroupoid [10Xsgpd[110X to [10Xgpd[110X.[133X
@@ -246,7 +246,7 @@
   
   [1X5.3-2 RestrictedMappingGroupoids[101X
   
-  [29X[2XRestrictedMappingGroupoids[102X( [3Xmor[103X, [3Xsgpd[103X ) [32X operation
+  [33X[1;0Y[29X[2XRestrictedMappingGroupoids[102X( [3Xmor[103X, [3Xsgpd[103X ) [32X operation[133X
   
   [33X[0;0YThe  operation  [10XRestrictedMappingGroupoids(mor,sgpd)[110X returns the restriction
   of  the homomorphism [10Xmor[110X to the subgroupoid [10Xsgpd[110X of its source. The range is
@@ -272,8 +272,8 @@
   
   [1X5.3-3 IsomorphismNewObjects[101X
   
-  [29X[2XIsomorphismNewObjects[102X( [3Xsrc[103X, [3Xobjlist[103X ) [32X operation
-  [29X[2XIsomorphismStandardGroupoid[102X( [3Xgpd[103X, [3Xobs[103X ) [32X operation
+  [33X[1;0Y[29X[2XIsomorphismNewObjects[102X( [3Xsrc[103X, [3Xobjlist[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsomorphismStandardGroupoid[102X( [3Xgpd[103X, [3Xobs[103X ) [32X operation[133X
   
   [33X[0;0YThe  operation [10XIsomorphismNewObjects(gpd,obs)[110X returns the isomorphism from a
   groupoid  [10Xgpd[110X  to a groupoid with the same object group and ray elements but
@@ -314,8 +314,8 @@
   
   [1X5.3-4 IsomorphismPermGroupoid[101X
   
-  [29X[2XIsomorphismPermGroupoid[102X( [3Xgpd[103X ) [32X attribute
-  [29X[2XIsomorphismPcGroupoid[102X( [3Xgpd[103X ) [32X operation
+  [33X[1;0Y[29X[2XIsomorphismPermGroupoid[102X( [3Xgpd[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsomorphismPcGroupoid[102X( [3Xgpd[103X ) [32X operation[133X
   
   [33X[0;0YThe  operation  [10XIsomorphismPermGroupoid(gpd)[110X  returns  an isomorphism from a
   groupoid  [10Xgpd[110X  to  a  groupoid  with the same objects but with an isomorphic
@@ -341,7 +341,7 @@
   
   [1X5.4-1 HomomorphismToSinglePiece[101X
   
-  [29X[2XHomomorphismToSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Xpiecehoms[103X ) [32X operation
+  [33X[1;0Y[29X[2XHomomorphismToSinglePiece[102X( [3Xsrc[103X, [3Xrng[103X, [3Xpiecehoms[103X ) [32X operation[133X
   
   [33X[0;0YWhen  [22XG[122X  is  made  up  of  two  or more pieces, all of which get mapped to a
   connected  groupoid,  we  have  a  [13Xhomomorphism to a single piece[113X. The third
@@ -374,7 +374,7 @@
     [4X[28X      [() : -36 -> -35], [() : -36 -> -34] ] ][128X[104X
     [4X[25Xgap>[125X [27Xhc6 := GroupHomomorphismByImages( c6, s3, [127X[104X
     [4X[25X>[125X [27X           [(5,6,7)(8,9)], [(15,16)(17,20)(18,19)] );;[127X[104X
-    [4X[25Xgap>[125X [27XFs3 := FullSubgroupoid( Gs3, [ -35 ] );; [127X[104X
+    [4X[25Xgap>[125X [27XFs3 := SubgroupoidByObjects( Gs3, [ -35 ] );; [127X[104X
     [4X[25Xgap>[125X [27XSetName( Fs3, "Fs3" ); [127X[104X
     [4X[25Xgap>[125X [27Xhomc6 := GroupoidHomomorphism( Gc6, Fs3, hc6 );;[127X[104X
     [4X[25Xgap>[125X [27XincFs3 := InclusionMappingGroupoids( Gs3, Fs3 );; [127X[104X
@@ -407,7 +407,7 @@
   
   [1X5.4-2 GroupoidHomomorphismFromHomogeneousDiscrete[101X
   
-  [29X[2XGroupoidHomomorphismFromHomogeneousDiscrete[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhoms[103X, [3Xoims[103X ) [32X operation
+  [33X[1;0Y[29X[2XGroupoidHomomorphismFromHomogeneousDiscrete[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhoms[103X, [3Xoims[103X ) [32X operation[133X
   
   [33X[0;0YThis  operation  requires the source and range; a list of homomorphisms from
   object group to object group; and a list of the image objects.[133X
@@ -433,7 +433,7 @@
   
   [1X5.5-1 HomomorphismByUnion[101X
   
-  [29X[2XHomomorphismByUnion[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhoms[103X ) [32X operation
+  [33X[1;0Y[29X[2XHomomorphismByUnion[102X( [3Xsrc[103X, [3Xrng[103X, [3Xhoms[103X ) [32X operation[133X
   
   [33X[0;0YAs in section [14X3.3[114X, when the range [22XH[122X has more than one connected component, a
   homomorphism is a union of homomorphisms, one for each piece in the range.[133X
@@ -480,10 +480,10 @@
   
   [1X5.6-1 GroupoidAutomorphismByObjectPerm[101X
   
-  [29X[2XGroupoidAutomorphismByObjectPerm[102X( [3Xgpd[103X, [3Ximobs[103X ) [32X operation
-  [29X[2XGroupoidAutomorphismByGroupAuto[102X( [3Xgpd[103X, [3Xgpiso[103X ) [32X operation
-  [29X[2XGroupoidAutomorphismByRayShifts[102X( [3Xgpd[103X, [3Ximrays[103X ) [32X operation
-  [29X[2XGroupoidInnerAutomorphism[102X( [3Xgpd[103X, [3Xarrow[103X ) [32X operation
+  [33X[1;0Y[29X[2XGroupoidAutomorphismByObjectPerm[102X( [3Xgpd[103X, [3Ximobs[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGroupoidAutomorphismByGroupAuto[102X( [3Xgpd[103X, [3Xgpiso[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGroupoidAutomorphismByRayShifts[102X( [3Xgpd[103X, [3Ximrays[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGroupoidInnerAutomorphism[102X( [3Xgpd[103X, [3Xarrow[103X ) [32X operation[133X
   
   [33X[0;0YWe  first  describe  automorphisms  of  a  groupoid  [22XG[122X where [22XG[122X is the direct
   product  of  a  group  [22Xg[122X  and  a complete digraph. The automorphism group is
@@ -565,8 +565,8 @@
   
   [1X5.6-3 AutomorphismGroupOfGroupoid[101X
   
-  [29X[2XAutomorphismGroupOfGroupoid[102X( [3Xgpd[103X ) [32X operation
-  [29X[2XNiceObjectAutoGroupGroupoid[102X( [3Xgpd[103X, [3Xaut[103X ) [32X operation
+  [33X[1;0Y[29X[2XAutomorphismGroupOfGroupoid[102X( [3Xgpd[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XNiceObjectAutoGroupGroupoid[102X( [3Xgpd[103X, [3Xaut[103X ) [32X operation[133X
   
   [33X[0;0YThe [10XAutomorphismGroup[110X of [22XG[122X is isomorphic to the quotient of [22XS_n × A × g^n[122X by
   a  subgroup  isomorphic to [22Xg[122X, where [22XA[122X is the automorphism group of [22Xg[122X and [22XS_n[122X
@@ -649,7 +649,7 @@
   
   [1X5.6-5 GroupoidAutomorphismByGroupAutos[101X
   
-  [29X[2XGroupoidAutomorphismByGroupAutos[102X( [3Xgpd[103X, [3Xauts[103X ) [32X operation
+  [33X[1;0Y[29X[2XGroupoidAutomorphismByGroupAutos[102X( [3Xgpd[103X, [3Xauts[103X ) [32X operation[133X
   
   [33X[0;0YHomogeneous,  discrete groupoids are the second type of groupoid for which a
   method is provided for [10XAutomorphismGroupOfGroupoid[110X. This is used in the [5XXMod[105X

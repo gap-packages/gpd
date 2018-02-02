@@ -15,9 +15,9 @@
   
   [1X6.1-1 FpWeightedDigraph[101X
   
-  [29X[2XFpWeightedDigraph[102X( [3Xverts[103X, [3Xarcs[103X ) [32X attribute
-  [29X[2XIsFpWeightedDigraph[102X( [3Xdig[103X ) [32X attribute
-  [29X[2XInvolutoryArcs[102X( [3Xdig[103X ) [32X attribute
+  [33X[1;0Y[29X[2XFpWeightedDigraph[102X( [3Xverts[103X, [3Xarcs[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsFpWeightedDigraph[102X( [3Xdig[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XInvolutoryArcs[102X( [3Xdig[103X ) [32X attribute[133X
   
   [33X[0;0YA  [13Xweighted  digraph[113X  is  a  record with two components: [13Xvertices[113X, which are
   usually  taken to be positive integers (to distinguish them from the objects
@@ -67,10 +67,10 @@
   
   [1X6.2-1 GraphOfGroups[101X
   
-  [29X[2XGraphOfGroups[102X( [3Xdig[103X, [3Xgps[103X, [3Xisos[103X ) [32X operation
-  [29X[2XDigraphOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XGroupsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XIsomorphismsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute
+  [33X[1;0Y[29X[2XGraphOfGroups[102X( [3Xdig[103X, [3Xgps[103X, [3Xisos[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XDigraphOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XGroupsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsomorphismsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute[133X
   
   [33X[0;0YA graph of groups is traditionally defined as consisting of:[133X
   
@@ -138,9 +138,9 @@
   
   [1X6.2-2 IsGraphOfFpGroups[101X
   
-  [29X[2XIsGraphOfFpGroups[102X( [3Xgg[103X ) [32X property
-  [29X[2XIsGraphOfPcGroups[102X( [3Xgg[103X ) [32X property
-  [29X[2XIsGraphOfPermGroups[102X( [3Xgg[103X ) [32X property
+  [33X[1;0Y[29X[2XIsGraphOfFpGroups[102X( [3Xgg[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsGraphOfPcGroups[102X( [3Xgg[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsGraphOfPermGroups[102X( [3Xgg[103X ) [32X property[133X
   
   [33X[0;0YThis  is  a  list  of  properties  to  be  expected of a graph of groups. In
   principle  any  type  of  group  known  to [5XGAP[105X may be used as vertex groups,
@@ -158,8 +158,8 @@
   
   [1X6.2-3 RightTransversalsOfGraphOfGroups[101X
   
-  [29X[2XRightTransversalsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XLeftTransversalsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute
+  [33X[1;0Y[29X[2XRightTransversalsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XLeftTransversalsOfGraphOfGroups[102X( [3Xgg[103X ) [32X attribute[133X
   
   [33X[0;0YComputation  with  graph of groups words will require, for each arc subgroup
   [10Xha[110X,  a  set  of representatives for the left cosets of [10Xha[110X in the tail vertex
@@ -186,12 +186,12 @@
   
   [1X6.3-1 GraphOfGroupsWord[101X
   
-  [29X[2XGraphOfGroupsWord[102X( [3Xgg[103X, [3Xtv[103X, [3Xlist[103X ) [32X operation
-  [29X[2XIsGraphOfGroupsWord[102X( [3Xw[103X ) [32X property
-  [29X[2XGraphOfGroupsOfWord[102X( [3Xw[103X ) [32X attribute
-  [29X[2XWordOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute
-  [29X[2XTailOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute
-  [29X[2XHeadOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute
+  [33X[1;0Y[29X[2XGraphOfGroupsWord[102X( [3Xgg[103X, [3Xtv[103X, [3Xlist[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsGraphOfGroupsWord[102X( [3Xw[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XGraphOfGroupsOfWord[102X( [3Xw[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XWordOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XTailOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XHeadOfGraphOfGroupsWord[102X( [3Xw[103X ) [32X attribute[133X
   
   [33X[0;0YIf [10XG[110X is a graph of groups with underlying digraph [10XD[110X, the following groupoids
   may  be  considered. First there is the free groupoid or path groupoid on [10XD[110X.
@@ -235,8 +235,8 @@
   
   [1X6.3-2 ReducedGraphOfGroupsWord[101X
   
-  [29X[2XReducedGraphOfGroupsWord[102X( [3Xw[103X ) [32X operation
-  [29X[2XIsReducedGraphOfGroupsWord[102X( [3Xw[103X ) [32X property
+  [33X[1;0Y[29X[2XReducedGraphOfGroupsWord[102X( [3Xw[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsReducedGraphOfGroupsWord[102X( [3Xw[103X ) [32X property[133X
   
   [33X[0;0YA  graph  of  groups word may be reduced in two ways, to give a normal form.
   Firstly,  if  part  of the word has the form [10X[yi, identity, yibar][110X then this
@@ -272,10 +272,10 @@
   
   [1X6.4-1 FreeProductWithAmalgamation[101X
   
-  [29X[2XFreeProductWithAmalgamation[102X( [3Xgp1[103X, [3Xgp2[103X, [3Xiso[103X ) [32X operation
-  [29X[2XIsFpaGroup[102X( [3Xfpa[103X ) [32X property
-  [29X[2XGraphOfGroupsRewritingSystem[102X( [3Xfpa[103X ) [32X attribute
-  [29X[2XNormalFormGGRWS[102X( [3Xfpa[103X, [3Xword[103X ) [32X attribute
+  [33X[1;0Y[29X[2XFreeProductWithAmalgamation[102X( [3Xgp1[103X, [3Xgp2[103X, [3Xiso[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsFpaGroup[102X( [3Xfpa[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XGraphOfGroupsRewritingSystem[102X( [3Xfpa[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XNormalFormGGRWS[102X( [3Xfpa[103X, [3Xword[103X ) [32X attribute[133X
   
   [33X[0;0YAs we have seen with the trefoil group example, graphs of groups can be used
   to obtain a normal form for free products with amalgamation [22XG_1 *_H G_2[122X when
@@ -343,8 +343,8 @@
   
   [1X6.4-2 HnnExtension[101X
   
-  [29X[2XHnnExtension[102X( [3Xgp[103X, [3Xiso[103X ) [32X operation
-  [29X[2XIsHnnGroup[102X( [3Xhnn[103X ) [32X property
+  [33X[1;0Y[29X[2XHnnExtension[102X( [3Xgp[103X, [3Xiso[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsHnnGroup[102X( [3Xhnn[103X ) [32X property[133X
   
   [33X[0;0YFor  [13XHNN  extensions[113X, the appropriate graph of groups has underlying digraph
   with just one vertex and one pair of loops, weighted with [10XFpGroup[110X generators
@@ -405,15 +405,15 @@
   
   [1X6.5-1 GraphOfGroupoids[101X
   
-  [29X[2XGraphOfGroupoids[102X( [3Xdig[103X, [3Xgpds[103X, [3Xsubgpds[103X, [3Xisos[103X ) [32X operation
-  [29X[2XIsGraphOfPermGroupoids[102X( [3Xgg[103X ) [32X property
-  [29X[2XIsGraphOfFpGroupoids[102X( [3Xgg[103X ) [32X property
-  [29X[2XGroupoidsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XDigraphOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XSubgroupoidsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XIsomorphismsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XRightTransversalsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute
-  [29X[2XLeftTransversalsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute
+  [33X[1;0Y[29X[2XGraphOfGroupoids[102X( [3Xdig[103X, [3Xgpds[103X, [3Xsubgpds[103X, [3Xisos[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsGraphOfPermGroupoids[102X( [3Xgg[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsGraphOfFpGroupoids[102X( [3Xgg[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XGroupoidsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XDigraphOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XSubgroupoidsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XIsomorphismsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XRightTransversalsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XLeftTransversalsOfGraphOfGroupoids[102X( [3Xgg[103X ) [32X attribute[133X
   
   [33X[0;0YGraphs  of  groups  generalise naturally to graphs of groupoids, forming the
   class  [10XIsGraphOfGroupoids[110X.  There  is  now a groupoid at each vertex and the
@@ -478,12 +478,12 @@
   
   [1X6.5-2 GraphOfGroupoidsWord[101X
   
-  [29X[2XGraphOfGroupoidsWord[102X( [3Xgg[103X, [3Xtv[103X, [3Xlist[103X ) [32X operation
-  [29X[2XIsGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X property
-  [29X[2XGraphOfGroupoidsOfWord[102X( [3Xw[103X ) [32X attribute
-  [29X[2XWordOfGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X attribute
-  [29X[2XReducedGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X operation
-  [29X[2XIsReducedGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X property
+  [33X[1;0Y[29X[2XGraphOfGroupoidsWord[102X( [3Xgg[103X, [3Xtv[103X, [3Xlist[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XGraphOfGroupoidsOfWord[102X( [3Xw[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XWordOfGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XReducedGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsReducedGraphOfGroupoidsWord[102X( [3Xw[103X ) [32X property[133X
   
   [33X[0;0YHaving  produced  the  graph  of  groupoids [10Xgg3[110X, we may construct left coset
   representatives; choose a graph of groupoids word; and reduce this to normal
@@ -503,10 +503,26 @@
     [4X[28X(5)[a^7 : -1 -> -2].y.[b^-6 : -4 -> -4].y^-1.[a^-11 : -2 -> -1].y.[b^9 : [128X[104X
     [4X[28X-3 -> -4].y^-1.[a^7 : -2 -> -1](5)[128X[104X
     [4X[25Xgap>[125X [27Xnw3 := ReducedGraphOfGroupoidsWord( gw3 );[127X[104X
-    [4X[28X(5)[a^-1 : -1 -> -2].y.[b^-1 : -4 -> -4].y^-1.[a^10 : -2 -> -1](5)[128X[104X
+    [4X[28X(5)[a^-1 : -1 -> -1].y.[b^-1 : -3 -> -3].y^-1.[a^10 : -1 -> -1](5)[128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [33X[0;0YMore  examples  of  these  operations  may  be  found  in  the  example file
-  [11Xgroupoids/examples/ggraph.g[111X.[133X
+  [33X[0;0YThe reduction proceeds as follows.[133X
+  
+  [30X    [33X[0;6Y[22X[a^7  :  -1  ->  -2]  = [a^-2 : -1 -> -1]*[a^9 : -1 -> -2] stackrely->
+        [a^-2 : -1 -> -1]*[b^6 : -3 -> -4][122X[133X
+  
+  [30X    [33X[0;6Y[22X[b^6  :  -3  ->  -4]*[b^-6  :  -4  ->  -4]  =  [mathrmid  :  -3 -> -4]
+        stackrelbary}-> [mathrmid : -1 -> -2][122X[133X
+  
+  [30X    [33X[0;6Y[22X[a^-2  : -1 -> -1]*[mathrmid : -1 -> -2]*[a^-11 : -2 -> -1] = [a^-13 :
+        -1 -> -1][122X[133X
+  
+  [30X    [33X[0;6Y[22X[a^-13  : -1 -> -1] = [a^-1 : -1 -> -1]*[a^-12 : -1 -> -1] stackrely->
+        [a^-1 : -1 -> -1]*[b^-8 : -3 -> -3][122X[133X
+  
+  [30X    [33X[0;6Y[22X[b^-8  :  -3  -> -3]*[b^9 : -3 -> -4] = [b^-1 : -3 -> -3]*[b^2 : -3 ->
+        -4] stackrelbary}-> [b^-1 : -3 -> -3]*[a^3 : -1 -> -2][122X[133X
+  
+  [30X    [33X[0;6Y[22X[a^3 := -1 -> -2]*[a^7 : -2 -> -1] = [a^10 : -1 -> -1][122X[133X
   

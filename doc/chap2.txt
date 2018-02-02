@@ -39,10 +39,10 @@
   
   [1X2.1-1 MagmaWithObjects[101X
   
-  [29X[2XMagmaWithObjects[102X( [3Xargs[103X ) [32X function
-  [29X[2XSinglePieceMagmaWithObjects[102X( [3Xmagma[103X, [3Xobs[103X ) [32X operation
-  [29X[2XObjectList[102X( [3Xmwo[103X ) [32X attribute
-  [29X[2XRootObject[102X( [3Xmwo[103X ) [32X attribute
+  [33X[1;0Y[29X[2XMagmaWithObjects[102X( [3Xargs[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XSinglePieceMagmaWithObjects[102X( [3Xmagma[103X, [3Xobs[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XObjectList[102X( [3Xmwo[103X ) [32X attribute[133X
+  [33X[1;0Y[29X[2XRootObject[102X( [3Xmwo[103X ) [32X attribute[133X
   
   [33X[0;0YThe  simplest  construction  for a magma with objects [22XM[122X is to take a magma [22Xm[122X
   and an ordered set [22Xs[122X, and form arrows [22X(u,a,v)[122X for every [22Xa[122X in [22Xm[122X and [22Xu,v[122X in [22Xs[122X.
@@ -58,11 +58,6 @@
   monoids    with    objects,    and    these    all    have    the   property
   [10XIsDirectProductWithCompleteDigraph[110X.    There    are    other   constructions
   implemented for groupoids.[133X
-  
-  [33X[0;0YThe   output   from   function   [10XMagmaWithObjects[110X  lies  in  the  categories
-  [10XIsDomainWithObjects[110X,                  [10XIsMagmaWithObjects[110X                 and
-  [10XCategoryCollections(IsMultiplicativeElementWithObjects)[110X.  As  composition is
-  only partial, the output does [13Xnot[113X lie in the category [10XIsMagma[110X.[133X
   
   [33X[0;0YThe [13Xroot object[113X of [22XM[122X is the first element in [22Xs[122X.[133X
   
@@ -84,19 +79,34 @@
     [4X[25Xgap>[125X [27XSetName( M78, "M78" ); [127X[104X
     [4X[25Xgap>[125X [27X[ IsAssociative(M78), IsCommutative(M78) ]; [127X[104X
     [4X[28X[ false, false ][128X[104X
-    [4X[25Xgap>[125X [27X[ IsDomainWithObjects(M78), IsMagmaWithObjects(M78), IsMagma(M78) ]; [127X[104X
-    [4X[28X[ true, true, false ][128X[104X
     [4X[25Xgap>[125X [27X[ RootObject( M78 ), ObjectList( M78 ) ]; [127X[104X
     [4X[28X[ -8, [ -8, -7 ] ][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X2.1-2 Arrow[101X
+  [1X2.1-2 IsDomainWithObjects[101X
   
-  [29X[2XArrow[102X( [3Xmwo[103X, [3Xelt[103X, [3Xtail[103X, [3Xhead[103X ) [32X operation
-  [29X[2XElementOfArrow[102X( [3Xarr[103X ) [32X operation
-  [29X[2XTailOfArrow[102X( [3Xarr[103X ) [32X operation
-  [29X[2XHeadOfArrow[102X( [3Xarr[103X ) [32X operation
+  [33X[1;0Y[29X[2XIsDomainWithObjects[102X( [3Xobj[103X ) [32X filter[133X
+  [33X[1;0Y[29X[2XIsMagmaWithObjects[102X( [3Xobj[103X ) [32X filter[133X
+  
+  [33X[0;0YThe   output   from   function   [10XMagmaWithObjects[110X  lies  in  the  categories
+  [10XIsDomainWithObjects[110X,                  [10XIsMagmaWithObjects[110X                 and
+  [10XCategoryCollections(IsMultiplicativeElementWithObjects)[110X.  As  composition is
+  only partial, the output does [13Xnot[113X lie in the category [10XIsMagma[110X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27X[ IsDomainWithObjects(M78), IsMagmaWithObjects(M78), IsMagma(M78) ]; [127X[104X
+    [4X[28X[ true, true, false ][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X2.1-3 Arrow[101X
+  
+  [33X[1;0Y[29X[2XArrow[102X( [3Xmwo[103X, [3Xelt[103X, [3Xtail[103X, [3Xhead[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XElementOfArrow[102X( [3Xarr[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XTailOfArrow[102X( [3Xarr[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XHeadOfArrow[102X( [3Xarr[103X ) [32X operation[133X
   
   [33X[0;0YArrows    in    a    magma    with    objects    lie    in    the   category
   [10XIsMultiplicativeElementWithObjects[110X.  An attempt to multiply two arrows which
@@ -126,21 +136,23 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X2.1-3 IsSinglePiece[101X
+  [1X2.1-4 IsSinglePieceDomain[101X
   
-  [29X[2XIsSinglePiece[102X( [3Xmwo[103X ) [32X property
-  [29X[2XIsDirectProductWithCompleteDigraph[102X( [3Xmwo[103X ) [32X property
-  [29X[2XIsDiscrete[102X( [3Xmwo[103X ) [32X property
+  [33X[1;0Y[29X[2XIsSinglePieceDomain[102X( [3Xmwo[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsSinglePiece[102X( [3Xmwo[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsDirectProductWithCompleteDigraph[102X( [3Xmwo[103X ) [32X property[133X
+  [33X[1;0Y[29X[2XIsDiscrete[102X( [3Xmwo[103X ) [32X property[133X
   
   [33X[0;0YIf  the  partial  composition  is  forgotten, then what remains is a digraph
   (usually  with  multiple  edges  and  loops).  Thus  the notion of [13Xconnected
   component[113X   may   be   inherited  by  magmas  with  objects  from  digraphs.
   Unfortunately   the   terms   [10XComponent[110X   and  [10XConstituent[110X  are  already  in
   considerable  use  elsewhere  in  [5XGAP[105X,  so  (and  this  may change if a more
-  suitable  word  is  suggested)  we  use the term [10XIsSinglePiece[110X to describe a
-  connected  magma  with  objects.  When each connected component has a single
-  object,  and  there  is  more  than one component, the magma with objects is
-  [13Xdiscrete[113X.[133X
+  suitable  word is suggested) we use the term [10XIsSinglePieceDomain[110X to describe
+  an  object  with an underlying connected digraph. The property [10XIsSinglePiece[110X
+  is  a  synonym  for  [10XIsSinglePieceDomain  and  IsMagmaWithObjects[110X. When each
+  connected  component  has  a  single  object,  and  there  is  more than one
+  component, the magma with objects is [13Xdiscrete[113X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -158,9 +170,9 @@
   
   [1X2.2-1 SemigroupWithObjects[101X
   
-  [29X[2XSemigroupWithObjects[102X( [3Xargs[103X ) [32X function
-  [29X[2XSinglePieceSemigroupWithObjects[102X( [3Xsgp[103X, [3Xobs[103X ) [32X operation
-  [29X[2XDomainWithSingleObject[102X( [3Xdom[103X, [3Xobj[103X ) [32X operation
+  [33X[1;0Y[29X[2XSemigroupWithObjects[102X( [3Xargs[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XSinglePieceSemigroupWithObjects[102X( [3Xsgp[103X, [3Xobs[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XDomainWithSingleObject[102X( [3Xdom[103X, [3Xobj[103X ) [32X operation[133X
   
   [33X[0;0YThe constructions in section [14X2.1[114X give a [10XSinglePieceSemigroupWithObjects[110X when
   the  magma  is a semigroup. In the example we use a transformation semigroup
@@ -219,8 +231,8 @@
   
   [1X2.3-1 MonoidWithObjects[101X
   
-  [29X[2XMonoidWithObjects[102X( [3Xargs[103X ) [32X function
-  [29X[2XSinglePieceMonoidWithObjects[102X( [3Xmon[103X, [3Xobs[103X ) [32X operation
+  [33X[1;0Y[29X[2XMonoidWithObjects[102X( [3Xargs[103X ) [32X function[133X
+  [33X[1;0Y[29X[2XSinglePieceMonoidWithObjects[102X( [3Xmon[103X, [3Xobs[103X ) [32X operation[133X
   
   [33X[0;0YThe  constructions  in  section [14X2.1[114X give a [10XSinglePieceMonoidWithObjects[110X when
   the  magma  is a monoid. The example uses a finitely presented monoid with [22X2[122X
@@ -257,9 +269,9 @@
   
   [1X2.4-1 GeneratorsOfMagmaWithObjects[101X
   
-  [29X[2XGeneratorsOfMagmaWithObjects[102X( [3Xmwo[103X ) [32X operation
-  [29X[2XGeneratorsOfSemigroupWithObjects[102X( [3Xswo[103X ) [32X operation
-  [29X[2XGeneratorsOfMonoidWithObjects[102X( [3Xmwo[103X ) [32X operation
+  [33X[1;0Y[29X[2XGeneratorsOfMagmaWithObjects[102X( [3Xmwo[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGeneratorsOfSemigroupWithObjects[102X( [3Xswo[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XGeneratorsOfMonoidWithObjects[102X( [3Xmwo[103X ) [32X operation[133X
   
   [33X[0;0YFor a magma or semigroup with objects, the generating set consists of arrows
   [22X(g  : u -> v)[122X for every pair of objects [22Xu,v[122X and every generating element for
@@ -302,8 +314,8 @@
   
   [1X2.5-1 UnionOfPieces[101X
   
-  [29X[2XUnionOfPieces[102X( [3Xpieces[103X ) [32X operation
-  [29X[2XPieces[102X( [3Xmwo[103X ) [32X attribute
+  [33X[1;0Y[29X[2XUnionOfPieces[102X( [3Xpieces[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XPieces[102X( [3Xmwo[103X ) [32X attribute[133X
   
   [33X[0;0YA  magma  with  objects  whose  underlying digraph has two or more connected
   components  can  be constructed by taking the union of two or more connected

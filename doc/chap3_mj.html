@@ -36,7 +36,7 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X795C8DE37AED7B44">3.3 <span class="Heading">Homomorphisms to more than one piece</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X86F313DB7EC4D9E7">3.3-1 HomomorphismByUnion</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7AE44D9485EB50F1">3.3-1 HomomorphismByUnion</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7C053B0379DDCE13">3.3-2 IsInjectiveOnObjects</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7B9D71BB7BAEFAAA">3.4 <span class="Heading">Mappings defined by a function</span></a>
@@ -77,12 +77,12 @@ f_A(a : u \to v) * f_A(b : v \to w) ~=~ f_A(a*b : u \to w)
 
 <h5>3.1-1 MagmaWithObjectsHomomorphism</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MagmaWithObjectsHomomorphism</code>( <var class="Arg">args</var> )</td><td class="tdright">( function )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismFromSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">hom</var>, <var class="Arg">imobs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismToSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">images</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingToSinglePieceData</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PiecesOfMapping</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismNewObjects</code>( <var class="Arg">src</var>, <var class="Arg">objlist</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MagmaWithObjectsHomomorphism</code>( <var class="Arg">args</var> )</td><td class="tdright">(&nbsp;function&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismFromSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">hom</var>, <var class="Arg">imobs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismToSinglePiece</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">images</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingToSinglePieceData</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PiecesOfMapping</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismNewObjects</code>( <var class="Arg">src</var>, <var class="Arg">objlist</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>There are a variety of homomorphism constructors.</p>
 
 <p>The simplest construction gives a homomorphism <span class="SimpleMath">\(M \to N\)</span> with both <span class="SimpleMath">\(M\)</span> and <span class="SimpleMath">\(N\)</span> connected. It is implemented as <code class="code">IsMappingToSinglePieceRep</code> with attributes <code class="code">Source</code>, <code class="code">Range</code> and <code class="code">MappingToSinglePieceData</code>. The operation requires the following information:</p>
@@ -212,11 +212,11 @@ true
 
 <h4>3.3 <span class="Heading">Homomorphisms to more than one piece</span></h4>
 
-<p><a id="X86F313DB7EC4D9E7" name="X86F313DB7EC4D9E7"></a></p>
+<p><a id="X7AE44D9485EB50F1" name="X7AE44D9485EB50F1"></a></p>
 
 <h5>3.3-1 HomomorphismByUnion</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismByUnion</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">homs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HomomorphismByUnion</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">homs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>When <span class="SimpleMath">\(f : M \to N\)</span> and <span class="SimpleMath">\(N\)</span> has more than one connected component, then <span class="SimpleMath">\(f\)</span> is a union of homomorphisms, one for each piece in the range.</p>
 
 
@@ -244,11 +244,11 @@ magma with objects homomorphism :
 
 <h5>3.3-2 IsInjectiveOnObjects</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsBijectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEndomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAutomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">( property )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsInjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSurjectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsBijectiveOnObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsEndomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAutomorphismWithObjects</code>( <var class="Arg">mwohom</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>The meaning of these five properties is obvious.</p>
 
 
@@ -275,9 +275,9 @@ false
 
 <h5>3.4-1 MappingWithObjectsByFunction</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingWithObjectsByFunction</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">fun</var>, <var class="Arg">imobs</var> )</td><td class="tdright">( operation )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMappingWithObjectsByFunction</code>( <var class="Arg">map</var> )</td><td class="tdright">( property )</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnderlyingFunction</code>( <var class="Arg">map</var> )</td><td class="tdright">( attribute )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MappingWithObjectsByFunction</code>( <var class="Arg">src</var>, <var class="Arg">rng</var>, <var class="Arg">fun</var>, <var class="Arg">imobs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMappingWithObjectsByFunction</code>( <var class="Arg">map</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; UnderlyingFunction</code>( <var class="Arg">map</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>More general mappings, which need not preserve multiplication, are available using this operation. See section <a href="chap5_mj.html#X803E01577A2B37D2"><span class="RefLink">5.6</span></a> for an application.</p>
 
 
