@@ -326,7 +326,8 @@ groupoid homomorphism : Hd8b -&gt; Hs4
 <h5>5.3-2 RestrictedMappingGroupoids</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RestrictedMappingGroupoids</code>( <var class="Arg">mor</var>, <var class="Arg">sgpd</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>The operation <code class="code">RestrictedMappingGroupoids(mor,sgpd)</code> returns the restriction of the homomorphism <code class="code">mor</code> to the subgroupoid <code class="code">sgpd</code> of its source. The range is usually set to the <code class="code">ImagesSource</code> of the restriction. For another example see section <a href="chap5.html#X8003AF117B956D16"><span class="RefLink">5.7</span></a></p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ParentMappingGroupoids</code>( <var class="Arg">mor</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>The operation <code class="code">RestrictedMappingGroupoids(mor,sgpd)</code> returns the restriction of the homomorphism <code class="code">mor</code> to the subgroupoid <code class="code">sgpd</code> of its source. The range is usually set to the <code class="code">ImagesSource</code> of the restriction. The restriction is assigned the attribute <code class="code">ParentMappingGroupoids</code> with value <code class="code">mor</code> (or that of <code class="code">mor</code> is one exists). For another example see section <a href="chap5.html#X8003AF117B956D16"><span class="RefLink">5.7</span></a>.</p>
 
 
 <div class="example"><pre>

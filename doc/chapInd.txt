@@ -135,12 +135,14 @@
   [2XObjectList[102X, for magmas with objects 2.1-1 
   [2XObjectStar[102X 4.2-4 
   [2XOrder[102X 4.2-3 
+  [2XParentMappingGroupoids[102X 5.3-2 
+  [2XPieceIsomorphisms[102X 4.1-5 
   [2XPieces[102X, for groupoids 4.1-4 
       for magmas with objects 2.5-1 
   [2XPiecesOfMapping[102X 3.1-1 
   [2XProjection[102X 4.1-6 
   [10XRange[110X 3.1-1 
-  [2XRayElementsOfGroupoid[102X 4.3-2 
+  [2XRayArrowsOfGroupoid[102X 4.3-2 
    4. 
   [2XRaysOfGroupoid[102X 4.3-2 
   [2XReducedGraphOfGroupoidsWord[102X 6.5-2 

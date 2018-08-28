@@ -247,11 +247,13 @@
   [1X5.3-2 RestrictedMappingGroupoids[101X
   
   [33X[1;0Y[29X[2XRestrictedMappingGroupoids[102X( [3Xmor[103X, [3Xsgpd[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XParentMappingGroupoids[102X( [3Xmor[103X ) [32X attribute[133X
   
   [33X[0;0YThe  operation  [10XRestrictedMappingGroupoids(mor,sgpd)[110X returns the restriction
   of  the homomorphism [10Xmor[110X to the subgroupoid [10Xsgpd[110X of its source. The range is
-  usually  set to the [10XImagesSource[110X of the restriction. For another example see
-  section [14X5.7[114X[133X
+  usually  set  to  the  [10XImagesSource[110X  of  the restriction. The restriction is
+  assigned the attribute [10XParentMappingGroupoids[110X with value [10Xmor[110X (or that of [10Xmor[110X
+  is one exists). For another example see section [14X5.7[114X.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
