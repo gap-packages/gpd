@@ -101,7 +101,8 @@ f_A(a : u \to v) * f_A(b : v \to w) ~=~ f_A(a*b : u \to w)
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">tup1 := [Tuple([m1,m2]), Tuple([m2,m1]), Tuple([m3,m4]), Tuple([m4,m3])]; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">tup1 := [ DirectProductElement([m1,m2]), DirectProductElement([m2,m1]), </span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">             DirectProductElement([m3,m4]), DirectProductElement([m4,m3]) ];; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f1 := GeneralMappingByElements( m, m, tup1 ); </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMagmaHomomorphism( f1 ); </span>
 true

@@ -49,7 +49,8 @@
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
-    [4X[25Xgap>[125X [27Xtup1 := [Tuple([m1,m2]), Tuple([m2,m1]), Tuple([m3,m4]), Tuple([m4,m3])]; [127X[104X
+    [4X[25Xgap>[125X [27Xtup1 := [ DirectProductElement([m1,m2]), DirectProductElement([m2,m1]), [127X[104X
+    [4X[25X>[125X [27X             DirectProductElement([m3,m4]), DirectProductElement([m4,m3]) ];; [127X[104X
     [4X[25Xgap>[125X [27Xf1 := GeneralMappingByElements( m, m, tup1 ); [127X[104X
     [4X[25Xgap>[125X [27XIsMagmaHomomorphism( f1 ); [127X[104X
     [4X[28Xtrue[128X[104X

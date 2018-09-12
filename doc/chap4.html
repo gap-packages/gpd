@@ -175,7 +175,7 @@ single piece groupoid: &lt; d8, [ "a", "b", "c" ] &gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f2 := FreeGroup( 2 );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Gf2 := Groupoid( f2, -22 );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( f2, "f2" );  SetName( Gf2, "Gf2" ); </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q8 := SmallGroup( 8, 4 );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">q8 := QuaternionGroup( 8 );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Gq8 := Groupoid( q8, [ -28, -27 ] );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( q8, "q8" );  SetName( Gq8, "Gq8" );</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gl43 := SpecialLinearGroup( 4, 3 );;</span>
@@ -228,7 +228,7 @@ groupoid with 5 pieces:
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Display( U5 );</span>
 groupoid with 5 pieces:
 &lt; objects: [ -28, -27 ]
-    group: q8 = &lt;[ f1, f2, f3 ]&gt; &gt;
+    group: q8 = &lt;[ x, y, y2 ]&gt; &gt;
 &lt; objects: [ -22 ]
     group: f2 = &lt;[ f1, f2 ]&gt; &gt;
 &lt; objects: [ -15 .. -11 ]
@@ -334,7 +334,7 @@ groupoid homomorphism :
       [() : [ -9, -6 ] -&gt; [ -8, -6 ]], [() : [ -9, -6 ] -&gt; [ -7, -6 ]] ], 
   [ [(1,2,3,4) : -9 -&gt; -9], [(1,3) : -9 -&gt; -9], [() : -9 -&gt; -9], 
       [() : -9 -&gt; -8], [() : -9 -&gt; -7] ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Embedding(prod,2);                        </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Embedding( prod, 2 );                        </span>
 groupoid homomorphism : 
 [ [ [(5,6,7)(8,9) : -6 -&gt; -6] ], 
   [ [(5,6,7)(8,9) : [ -9, -6 ] -&gt; [ -9, -6 ]] ] ]
@@ -378,12 +378,12 @@ rec( embeddings := [ , groupoid homomorphism :
 [(1,3) : -8 -&gt; -7]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( [ ElementOfArrow(e1), TailOfArrow(e1), HeadOfArrow(e1) ], "\n" );</span>
 [ (1,2,3,4), -9, -8 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">prod := e1*e2;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e1e2 := e1*e2;</span>
 [(1,2)(3,4) : -9 -&gt; -7]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e2*e1;</span>
 fail
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">e3 := Arrow( Gd8, (2,4), -7, -9 );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">loop := prod*e3;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">loop := e1e2*e3;</span>
 [(1,4,3,2) : -9 -&gt; -9]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">loop^2;</span>
 [(1,3)(2,4) : -9 -&gt; -9]
@@ -455,15 +455,15 @@ fail
 &lt;costar at -6 with group c6&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hsetq8 := Homset( Gq8, -28, -27 );</span>
 &lt;homset -28 -&gt; -27 with group q8&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintOneItemPerLine( hsetq8 );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Perform( hsetq8, Display );</span>
 [&lt;identity&gt; of ... : -28 -&gt; -27]
-[f3 : -28 -&gt; -27]
-[f2 : -28 -&gt; -27]
-[f2*f3 : -28 -&gt; -27]
-[f1 : -28 -&gt; -27]
-[f1*f3 : -28 -&gt; -27]
-[f1*f2 : -28 -&gt; -27]
-[f1*f2*f3 : -28 -&gt; -27]
+[y2 : -28 -&gt; -27]
+[y : -28 -&gt; -27]
+[y*y2 : -28 -&gt; -27]
+[x : -28 -&gt; -27]
+[x*y2 : -28 -&gt; -27]
+[x*y : -28 -&gt; -27]
+[x*y*y2 : -28 -&gt; -27]
 
 </pre></div>
 
@@ -691,7 +691,7 @@ single piece groupoid with rays: &lt; Group( [ (2,3,4) ] ), [ -15, -13, -11 ],
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">re2 := RightCoset( Gd8, Ud8, e2 );</span>
 &lt;right coset of single piece groupoid: &lt; c4, 
 [ -8, -7 ] &gt; with representative [(1,3) : -8 -&gt; -7]&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintOneItemPerLine( re2 );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Perform( re2, Display );</span>
 [(1,3) : -8 -&gt; -7]
 [(1,3) : -7 -&gt; -7]
 [(2,4) : -8 -&gt; -7]

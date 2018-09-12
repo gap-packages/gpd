@@ -10,6 +10,7 @@
   [10XArrow[110X, for groupoid elements 4.2-1 
   [10XAutomorphismGroup[110X 5.6-3 
   [2XAutomorphismGroupOfGroupoid[102X 5.6-3 
+  [2XAutomorphismGroupoidOfGroupoid[102X 5.6-6 
   [2XConjugateGroupoid[102X 4.5-2 
    4.4 
   [2XDigraphOfGraphOfGroupoids[102X 6.5-1 
