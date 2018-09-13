@@ -1,6 +1,6 @@
 name: groupoids
-version: 1.58
-date: 2018-09-12
+version: 1.59
+date: 2018-09-13
 description: |
     Calculations with finite groupoids and their homomorphisms
 
@@ -22,9 +22,6 @@ needed-pkgs:
     - name: "fga"
       version: ">= 1.4.0"
       url: "http://www.icm.tu-bs.de/ag_algebra/software/FGA/"
-    - name: "utils"
-      version: ">=0.58"
-      url: "https://gap-packages.github.io/utils"
 
 suggested-pkgs:
     - name: "semigroups"
@@ -37,7 +34,7 @@ packageinfo: https://gap-packages.github.io/groupoids/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/groupoids/releases/download/v1.58/groupoids-1.58.tar.gz
+      url: https://github.com/gap-packages/groupoids/releases/download/v1.59/groupoids-1.59.tar.gz
 
 abstract: |
     The groupoids package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions. Up until April 2017 this package was named Gpd.

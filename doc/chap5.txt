@@ -561,12 +561,69 @@
   
   [1X5.6-2 [33X[0;0YAutomorphisms of a groupoid with rays[133X[101X
   
-  [33X[0;0YIf  [22XS[122X  is  a  wide  subgroupoid  with  rays of a standard groupoid [22XG[122X then an
-  automorphism  [22Xα[122X  of  [22XG[122X  may  map  [22XS[122X  to a different subgroupoid. When [22Xα[122X is a
-  [10XGroupoidAutomorphismByObjectPerm[110X,  then it restricts to an automorphism of [22XS[122X
-  provided the objects in each orbit have the same ray elements.[133X
+  [33X[0;0YLet [22XS[122X be a wide subgroupoid with rays of a standard groupoid [22XG[122X.[133X
   
-  [33X[0;0YThis subsection needs to be expanded and examples added.[133X
+  [33X[0;0YAn  automorphism  of  the root group extends to the whole of [22XS[122X with the rays
+  fixed by the automorphism.[133X
+  
+  [33X[0;0YAn  automorphism  of  [22XG[122X  by  permuting  the objects may map [22XS[122X to a different
+  subgroupoid.  So we construct an isomorphism [22Xι[122X from [22XS[122X to a standard groupoid
+  [22XT[122X, constgruct [22Xα[122X permuting the objects of [22XT[122X, and return [22Xι*α*ι^-1[122X.[133X
+  
+  [33X[0;0YFor an automorphism by ray shifts we require that the shifts are elements of
+  the root group of [22XS[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xs4c := Group( (1,2,3,4), (3,4) );; [127X[104X
+    [4X[25Xgap>[125X [27XSetName( s4c, "s4c" );[127X[104X
+    [4X[25Xgap>[125X [27Xs3c := Subgroup( s4c, [ (1,2), (2,3) ] );; [127X[104X
+    [4X[25Xgap>[125X [27XSetName( s3c, "s3c" ); [127X[104X
+    [4X[25Xgap>[125X [27XGs4c := SinglePieceGroupoid( s4c, [-9,-8,-7,-6] );; [127X[104X
+    [4X[25Xgap>[125X [27XSetName( Gs4c, "Gs4c" ); [127X[104X
+    [4X[25Xgap>[125X [27XHs3c := SubgroupoidWithRays( Gs4c, s3c, [ (), (1,4), (2,4), (3,4) ] );; [127X[104X
+    [4X[25Xgap>[125X [27XSetName( Hs3c, "Hs3c" ); [127X[104X
+    [4X[25Xgap>[125X [27X## (1) automorphism by group auto [127X[104X
+    [4X[25Xgap>[125X [27Xa1 := GroupHomomorphismByImages( s3c, s3c, [(1,2),(2,3)], [(1,3),(2,3)] );;[127X[104X
+    [4X[25Xgap>[125X [27Xaut1 := GroupoidAutomorphismByGroupAuto( Hs3c, a1 );[127X[104X
+    [4X[28Xgroupoid homomorphism : Hs3c -> Hs3c[128X[104X
+    [4X[28X[ [ [(1,2) : -9 -> -9], [(2,3) : -9 -> -9], [(1,4) : -9 -> -8], [128X[104X
+    [4X[28X      [(2,4) : -9 -> -7], [(3,4) : -9 -> -6] ], [128X[104X
+    [4X[28X  [ [(1,3) : -9 -> -9], [(2,3) : -9 -> -9], [(1,4) : -9 -> -8], [128X[104X
+    [4X[28X      [(2,4) : -9 -> -7], [(3,4) : -9 -> -6] ] ][128X[104X
+    [4X[25Xgap>[125X [27Xa := Arrow( Hs3c, (2,3,4), -8, -8 );[127X[104X
+    [4X[28X[(2,3,4) : -8 -> -8][128X[104X
+    [4X[25Xgap>[125X [27XImageElm( aut1, a );[127X[104X
+    [4X[28X[(2,4,3) : -8 -> -8][128X[104X
+    [4X[25Xgap>[125X [27Xb := Arrow( Hs3c, (1,2,3,4), -7, -6 );[127X[104X
+    [4X[28X[(1,2,3,4) : -7 -> -6][128X[104X
+    [4X[25Xgap>[125X [27X##  b = (2,4)(1,2)(3,4) -> (2,4)(1,3)(3,4)[127X[104X
+    [4X[25Xgap>[125X [27XImageElm( aut1, b );[127X[104X
+    [4X[28X[(1,4,2,3) : -7 -> -6][128X[104X
+    [4X[25Xgap>[125X [27X## (2) automorphism by object perm [127X[104X
+    [4X[25Xgap>[125X [27Xaut2 := GroupoidAutomorphismByObjectPerm( Hs3c, [-8,-7,-6,-9] );[127X[104X
+    [4X[28Xgroupoid homomorphism : Hs3c -> Hs3c[128X[104X
+    [4X[28X[ [ [(1,2) : -9 -> -9], [(2,3) : -9 -> -9], [(1,4) : -9 -> -8], [128X[104X
+    [4X[28X      [(2,4) : -9 -> -7], [(3,4) : -9 -> -6] ], [128X[104X
+    [4X[28X  [ [(2,4) : -8 -> -8], [(2,3) : -8 -> -8], [(1,2,4) : -8 -> -7], [128X[104X
+    [4X[28X      [(1,3,4) : -8 -> -6], [(1,4) : -8 -> -9] ] ] [128X[104X
+    [4X[25Xgap>[125X [27XImageElm( aut2, a );                                           [127X[104X
+    [4X[28X[(1,4,3) : -7 -> -7][128X[104X
+    [4X[25Xgap>[125X [27XImageElm( aut2, b );                                           [127X[104X
+    [4X[28X[(1,2)(3,4) : -6 -> -9][128X[104X
+    [4X[25Xgap>[125X [27X## (3) automorphism by ray shifts [127X[104X
+    [4X[25Xgap>[125X [27Xaut3 := GroupoidAutomorphismByRayShifts( Hs3c, [(),(2,3),(1,3),(1,2)] );   [127X[104X
+    [4X[28Xgroupoid homomorphism : Hs3c -> Hs3c[128X[104X
+    [4X[28X[ [ [(1,2) : -9 -> -9], [(2,3) : -9 -> -9], [(1,4) : -9 -> -8], [128X[104X
+    [4X[28X      [(2,4) : -9 -> -7], [(3,4) : -9 -> -6] ], [128X[104X
+    [4X[28X  [ [(1,2) : -9 -> -9], [(2,3) : -9 -> -9], [(1,4)(2,3) : -9 -> -8], [128X[104X
+    [4X[28X      [(1,3)(2,4) : -9 -> -7], [(1,2)(3,4) : -9 -> -6] ] ][128X[104X
+    [4X[25Xgap>[125X [27XImageElm( aut3, a );[127X[104X
+    [4X[28X[(2,4,3) : -8 -> -8][128X[104X
+    [4X[25Xgap>[125X [27XImageElm( aut3, b );[127X[104X
+    [4X[28X[(1,4,2,3) : -7 -> -6][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
   
   [1X5.6-3 AutomorphismGroupOfGroupoid[101X
   
