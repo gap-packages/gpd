@@ -6,10 +6,10 @@
           [1X Calculations with finite groupoids and their homomorphisms [101X
   
   
-                                      1.59
+                                      1.61
   
   
-                               13 September 2018
+                                 9 October 2018
   
   
                                  Emma J. Moore
@@ -177,8 +177,8 @@
       6.3-1 GraphOfGroupsWord
       6.3-2 ReducedGraphOfGroupsWord
     6.4 [33X[0;0YFree products with amalgamation and HNN extensions[133X
-      6.4-1 FreeProductWithAmalgamation
-      6.4-2 HnnExtension
+      6.4-1 FreeProductWithAmalgamationGGRWS
+      6.4-2 HnnExtensionGGRWS
     6.5 [33X[0;0YGraphsOfGroupoids and their Words[133X
       6.5-1 GraphOfGroupoids
       6.5-2 GraphOfGroupoidsWord

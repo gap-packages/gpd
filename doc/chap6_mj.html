@@ -46,8 +46,8 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7D99A7B37B36BAA8">6.4 <span class="Heading">Free products with amalgamation and HNN extensions</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X795AB71F7E370119">6.4-1 FreeProductWithAmalgamation</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7CB0F120804A8DED">6.4-2 HnnExtension</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83C582E687A94979">6.4-1 FreeProductWithAmalgamationGGRWS</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E016D967AC5B265">6.4-2 HnnExtensionGGRWS</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X78108FB4814AE887">6.5 <span class="Heading">GraphsOfGroupoids and their Words</span></a>
 </span>
@@ -297,17 +297,17 @@ a^{-1}b^{-1}a^{10}.
 
 <h4>6.4 <span class="Heading">Free products with amalgamation and HNN extensions</span></h4>
 
-<p><a id="X795AB71F7E370119" name="X795AB71F7E370119"></a></p>
+<p><a id="X83C582E687A94979" name="X83C582E687A94979"></a></p>
 
-<h5>6.4-1 FreeProductWithAmalgamation</h5>
+<h5>6.4-1 FreeProductWithAmalgamationGGRWS</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FreeProductWithAmalgamation</code>( <var class="Arg">gp1</var>, <var class="Arg">gp2</var>, <var class="Arg">iso</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; FreeProductWithAmalgamationGGRWS</code>( <var class="Arg">gp1</var>, <var class="Arg">gp2</var>, <var class="Arg">iso</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsFpaGroup</code>( <var class="Arg">fpa</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GraphOfGroupsRewritingSystem</code>( <var class="Arg">fpa</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NormalFormGGRWS</code>( <var class="Arg">fpa</var>, <var class="Arg">word</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <p>As we have seen with the trefoil group example, graphs of groups can be used to obtain a normal form for free products with amalgamation <span class="SimpleMath">\(G_1 *_H G_2\)</span> when <span class="SimpleMath">\(G_1, G_2\)</span> both have rewrite systems, and <span class="SimpleMath">\(H\)</span> is of finite index in both <span class="SimpleMath">\(G_1\)</span> and <span class="SimpleMath">\(G_2\)</span>.</p>
 
-<p>When <code class="code">gp1</code> and <code class="code">gp2</code> are fp-groups, the operation <code class="code">FreeProductWithAmalgamation</code> constructs the required fp-group. When the two groups are permutation groups, the <code class="code">IsomorphismFpGroup</code> operation is called on both <code class="code">gp1</code> and <code class="code">gp2</code>, and the resulting isomorphism is transported to one between the two new subgroups.</p>
+<p>When <code class="code">gp1</code> and <code class="code">gp2</code> are fp-groups, the operation <code class="code">FreeProductWithAmalgamationGGRWS</code> constructs the required fp-group. When the two groups are permutation groups, the <code class="code">IsomorphismFpGroup</code> operation is called on both <code class="code">gp1</code> and <code class="code">gp2</code>, and the resulting isomorphism is transported to one between the two new subgroups.</p>
 
 <p>The attribute <code class="code">GraphOfGroupsRewritingSystem</code> of <code class="code">fpa</code> is the graph of groups which has underlying digraph <code class="code">D1</code>, with two vertices and two arcs; the two groups as vertex groups; and the specified isomorphisms on the arcs. Despite the name, graphs of groups constructed in this way <em>do not</em> belong to the category <code class="code">IsRewritingSystem</code>. This anomaly may be dealt with when time permits.</p>
 
@@ -334,7 +334,7 @@ a^{-1}b^{-1}a^{10}.
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H2 := Subgroup(a4,[b1]);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">## form the isomorphism and the fpa group</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso := GroupHomomorphismByImages(H1,H2,[a1],[b1]);;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">fpa := FreeProductWithAmalgamation( s3, a4, iso );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">fpa := FreeProductWithAmalgamationGGRWS( s3, a4, iso );</span>
 &lt;fp group on the generators [ fa1, fa2, fa3, fa4 ]&gt;
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">RelatorsOfFpGroup( fpa );</span>
 [ fa1^3, fa2^2, (fa1*fa2)^2, fa3^3, fa4^3, (fa3*fa4)^2, fa1*fa3^-1 ]
@@ -357,11 +357,11 @@ fa2*fa3*(fa4^-1*fa2)^2*fa4^-1*fa3
 
 </pre></div>
 
-<p><a id="X7CB0F120804A8DED" name="X7CB0F120804A8DED"></a></p>
+<p><a id="X7E016D967AC5B265" name="X7E016D967AC5B265"></a></p>
 
-<h5>6.4-2 HnnExtension</h5>
+<h5>6.4-2 HnnExtensionGGRWS</h5>
 
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HnnExtension</code>( <var class="Arg">gp</var>, <var class="Arg">iso</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; HnnExtensionGGRWS</code>( <var class="Arg">gp</var>, <var class="Arg">iso</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsHnnGroup</code>( <var class="Arg">hnn</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
 <p>For <em>HNN extensions</em>, the appropriate graph of groups has underlying digraph with just one vertex and one pair of loops, weighted with <code class="code">FpGroup</code> generators <span class="SimpleMath">\(z,z^{-1}\)</span>. There is one vertex group <code class="code">G</code>, two isomorphic subgroups <code class="code">H1,H2</code> of <code class="code">G</code>, with the isomorphism and its inverse on the loops. The presentation of the extension has one more generator than that of <code class="code">G</code> and corresponds to the generator <span class="SimpleMath">\(z\)</span>.</p>
 
@@ -374,7 +374,7 @@ fa2*fa3*(fa4^-1*fa2)^2*fa4^-1*fa3
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">H3 := Subgroup(a4,[b2]);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">i23 := GroupHomomorphismByImages( H2, H3, [b1], [b2] );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hnn := HnnExtension( a4, i23 );</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">hnn := HnnExtensionGGRWS( a4, i23 );</span>
 &lt;fp group on the generators [ fe1, fe2, fe3 ]&gt; 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">phnn := PresentationFpGroup( hnn );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TzPrint( phnn );</span>

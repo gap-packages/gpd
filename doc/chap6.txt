@@ -270,9 +270,9 @@
   
   [1X6.4 [33X[0;0YFree products with amalgamation and HNN extensions[133X[101X
   
-  [1X6.4-1 FreeProductWithAmalgamation[101X
+  [1X6.4-1 FreeProductWithAmalgamationGGRWS[101X
   
-  [33X[1;0Y[29X[2XFreeProductWithAmalgamation[102X( [3Xgp1[103X, [3Xgp2[103X, [3Xiso[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XFreeProductWithAmalgamationGGRWS[102X( [3Xgp1[103X, [3Xgp2[103X, [3Xiso[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XIsFpaGroup[102X( [3Xfpa[103X ) [32X property[133X
   [33X[1;0Y[29X[2XGraphOfGroupsRewritingSystem[102X( [3Xfpa[103X ) [32X attribute[133X
   [33X[1;0Y[29X[2XNormalFormGGRWS[102X( [3Xfpa[103X, [3Xword[103X ) [32X attribute[133X
@@ -282,11 +282,11 @@
   [22XG_1, G_2[122X both have rewrite systems, and [22XH[122X is of finite index in both [22XG_1[122X and
   [22XG_2[122X.[133X
   
-  [33X[0;0YWhen  [10Xgp1[110X  and  [10Xgp2[110X are fp-groups, the operation [10XFreeProductWithAmalgamation[110X
-  constructs  the  required  fp-group.  When  the  two  groups are permutation
-  groups,  the [10XIsomorphismFpGroup[110X operation is called on both [10Xgp1[110X and [10Xgp2[110X, and
-  the  resulting  isomorphism  is  transported  to  one  between  the  two new
-  subgroups.[133X
+  [33X[0;0YWhen      [10Xgp1[110X      and      [10Xgp2[110X     are     fp-groups,     the     operation
+  [10XFreeProductWithAmalgamationGGRWS[110X  constructs the required fp-group. When the
+  two  groups  are  permutation  groups,  the  [10XIsomorphismFpGroup[110X operation is
+  called  on both [10Xgp1[110X and [10Xgp2[110X, and the resulting isomorphism is transported to
+  one between the two new subgroups.[133X
   
   [33X[0;0YThe  attribute  [10XGraphOfGroupsRewritingSystem[110X  of  [10Xfpa[110X is the graph of groups
   which  has  underlying  digraph  [10XD1[110X, with two vertices and two arcs; the two
@@ -318,7 +318,7 @@
     [4X[25Xgap>[125X [27XH2 := Subgroup(a4,[b1]);;[127X[104X
     [4X[25Xgap>[125X [27X## form the isomorphism and the fpa group[127X[104X
     [4X[25Xgap>[125X [27Xiso := GroupHomomorphismByImages(H1,H2,[a1],[b1]);;[127X[104X
-    [4X[25Xgap>[125X [27Xfpa := FreeProductWithAmalgamation( s3, a4, iso );[127X[104X
+    [4X[25Xgap>[125X [27Xfpa := FreeProductWithAmalgamationGGRWS( s3, a4, iso );[127X[104X
     [4X[28X<fp group on the generators [ fa1, fa2, fa3, fa4 ]>[128X[104X
     [4X[25Xgap>[125X [27XRelatorsOfFpGroup( fpa );[127X[104X
     [4X[28X[ fa1^3, fa2^2, (fa1*fa2)^2, fa3^3, fa4^3, (fa3*fa4)^2, fa1*fa3^-1 ][128X[104X
@@ -341,9 +341,9 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X6.4-2 HnnExtension[101X
+  [1X6.4-2 HnnExtensionGGRWS[101X
   
-  [33X[1;0Y[29X[2XHnnExtension[102X( [3Xgp[103X, [3Xiso[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XHnnExtensionGGRWS[102X( [3Xgp[103X, [3Xiso[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XIsHnnGroup[102X( [3Xhnn[103X ) [32X property[133X
   
   [33X[0;0YFor  [13XHNN  extensions[113X, the appropriate graph of groups has underlying digraph
@@ -363,7 +363,7 @@
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27XH3 := Subgroup(a4,[b2]);;[127X[104X
     [4X[25Xgap>[125X [27Xi23 := GroupHomomorphismByImages( H2, H3, [b1], [b2] );;[127X[104X
-    [4X[25Xgap>[125X [27Xhnn := HnnExtension( a4, i23 );[127X[104X
+    [4X[25Xgap>[125X [27Xhnn := HnnExtensionGGRWS( a4, i23 );[127X[104X
     [4X[28X<fp group on the generators [ fe1, fe2, fe3 ]> [128X[104X
     [4X[25Xgap>[125X [27Xphnn := PresentationFpGroup( hnn );;[127X[104X
     [4X[25Xgap>[125X [27XTzPrint( phnn );[127X[104X

@@ -24,7 +24,7 @@
       for magmas with objects 2.1-3 
   [2XEmbedding[102X 4.1-6 
   [2XFpWeightedDigraph[102X 6.1-1 
-  [2XFreeProductWithAmalgamation[102X 6.4-1 
+  [2XFreeProductWithAmalgamationGGRWS[102X 6.4-1 
   [2XFullTrivialSubgroupoid[102X 4.3-5 
   [2XGeneratorsOfMagmaWithObjects[102X 2.4-1 
   [2XGeneratorsOfMonoidWithObjects[102X 2.4-1 
@@ -51,7 +51,7 @@
   [2XHeadOfArrow[102X, for groupoids 4.2-1 
       for magmas with objects 2.1-3 
   [2XHeadOfGraphOfGroupsWord[102X 6.3-1 
-  [2XHnnExtension[102X 6.4-2 
+  [2XHnnExtensionGGRWS[102X 6.4-2 
   [2XHomogeneousDiscreteGroupoid[102X 4.1-5 
   [2XHomogeneousGroupoid[102X 4.1-5 
   [2XHomomorphismByUnion[102X, for groupoids 5.5-1 
