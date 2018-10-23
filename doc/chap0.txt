@@ -6,10 +6,10 @@
           [1X Calculations with finite groupoids and their homomorphisms [101X
   
   
-                                      1.61
+                                      1.62
   
   
-                                 9 October 2018
+                                23 October 2018
   
   
                                  Emma J. Moore
@@ -41,13 +41,15 @@
   
   [33X[0;0YIt  provides  normal  forms  for  Free  Products  with  Amalgamation and for
   HNN-extensions  when  the  initial  groups  have  rewrite  systems  and  the
-  subgroups have finite index.[133X
+  subgroups have finite index. This is described in Section [14X6.2[114X. It is planned
+  to  move this section to a new package [5XRewriting[105X in time for version 4.11 of
+  [5XGAP[105X.[133X
   
   [33X[0;0YThe  [5Xgroupoids[105X package was originally implemented in 2000 (as [5XGraphGpd[105X) when
   the first author was studying for a Ph.D. in Bangor.[133X
   
   [33X[0;0YThe package was then renamed [5XGpd[105X and version 1.07 was released in July 2011,
-  to be tested with [5XGAP[105X 4.5.[133X
+  ready for [5XGAP[105X 4.5.[133X
   
   [33X[0;0Y[5XGpd[105X became an accepted [5XGAP[105X package in May 2015.[133X
   
@@ -177,8 +179,9 @@
       6.3-1 GraphOfGroupsWord
       6.3-2 ReducedGraphOfGroupsWord
     6.4 [33X[0;0YFree products with amalgamation and HNN extensions[133X
-      6.4-1 FreeProductWithAmalgamationGGRWS
-      6.4-2 HnnExtensionGGRWS
+      6.4-1 FreeProductWithAmalgamation
+      6.4-2 ReducedImageElm
+      6.4-3 HnnExtension
     6.5 [33X[0;0YGraphsOfGroupoids and their Words[133X
       6.5-1 GraphOfGroupoids
       6.5-2 GraphOfGroupoidsWord

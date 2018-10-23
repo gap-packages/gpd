@@ -17,7 +17,7 @@
   [10XCoveringGroupOfGroupoid[110X respectively. Similarly, the [10XVertices[110X and [10XArcs[110X of an
   [10XFpWeightedDigraph[110X were changed from attributes to record components.[133X
   
-  [33X[0;0YIn the spring of 2006 the package was extensively rewritten and renamed [5Xgpd[105X.
+  [33X[0;0YIn the spring of 2006 the package was extensively rewritten and renamed [5XGpd[105X.
   Version  1.01  was  submitted  as  a deposited package in June 2006. Version
   1.03,  of October 2007, fixed some file protections, and introduced the test
   file [11Xgpd_manual.tst[111X.[133X
@@ -32,7 +32,7 @@
   [33X[0;0YVersions  1.09  to 1.15 were prepared for the anticipated release of [5XGAP[105X 4.5
   in June 2012.[133X
   
-  [33X[0;0Y[5Xgpd[105X became an accepted [5XGAP[105X package in May 2015.[133X
+  [33X[0;0Y[5XGpd[105X became an accepted [5XGAP[105X package in May 2015.[133X
   
   [33X[0;0YIn April 2017 the package was renamed again, as [5Xgroupoids[105X.[133X
   
@@ -50,6 +50,11 @@
   conflicts  with  the [5XDigraphs[105X package. The intention is that these functions
   can revert to the original names in due course.[133X
   
+  [33X[0;0YIn  version  1.62  of  October  2018  there  were significant changes to the
+  operations  constructing free products with amalgamation and HNN extensions.
+  It  is  planned to move this material to a new package [5XRewriting[105X in time for
+  [5XGAP[105X 4.11.[133X
+  
   
   [1X8.2 [33X[0;0YWhat needs to be done next?[133X[101X
   
@@ -66,9 +71,6 @@
   [30X    [33X[0;6Y[10XEnumerator[110X for [10XIsHomsetCosetsRep[110X;[133X
   
   [30X    [33X[0;6Yfree groupoid on a graph;[133X
-  
-  [30X    [33X[0;6Ymethods   for   [10XFreeProductWithAmalgamation[110X   and   [10XHnnEntension[110X   for
-        pc-groups;[133X
   
   [30X    [33X[0;6Yconvert      [10XGraphOfGroupsRewritingSystem[110X      to     the     category
         [10XIsRewritingSystem[110X;[133X
