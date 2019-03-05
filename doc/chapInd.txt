@@ -89,6 +89,7 @@
   [2XIsGraphOfPcGroups[102X 6.2-2 
   [2XIsGraphOfPermGroupoids[102X 6.5-1 
   [2XIsGraphOfPermGroups[102X 6.2-2 
+  [2XIsGroupoidWithMonoidObjects[102X 4.6-2 
   [2XIsHnnExtension[102X 6.4-3 
   [10XIsHomogeneousDomainWithObjects[110X 4.1-5 
   [10XIsHomogeneousDiscreteGroupoidRep[110X 4.1-5 

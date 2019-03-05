@@ -6,7 +6,7 @@
           [1X Calculations with finite groupoids and their homomorphisms [101X
   
   
-                                      1.64
+                                      1.65
   
   
                                   5 March 2019

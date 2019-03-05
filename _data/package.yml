@@ -1,5 +1,5 @@
 name: groupoids
-version: 1.64
+version: 1.65
 date: 2019-03-05
 description: |
     Calculations with finite groupoids and their homomorphisms
@@ -34,7 +34,7 @@ packageinfo: https://gap-packages.github.io/groupoids/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/groupoids/releases/download/v1.64/groupoids-1.64.tar.gz
+      url: https://github.com/gap-packages/groupoids/releases/download/v1.65/groupoids-1.65.tar.gz
 
 abstract: |
     The groupoids package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions. Up until April 2017 this package was named Gpd.
