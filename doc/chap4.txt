@@ -819,3 +819,100 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
+  
+  [1X4.6 [33X[0;0YGroupoids whose objects form a monoid[133X[101X
+  
+  [33X[0;0YLet  [22XM[122X  be a monoid with [22XG[122X its maximal subgroup. We may form a groupoid with
+  the  elements of [22XM[122X as its objects and with arrows [22Xt -> t*g[122X for all [22Xt ∈ M[122X and
+  [22Xg ∈ G[122X.[133X
+  
+  [33X[0;0YThis   construction   is   used   in  the  [5XXMod[105X  package  to  construct  the
+  group-groupoid which corresponds to a crossed module or cat2-group.[133X
+  
+  [1X4.6-1 SinglePieceGroupoidWithRays[101X
+  
+  [33X[1;0Y[29X[2XSinglePieceGroupoidWithRays[102X( [3Xgp[103X, [3Xobs[103X, [3Xrays[103X ) [32X operation[133X
+  
+  [33X[0;0YWhen  [22XM[122X  is  a  group, [22XG=M[122X and the groupoid so constructed is a single piece
+  which  represents  the  regular  representation of [22XG[122X. The ray from [22X1[122X to [22Xg[122X is
+  just [22Xg[122X since [22X1*g=g[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xd8 := Group( (1,2,3,4), (1,3) );; [127X[104X
+    [4X[25Xgap>[125X [27Xed8 := Elements( d8 );; [127X[104X
+    [4X[25Xgap>[125X [27Xrd8 := SinglePieceGroupoidWithRays( d8, ed8, ed8 );[127X[104X
+    [4X[28Xsingle piece groupoid with rays: < Group( [ (1,2,3,4), (1,3) ] ), [128X[104X
+    [4X[28X[ (), (2,4), (1,2)(3,4), (1,2,3,4), (1,3), (1,3)(2,4), (1,4,3,2), (1,4)(2,3) [128X[104X
+    [4X[28X ], [ (), (2,4), (1,2)(3,4), (1,2,3,4), (1,3), (1,3)(2,4), (1,4,3,2), [128X[104X
+    [4X[28X  (1,4)(2,3) ] >[128X[104X
+    [4X[25Xgap>[125X [27XDisplay( Homset( rd8, (2,4), (1,3) ) );[127X[104X
+    [4X[28X[(1,3)(2,4) : (2,4) -> (1,3)][128X[104X
+    [4X[28X[(1,3) : (2,4) -> (1,3)][128X[104X
+    [4X[28X[() : (2,4) -> (1,3)][128X[104X
+    [4X[28X[(2,4) : (2,4) -> (1,3)][128X[104X
+    [4X[28X[(1,4,3,2) : (2,4) -> (1,3)][128X[104X
+    [4X[28X[(1,4)(2,3) : (2,4) -> (1,3)][128X[104X
+    [4X[28X[(1,2,3,4) : (2,4) -> (1,3)][128X[104X
+    [4X[28X[(1,2)(3,4) : (2,4) -> (1,3)][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  [1X4.6-2 RightActionGroupoid[101X
+  
+  [33X[1;0Y[29X[2XRightActionGroupoid[102X( [3Xmon[103X ) [32X operation[133X
+  
+  [33X[0;0YWhen  [22XM[122X is a monoid, rather than a group, this construction produces several
+  components. One of these has as objects the elements of the group [22XG[122X.[133X
+  
+  [33X[0;0YWhen   [22XM[122X   [13Xis[113X   a   group,   this   operation   gives  the  same  result  as
+  [10XSinglePieceGroupoidWithRays[110X.[133X
+  
+  [33X[0;0YAs  a simple example we take the full transformation monoid [22Xm3[122X on [22X3[122X objects.
+  The  group  of  [22Xm3[122X is the symmetric group [22XS_3[122X. There are [22X5[122X components in the
+  groupoid,  four  of  which have trivial group while the fifth has as objects
+  the transformations [22X[1,1,1], [2,2,2], [3,3,3][122X, and so the component group is
+  [22XC_2[122X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xt := Transformation( [1,1,2,3] );;[127X[104X
+    [4X[25Xgap>[125X [27Xu := Transformation( [1,2,4,3] );;[127X[104X
+    [4X[25Xgap>[125X [27XM := Monoid( t, u );[127X[104X
+    [4X[28X<transformation monoid of degree 4 with 2 generators>[128X[104X
+    [4X[25Xgap>[125X [27Xrag := RightActionGroupoid( M );[127X[104X
+    [4X[28Xgroupoid with 8 pieces:[128X[104X
+    [4X[28X1:  single piece groupoid with rays: < Group( [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] ), [128X[104X
+    [4X[28X[ Transformation( [ 1, 1, 1, 1 ] ) ], [ IdentityTransformation ] >[128X[104X
+    [4X[28X2:  single piece groupoid with rays: < Group( [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] ), [128X[104X
+    [4X[28X[ Transformation( [ 1, 1, 1, 2 ] ) ], [ IdentityTransformation ] >[128X[104X
+    [4X[28X3:  single piece groupoid with rays: < Group( [ IdentityTransformation ] ), [128X[104X
+    [4X[28X[ Transformation( [ 1, 1, 1, 3 ] ), Transformation( [ 1, 1, 1 ] ) ], [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] >[128X[104X
+    [4X[28X4:  single piece groupoid with rays: < Group( [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] ), [128X[104X
+    [4X[28X[ Transformation( [ 1, 1, 2, 1 ] ) ], [ IdentityTransformation ] >[128X[104X
+    [4X[28X5:  single piece groupoid with rays: < Group( [ IdentityTransformation ] ), [128X[104X
+    [4X[28X[ Transformation( [ 1, 1, 2, 3 ] ), Transformation( [ 1, 1, 2 ] ) ], [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] >[128X[104X
+    [4X[28X6:  single piece groupoid with rays: < Group( [ IdentityTransformation ] ), [128X[104X
+    [4X[28X[ Transformation( [ 1, 1, 3, 1 ] ), Transformation( [ 1, 1, 4, 1 ] ) ], [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] >[128X[104X
+    [4X[28X7:  single piece groupoid with rays: < Group( [ IdentityTransformation ] ), [128X[104X
+    [4X[28X[ Transformation( [ 1, 1, 3, 2 ] ), Transformation( [ 1, 1, 4, 2 ] ) ], [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] >[128X[104X
+    [4X[28X8:  single piece groupoid with rays: < Group( [ IdentityTransformation ] ), [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ], [128X[104X
+    [4X[28X[ IdentityTransformation, Transformation( [ 1, 2, 4, 3 ] ) ] >[128X[104X
+    [4X[25Xgap>[125X [27Xorag := ObjectList( rag );;[127X[104X
+    [4X[25Xgap>[125X [27Xhs := Homset( rag, orag[3], orag[4] );;  [127X[104X
+    [4X[25Xgap>[125X [27XDisplay( hs );                  [127X[104X
+    [4X[28X<homset Transformation( [ 1, 1, 1, 3 ] ) -> Transformation( [ 1, 1, 1 ] )[128X[104X
+    [4X[28X  with elements:[128X[104X
+    [4X[28X[Transformation( [ 1, 2, 4, 3 ] ) : Transformation( [ 1, 1, 1, 3 ] ) -> [128X[104X
+    [4X[28XTransformation( [ 1, 1, 1 ] )][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  

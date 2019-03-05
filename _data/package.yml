@@ -1,6 +1,6 @@
 name: groupoids
-version: 1.63
-date: 2018-10-23
+version: 1.64
+date: 2019-03-05
 description: |
     Calculations with finite groupoids and their homomorphisms
 
@@ -13,11 +13,11 @@ maintainers:
     - name: Christopher D. Wensley
       url: http://pages.bangor.ac.uk/~mas023/
 
-GAP: ">=4.9.2"
+GAP: ">=4.10.0"
 
 needed-pkgs:
     - name: "GAPDoc"
-      version: ">= 1.6.1"
+      version: ">= 1.6.2"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
     - name: "fga"
       version: ">= 1.4.0"
@@ -25,7 +25,7 @@ needed-pkgs:
 
 suggested-pkgs:
     - name: "semigroups"
-      version: ">= 3.0.18"
+      version: ">= 3.0.20"
       url: "https://gap-packages.github.io/Semigroups"
 
 www: https://gap-packages.github.io/groupoids/
@@ -34,7 +34,7 @@ packageinfo: https://gap-packages.github.io/groupoids/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-packages/groupoids/releases/download/v1.63/groupoids-1.63.tar.gz
+      url: https://github.com/gap-packages/groupoids/releases/download/v1.64/groupoids-1.64.tar.gz
 
 abstract: |
     The groupoids package provides a collection of functions for computing with finite groupoids, graph of groups, and graphs of groupoids. These are based on the more basic structures of magmas with objects and their mappings. It provides functions for normal forms of elements in Free Products with Amalgamation and in HNN extensions. Up until April 2017 this package was named Gpd.

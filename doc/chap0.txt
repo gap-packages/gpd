@@ -6,10 +6,10 @@
           [1X Calculations with finite groupoids and their homomorphisms [101X
   
   
-                                      1.63
+                                      1.64
   
   
-                                23 October 2018
+                                  5 March 2019
   
   
                                  Emma J. Moore
@@ -140,6 +140,9 @@
     4.5 [33X[0;0YConjugation[133X
       4.5-1 \^
       4.5-2 ConjugateGroupoid
+    4.6 [33X[0;0YGroupoids whose objects form a monoid[133X
+      4.6-1 SinglePieceGroupoidWithRays
+      4.6-2 RightActionGroupoid
   5 [33X[0;0YHomomorphisms of Groupoids[133X
     5.1 [33X[0;0YHomomorphisms from a connected groupoid[133X
       5.1-1 GroupoidHomomorphismFromSinglePiece
