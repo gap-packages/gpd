@@ -8,8 +8,8 @@ SetPackageInfo( rec(
 
 PackageName := "groupoids",
 Subtitle := "Calculations with finite groupoids and their homomorphisms",
-Version := "1.65",
-Date := "05/03/2019", # dd/mm/yyyy format
+Version := "1.66",
+Date := "29/05/2019", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
@@ -32,15 +32,15 @@ Persons := [
     Email         := "c.d.wensley@bangor.ac.uk",
     WWWHome       := "http://pages.bangor.ac.uk/~mas023/",
     PostalAddress := Concatenation( [
-                       "Dr. C.D. Wensley\n",
-                       "School of Computer Science\n",
-                       "Bangor University\n",
-                       "Dean Street\n",
-                       "Bangor\n",
-                       "Gwynedd LL57 1UT\n",
-                       "UK"] ),
+                      "Dr. C.D. Wensley\n",
+                      "School of Computer Science and Electronic Engineering\n",
+                      "Bangor University\n",
+                      "Dean Street\n",
+                      "Bangor\n",
+                      "Gwynedd LL57 1UT\n",
+                      "UK"] ),
     Place         := "Llanfairfechan",
-    Institution   := "University of Wales, Bangor"
+    Institution   := "Bangor University"
   )
 ],
 
@@ -82,10 +82,11 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.10.0",
-  NeededOtherPackages := [ [ "GAPDoc", ">= 1.6.2" ], 
+  GAP := ">=4.10.1",
+  NeededOtherPackages := [ [ "AutoDoc", ">= 2019.02.22" ], 
+                           [ "GAPDoc", ">= 1.6.2" ], 
                            [ "fga", ">= 1.4.0" ] ],
-  SuggestedOtherPackages := [ [ "semigroups", ">= 3.0.20" ] ],
+  SuggestedOtherPackages := [ [ "semigroups", ">= 3.1.1" ] ],
   ExternalConditions := [ ]
 ),
 
@@ -108,7 +109,7 @@ BannerString := Concatenation(
 AutoDoc := rec(
     TitlePage := rec(
         Copyright := Concatenation(
-            "&copyright; 2000-2018, Emma Moore and Chris Wensley.<P/>\n", 
+            "&copyright; 2000-2019, Emma Moore and Chris Wensley.<P/>\n", 
             "The &groupoids; package is free software; you can redistribute ", 
             "it and/or modify it under the terms of the GNU General ", 
             "Public License as published by the Free Software Foundation; ", 
@@ -153,7 +154,7 @@ AutoDoc := rec(
             "<Email>c.d.wensley@bangor.ac.uk</Email>.\n <P/>" 
             ), 
         Acknowledgements := Concatenation( 
-            "This documentation was prepared with the ", 
+            "This documentation was prepared using the ", 
             "&GAPDoc; <Cite Key='GAPDoc'/> and ", 
             "&AutoDoc; <Cite Key='AutoDoc'/> packages.<P/>\n", 
             "The procedure used to produce new releases uses the package ", 

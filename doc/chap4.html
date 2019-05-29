@@ -62,11 +62,16 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7D21FB1A7D21FB1A"><code>4.5-1 \^</code></a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X78218F357BFEDE82">4.5-2 ConjugateGroupoid</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X795DEB3D825B2120">4.6 <span class="Heading">Groupoids whose objects form a monoid</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X86DD749283068705">4.6 <span class="Heading">Groupoids formed using isomorphisms</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X805FA9F687C7F2A7">4.6-1 SinglePieceGroupoidWithRays</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7E399664868937C8">4.6-2 RightActionGroupoid</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7B066DE28574A768">4.6-1 GroupoidByIsomorphisms</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4.html#X795DEB3D825B2120">4.7 <span class="Heading">Groupoids whose objects form a monoid</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X805FA9F687C7F2A7">4.7-1 SinglePieceGroupoidWithRays</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4.html#X7E399664868937C8">4.7-2 RightActionGroupoid</a></span>
 </div></div>
 </div>
 
@@ -681,7 +686,7 @@ single piece groupoid with rays: &lt; Group( [ (2,3,4) ] ), [ -15, -13, -11 ],
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftCoset</code>( <var class="Arg">G</var>, <var class="Arg">U</var>, <var class="Arg">elt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftCosetRepresentatives</code>( <var class="Arg">G</var>, <var class="Arg">U</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LeftCosetRepresentativesFromObject</code>( <var class="Arg">G</var>, <var class="Arg">U</var>, <var class="Arg">obj</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>If <code class="code">U</code> is a subgroupoid of <span class="SimpleMath">G</span>, the <em>right cosets</em> <span class="SimpleMath">Ug</span> of <span class="SimpleMath">U</span> in <span class="SimpleMath">G</span> are the equivalence classes for the relation on the arrows of <span class="SimpleMath">G</span> where <span class="SimpleMath">g1</span> is related to <span class="SimpleMath">g2</span> if and only if <span class="SimpleMath">g2 = u*g1</span> for some arrow <span class="SimpleMath">u</span> of <span class="SimpleMath">U</span>. The right coset containing <span class="SimpleMath">g</span> is written <span class="SimpleMath">Ug</span>. These right cosets partition the costars of <span class="SimpleMath">G</span> and, in particular, the costar <span class="SimpleMath">U1_o</span> of <span class="SimpleMath">U</span> at object <span class="SimpleMath">o</span>, so that (unlike groups) <span class="SimpleMath">U</span> is itself a coset only when <span class="SimpleMath">G</span> has a single object.</p>
+<p>If <code class="code">U</code> is a subgroupoid of <span class="SimpleMath">G</span>, the <em>right cosets</em> <span class="SimpleMath">Ug</span> of <span class="SimpleMath">U</span> in <span class="SimpleMath">G</span> are the equivalence classes for the relation on the arrows of <span class="SimpleMath">G</span> where <span class="SimpleMath">g1</span> is related to <span class="SimpleMath">g2</span> if and only if <span class="SimpleMath">g2 = u*g1</span> for some arrow <span class="SimpleMath">u</span> of <span class="SimpleMath">U</span>. The right coset containing <span class="SimpleMath">g</span> is written <span class="SimpleMath">Ug</span>. These right cosets partition the costars of <span class="SimpleMath">G</span> and, in particular, the costar <span class="SimpleMath">U1_o</span> of <span class="SimpleMath">U</span> at object <span class="SimpleMath">o</span>. So (unlike groups) <span class="SimpleMath">U</span> is itself a coset only when <span class="SimpleMath">G</span> has a single object.</p>
 
 <p>The <em>right coset representatives</em> for <span class="SimpleMath">U</span> in <span class="SimpleMath">G</span> form a list containing one arrow for each coset where, in a particular piece of <span class="SimpleMath">U</span>, the group element chosen is the right coset representative of the group of <span class="SimpleMath">U</span> in the group of <span class="SimpleMath">G</span>.</p>
 
@@ -690,6 +695,8 @@ single piece groupoid with rays: &lt; Group( [ (2,3,4) ] ), [ -15, -13, -11 ],
 <p>As with stars and homsets, these cosets are implemented with representation <code class="code">IsHomsetCosetsRep</code> and provided with an iterator. Note that, when <span class="SimpleMath">U</span> has more than one piece, cosets may have differing lengths.</p>
 
 <p>In the example the representative for the right coset <code class="code">re2</code> is the tenth one in the printed list <code class="code">rcrd8</code>, namely <code class="code">[(2,4):-7-&gt;-7]</code>.</p>
+
+<p>Note that no operation <code class="code">DoubleCoset</code> has yet been implemented.</p>
 
 
 <div class="example"><pre>
@@ -819,9 +826,77 @@ single piece groupoid with rays: &lt; Group( [ (1,3,2,4), (1,2) ] ),
 
 </pre></div>
 
+<p><a id="X86DD749283068705" name="X86DD749283068705"></a></p>
+
+<h4>4.6 <span class="Heading">Groupoids formed using isomorphisms</span></h4>
+
+<p>Here we describe an alternative way of constructing a connected groupoid. This section has been introduced in version 1.66 of the package, and so should be considered very experimental, and liable to change.</p>
+
+<p>Object groups in a connected groupoid are isomorphic, so we may use a collection of isomorphisms to form a groupoid. Let <span class="SimpleMath">G_1,G_2,...,G_n</span> be isomorphic groups and, for <span class="SimpleMath">2 leqslant i leqslant n</span>, let <span class="SimpleMath">μ_i : G_1 -&gt; G_i</span> be isomorphisms. Then <span class="SimpleMath">μ_ij = μ_i^-1*μ_j</span> is an isomorphism from <span class="SimpleMath">G_i</span> to <span class="SimpleMath">G_j</span>. If we take <span class="SimpleMath">{u_1,...,u_n}</span> to be our set of objects, with <span class="SimpleMath">G_i</span> the object group at <span class="SimpleMath">u_i</span>, we may consider the arrows in the groupoid to have the form <span class="SimpleMath">[[g_i,g_j] : u_i -&gt; u_j]</span> where <span class="SimpleMath">g_i ∈ G_i</span> and <span class="SimpleMath">g_j = μ_ij(g_i) ∈ G_j</span>. The product of <span class="SimpleMath">[[g_i,g_j] : u_i -&gt; u_j]</span> and <span class="SimpleMath">[[g'_j,g_k] : u_j -&gt; u_k]</span> is <span class="SimpleMath">[[μ_ij^-1(g_jg'_j), μ_jk(g_jg'_j)] : u_i -&gt; u_k]</span>.</p>
+
+<p><a id="X7B066DE28574A768" name="X7B066DE28574A768"></a></p>
+
+<h5>4.6-1 GroupoidByIsomorphisms</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GroupoidByIsomorphisms</code>( <var class="Arg">gp</var>, <var class="Arg">obs</var>, <var class="Arg">isos</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGroupoidByIsomorphisms</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>
+<p>The operation <code class="code">GroupoidByIsomorphisms</code> takes a group <code class="code">G1</code> as root group; a set of <span class="SimpleMath">n</span> objects; and a set of <span class="SimpleMath">n</span> isomorphisms from the root group, where the first isomorphism should be the identity mapping on <code class="code">G1</code>. The output is a single piece groupoid of type <code class="code">IsGroupoidByIsomorphisms</code>. Its rays have the form <code class="code">[One(G1),One(Gi)]</code> where <code class="code">Gi</code> is the image of the <span class="SimpleMath">i</span>-th isomorphism.</p>
+
+<p>In the example we first take three permutation groups isomorphic to the symmetric group <span class="SimpleMath">S_3</span>. There follows an isomorphic groupoid whose object groups are a permutation group; a pc-group and an fp-group.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3a := Group( (1,2), (2,3) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3b := Group( (4,6,8)(5,7,9), (4,9)(5,8)(6,7) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3c := Group( (4,6,8)(5,7,9), (5,9)(6,8) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ida := IdentityMapping( s3a );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isoab := IsomorphismGroups( s3a, s3b );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isoac := IsomorphismGroups( s3a, s3c );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isos1 := [ ida, isoab, isoac ];; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G1 := GroupoidByIsomorphisms( s3a, [-3,-2,-1], isos1 );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens1 := GeneratorsOfGroupoid( G1 );                    </span>
+[ [[ (1,2), (1,2) ] : -3 -&gt; -3], [[ (2,3), (2,3) ] : -3 -&gt; -3], 
+  [[ (), () ] : -3 -&gt; -2], [[ (), () ] : -3 -&gt; -1] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x1 := ImageElm( isos1[2], (1,2) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a1 := Arrow( G1, [ (1,2), x1 ], -3, -2 );</span>
+[[ (1,2), (4,5)(6,9)(7,8) ] : -3 -&gt; -2]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a1^-1;</span>
+[[ (4,5)(6,9)(7,8), (1,2) ] : -2 -&gt; -3]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y1 := ImageElm( isos1[2], (2,3) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">z1 := ImageElm( isos1[3], (2,3) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b1 := Arrow( G1, [ y1, z1 ], -2, -1 );</span>
+[[ (4,9)(5,8)(6,7), (5,9)(6,8) ] : -2 -&gt; -1]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c1 := a1*b1;</span>
+[[ (1,3,2), (4,8,6)(5,9,7) ] : -3 -&gt; -1]
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isopc := IsomorphismPcGroup( s3a );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3p := Image( isopc );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isofp := IsomorphismFpGroup( s3a );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3f := Image( isofp );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isos2 := [ ida, isopc, isofp ];;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G2 := GroupoidByIsomorphisms( s3a, [-7,-6,-5], isos2 );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens2 := GeneratorsOfGroupoid( G2 );</span>
+[ [[ (1,2), (1,2) ] : -7 -&gt; -7], [[ (2,3), (2,3) ] : -7 -&gt; -7], 
+  [[ (), &lt;identity&gt; of ... ] : -7 -&gt; -6], [[ (), &lt;identity ...&gt; ] : -7 -&gt; -5] 
+ ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">x2 := ImageElm( isos2[2], (1,2) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a2 := Arrow( G2, [ (1,2), x2 ], -7, -6 );</span>
+[[ (1,2), f1*f2 ] : -7 -&gt; -6]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">a2^-1;</span>
+[[ f1*f2, (1,2) ] : -6 -&gt; -7]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y2 := ImageElm( isos2[2], (2,3) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">z2 := ImageElm( isos2[3], (2,3) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b2 := Arrow( G2, [ y2, z2 ], -6, -5 );</span>
+[[ f1, F1 ] : -6 -&gt; -5]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c2 := a2*b2; </span>
+[[ (1,3,2), F2^2 ] : -7 -&gt; -5]
+
+</pre></div>
+
 <p><a id="X795DEB3D825B2120" name="X795DEB3D825B2120"></a></p>
 
-<h4>4.6 <span class="Heading">Groupoids whose objects form a monoid</span></h4>
+<h4>4.7 <span class="Heading">Groupoids whose objects form a monoid</span></h4>
 
 <p>Let <span class="SimpleMath">M</span> be a monoid with <span class="SimpleMath">G</span> its maximal subgroup. We may form a groupoid with the elements of <span class="SimpleMath">M</span> as its objects and with arrows <span class="SimpleMath">t -&gt; t*g</span> for all <span class="SimpleMath">t ∈ M</span> and <span class="SimpleMath">g ∈ G</span>.</p>
 
@@ -829,7 +904,7 @@ single piece groupoid with rays: &lt; Group( [ (1,3,2,4), (1,2) ] ),
 
 <p><a id="X805FA9F687C7F2A7" name="X805FA9F687C7F2A7"></a></p>
 
-<h5>4.6-1 SinglePieceGroupoidWithRays</h5>
+<h5>4.7-1 SinglePieceGroupoidWithRays</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SinglePieceGroupoidWithRays</code>( <var class="Arg">gp</var>, <var class="Arg">obs</var>, <var class="Arg">rays</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>When <span class="SimpleMath">M</span> is a group, <span class="SimpleMath">G=M</span> and the groupoid so constructed is a single piece which represents the regular representation of <span class="SimpleMath">G</span>. The ray from <span class="SimpleMath">1</span> to <span class="SimpleMath">g</span> is just <span class="SimpleMath">g</span> since <span class="SimpleMath">1*g=g</span>.</p>
@@ -858,7 +933,7 @@ single piece groupoid with rays: &lt; Group( [ (1,2,3,4), (1,3) ] ),
 
 <p><a id="X7E399664868937C8" name="X7E399664868937C8"></a></p>
 
-<h5>4.6-2 RightActionGroupoid</h5>
+<h5>4.7-2 RightActionGroupoid</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; RightActionGroupoid</code>( <var class="Arg">mon</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsGroupoidWithMonoidObjects</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;property&nbsp;)</td></tr></table></div>

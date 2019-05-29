@@ -685,8 +685,8 @@
   equivalence  classes for the relation on the arrows of [22XG[122X where [22Xg1[122X is related
   to  [22Xg2[122X  if  and  only  if  [22Xg2  = u*g1[122X for some arrow [22Xu[122X of [22XU[122X. The right coset
   containing  [22Xg[122X  is  written [22XUg[122X. These right cosets partition the costars of [22XG[122X
-  and,  in  particular,  the  costar  [22XU1_o[122X  of  [22XU[122X at object [22Xo[122X, so that (unlike
-  groups) [22XU[122X is itself a coset only when [22XG[122X has a single object.[133X
+  and,  in  particular, the costar [22XU1_o[122X of [22XU[122X at object [22Xo[122X. So (unlike groups) [22XU[122X
+  is itself a coset only when [22XG[122X has a single object.[133X
   
   [33X[0;0YThe  [13Xright coset representatives[113X for [22XU[122X in [22XG[122X form a list containing one arrow
   for  each  coset where, in a particular piece of [22XU[122X, the group element chosen
@@ -703,6 +703,8 @@
   
   [33X[0;0YIn  the  example the representative for the right coset [10Xre2[110X is the tenth one
   in the printed list [10Xrcrd8[110X, namely [10X[(2,4):-7->-7][110X.[133X
+  
+  [33X[0;0YNote that no operation [10XDoubleCoset[110X has yet been implemented.[133X
   
   [4X[32X  Example  [32X[104X
     [4X[28X[128X[104X
@@ -820,7 +822,88 @@
   [4X[32X[104X
   
   
-  [1X4.6 [33X[0;0YGroupoids whose objects form a monoid[133X[101X
+  [1X4.6 [33X[0;0YGroupoids formed using isomorphisms[133X[101X
+  
+  [33X[0;0YHere  we  describe  an alternative way of constructing a connected groupoid.
+  This  section  has  been  introduced  in version 1.66 of the package, and so
+  should be considered very experimental, and liable to change.[133X
+  
+  [33X[0;0YObject  groups  in  a  connected  groupoid  are  isomorphic, so we may use a
+  collection  of  isomorphisms  to  form  a  groupoid.  Let [22XG_1,G_2,...,G_n[122X be
+  isomorphic  groups and, for [22X2 leqslant i leqslant n[122X, let [22Xμ_i : G_1 -> G_i[122X be
+  isomorphisms.  Then  [22Xμ_ij = μ_i^-1*μ_j[122X is an isomorphism from [22XG_i[122X to [22XG_j[122X. If
+  we take [22X{u_1,...,u_n}[122X to be our set of objects, with [22XG_i[122X the object group at
+  [22Xu_i[122X,  we may consider the arrows in the groupoid to have the form [22X[[g_i,g_j]
+  :  u_i  ->  u_j][122X  where  [22Xg_i ∈ G_i[122X and [22Xg_j = μ_ij(g_i) ∈ G_j[122X. The product of
+  [22X[[g_i,g_j]   :   u_i   ->   u_j][122X   and   [22X[[g'_j,g_k]   :   u_j  ->  u_k][122X  is
+  [22X[[μ_ij^-1(g_jg'_j), μ_jk(g_jg'_j)] : u_i -> u_k][122X.[133X
+  
+  [1X4.6-1 GroupoidByIsomorphisms[101X
+  
+  [33X[1;0Y[29X[2XGroupoidByIsomorphisms[102X( [3Xgp[103X, [3Xobs[103X, [3Xisos[103X ) [32X operation[133X
+  [33X[1;0Y[29X[2XIsGroupoidByIsomorphisms[102X( [3Xgpd[103X ) [32X property[133X
+  
+  [33X[0;0YThe  operation  [10XGroupoidByIsomorphisms[110X takes a group [10XG1[110X as root group; a set
+  of  [22Xn[122X  objects;  and  a set of [22Xn[122X isomorphisms from the root group, where the
+  first  isomorphism  should  be  the  identity mapping on [10XG1[110X. The output is a
+  single  piece  groupoid  of type [10XIsGroupoidByIsomorphisms[110X. Its rays have the
+  form [10X[One(G1),One(Gi)][110X where [10XGi[110X is the image of the [22Xi[122X-th isomorphism.[133X
+  
+  [33X[0;0YIn  the  example  we  first  take three permutation groups isomorphic to the
+  symmetric  group  [22XS_3[122X.  There  follows  an  isomorphic groupoid whose object
+  groups are a permutation group; a pc-group and an fp-group.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xs3a := Group( (1,2), (2,3) );; [127X[104X
+    [4X[25Xgap>[125X [27Xs3b := Group( (4,6,8)(5,7,9), (4,9)(5,8)(6,7) );;[127X[104X
+    [4X[25Xgap>[125X [27Xs3c := Group( (4,6,8)(5,7,9), (5,9)(6,8) );;[127X[104X
+    [4X[25Xgap>[125X [27Xida := IdentityMapping( s3a );; [127X[104X
+    [4X[25Xgap>[125X [27Xisoab := IsomorphismGroups( s3a, s3b );; [127X[104X
+    [4X[25Xgap>[125X [27Xisoac := IsomorphismGroups( s3a, s3c );;[127X[104X
+    [4X[25Xgap>[125X [27Xisos1 := [ ida, isoab, isoac ];; [127X[104X
+    [4X[25Xgap>[125X [27XG1 := GroupoidByIsomorphisms( s3a, [-3,-2,-1], isos1 );; [127X[104X
+    [4X[25Xgap>[125X [27Xgens1 := GeneratorsOfGroupoid( G1 );                    [127X[104X
+    [4X[28X[ [[ (1,2), (1,2) ] : -3 -> -3], [[ (2,3), (2,3) ] : -3 -> -3], [128X[104X
+    [4X[28X  [[ (), () ] : -3 -> -2], [[ (), () ] : -3 -> -1] ][128X[104X
+    [4X[25Xgap>[125X [27Xx1 := ImageElm( isos1[2], (1,2) );;[127X[104X
+    [4X[25Xgap>[125X [27Xa1 := Arrow( G1, [ (1,2), x1 ], -3, -2 );[127X[104X
+    [4X[28X[[ (1,2), (4,5)(6,9)(7,8) ] : -3 -> -2][128X[104X
+    [4X[25Xgap>[125X [27Xa1^-1;[127X[104X
+    [4X[28X[[ (4,5)(6,9)(7,8), (1,2) ] : -2 -> -3][128X[104X
+    [4X[25Xgap>[125X [27Xy1 := ImageElm( isos1[2], (2,3) );;[127X[104X
+    [4X[25Xgap>[125X [27Xz1 := ImageElm( isos1[3], (2,3) );;[127X[104X
+    [4X[25Xgap>[125X [27Xb1 := Arrow( G1, [ y1, z1 ], -2, -1 );[127X[104X
+    [4X[28X[[ (4,9)(5,8)(6,7), (5,9)(6,8) ] : -2 -> -1][128X[104X
+    [4X[25Xgap>[125X [27Xc1 := a1*b1;[127X[104X
+    [4X[28X[[ (1,3,2), (4,8,6)(5,9,7) ] : -3 -> -1][128X[104X
+    [4X[28X[128X[104X
+    [4X[25Xgap>[125X [27Xisopc := IsomorphismPcGroup( s3a );; [127X[104X
+    [4X[25Xgap>[125X [27Xs3p := Image( isopc );;[127X[104X
+    [4X[25Xgap>[125X [27Xisofp := IsomorphismFpGroup( s3a );; [127X[104X
+    [4X[25Xgap>[125X [27Xs3f := Image( isofp );; [127X[104X
+    [4X[25Xgap>[125X [27Xisos2 := [ ida, isopc, isofp ];;[127X[104X
+    [4X[25Xgap>[125X [27XG2 := GroupoidByIsomorphisms( s3a, [-7,-6,-5], isos2 );; [127X[104X
+    [4X[25Xgap>[125X [27Xgens2 := GeneratorsOfGroupoid( G2 );[127X[104X
+    [4X[28X[ [[ (1,2), (1,2) ] : -7 -> -7], [[ (2,3), (2,3) ] : -7 -> -7], [128X[104X
+    [4X[28X  [[ (), <identity> of ... ] : -7 -> -6], [[ (), <identity ...> ] : -7 -> -5] [128X[104X
+    [4X[28X ][128X[104X
+    [4X[25Xgap>[125X [27Xx2 := ImageElm( isos2[2], (1,2) );;[127X[104X
+    [4X[25Xgap>[125X [27Xa2 := Arrow( G2, [ (1,2), x2 ], -7, -6 );[127X[104X
+    [4X[28X[[ (1,2), f1*f2 ] : -7 -> -6][128X[104X
+    [4X[25Xgap>[125X [27Xa2^-1;[127X[104X
+    [4X[28X[[ f1*f2, (1,2) ] : -6 -> -7][128X[104X
+    [4X[25Xgap>[125X [27Xy2 := ImageElm( isos2[2], (2,3) );;[127X[104X
+    [4X[25Xgap>[125X [27Xz2 := ImageElm( isos2[3], (2,3) );;[127X[104X
+    [4X[25Xgap>[125X [27Xb2 := Arrow( G2, [ y2, z2 ], -6, -5 );[127X[104X
+    [4X[28X[[ f1, F1 ] : -6 -> -5][128X[104X
+    [4X[25Xgap>[125X [27Xc2 := a2*b2; [127X[104X
+    [4X[28X[[ (1,3,2), F2^2 ] : -7 -> -5][128X[104X
+    [4X[28X[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.7 [33X[0;0YGroupoids whose objects form a monoid[133X[101X
   
   [33X[0;0YLet  [22XM[122X  be a monoid with [22XG[122X its maximal subgroup. We may form a groupoid with
   the  elements of [22XM[122X as its objects and with arrows [22Xt -> t*g[122X for all [22Xt ∈ M[122X and
@@ -829,7 +912,7 @@
   [33X[0;0YThis   construction   is   used   in  the  [5XXMod[105X  package  to  construct  the
   group-groupoid which corresponds to a crossed module or cat2-group.[133X
   
-  [1X4.6-1 SinglePieceGroupoidWithRays[101X
+  [1X4.7-1 SinglePieceGroupoidWithRays[101X
   
   [33X[1;0Y[29X[2XSinglePieceGroupoidWithRays[102X( [3Xgp[103X, [3Xobs[103X, [3Xrays[103X ) [32X operation[133X
   
@@ -858,7 +941,7 @@
     [4X[28X[128X[104X
   [4X[32X[104X
   
-  [1X4.6-2 RightActionGroupoid[101X
+  [1X4.7-2 RightActionGroupoid[101X
   
   [33X[1;0Y[29X[2XRightActionGroupoid[102X( [3Xmon[103X ) [32X operation[133X
   [33X[1;0Y[29X[2XIsGroupoidWithMonoidObjects[102X( [3Xgpd[103X ) [32X property[133X

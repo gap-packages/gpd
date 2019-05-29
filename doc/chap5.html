@@ -45,7 +45,8 @@
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X855DB6C8815CDCC3">5.3-1 InclusionMappingGroupoids</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7946BC207D455A98">5.3-2 RestrictedMappingGroupoids</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X83B8AB6D7C9DB264">5.3-3 IsomorphismNewObjects</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7CF33CCD8278A904">5.3-4 IsomorphismPermGroupoid</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X87C54BB581181400">5.3-4 IsomorphismStandardGroupoid</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7CF33CCD8278A904">5.3-5 IsomorphismPermGroupoid</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X7EAAB2A97E097FB6">5.4 <span class="Heading">Homomorphisms to a connected groupoid</span></a>
 </span>
@@ -57,6 +58,7 @@
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X847094F478113EA6">5.5-1 HomomorphismByUnion</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7E2C6BCC7AAB25BE">5.5-2 IsomorphismGroupoids</a></span>
 </div></div>
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X803E01577A2B37D2">5.6 <span class="Heading">Automorphisms of groupoids</span></a>
 </span>
@@ -194,10 +196,10 @@ true
 
 <div class="example"><pre>
 
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsInjectiveOnObjects( mor2 ); </span>
-true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSurjectiveOnObjects( mor2 );</span>
-false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsInjectiveOnObjects( mor2 ), IsSurjectiveOnObjects( mor2 ) ]; </span>
+[ true, false ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsInjective( mor2 ), IsSurjective( mor2 ) ];</span>
+[ false, false ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ad8 := GroupHomomorphismByImages( d8, d8, </span>
 <span class="GAPprompt">&gt;</span> <span class="GAPinput">              [ (1,2,3,4), (1,3) ], [ (1,4,3,2), (2,4) ] );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">md8 := GroupoidHomomorphism( Gd8, Gd8, ad8, [-7,-9,-8], [(),(1,3),(2,4)] );</span>
@@ -208,11 +210,10 @@ groupoid homomorphism : Gd8 -&gt; Gd8
       [(2,4) : -7 -&gt; -8] ] ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsBijectiveOnObjects( md8 );</span>
 true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsEndomorphismWithObjects( md8 );</span>
-true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAutomorphismWithObjects( md8 );</span>
-true
-
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsInjective( md8 ), IsSurjective( md8 ) ];  </span>
+[ true, true ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">[ IsEndomorphismWithObjects( md8 ), IsAutomorphismWithObjects( md8 ) ];</span>
+[
 </pre></div>
 
 <p><a id="X870565948381B921" name="X870565948381B921"></a></p>
@@ -353,10 +354,7 @@ groupoid homomorphism :
 <h5>5.3-3 IsomorphismNewObjects</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismNewObjects</code>( <var class="Arg">src</var>, <var class="Arg">objlist</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismStandardGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">obs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <p>The operation <code class="code">IsomorphismNewObjects(gpd,obs)</code> returns the isomorphism from a groupoid <code class="code">gpd</code> to a groupoid with the same object group and ray elements but with a different set <code class="code">obs</code> of objects.</p>
-
-<p>The operation <code class="code">IsomorphismStandardGroupoid(gpd,obs)</code> returns the isomorphism from a groupoid with rays to the groupoid of type <code class="code">IsDirectProductWithCompleteDigraphDomain</code> on the given set <code class="code">obs</code> of objects.</p>
 
 
 <div class="example"><pre>
@@ -373,6 +371,19 @@ groupoid homomorphism :
       [&lt;identity&gt; of ... : -28 -&gt; -27] ], 
   [ [(1,3)(2,4) : -30 -&gt; -30], [(1,2)(3,4) : -30 -&gt; -30], [() : -30 -&gt; -30], 
       [(1,2,4) : -30 -&gt; -10] ] ]
+
+</pre></div>
+
+<p><a id="X87C54BB581181400" name="X87C54BB581181400"></a></p>
+
+<h5>5.3-4 IsomorphismStandardGroupoid</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismStandardGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">obs</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>The operation <code class="code">IsomorphismStandardGroupoid(gpd,obs)</code> returns the isomorphism from a groupoid with rays to the groupoid of type <code class="code">IsDirectProductWithCompleteDigraphDomain</code> on the given set <code class="code">obs</code> of objects.</p>
+
+
+<div class="example"><pre>
+
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso2 := IsomorphismStandardGroupoid( Hd8b, [-23,-22,-21] );</span>
 groupoid homomorphism : 
 [ [ [(1,2,3,4) : -14 -&gt; -14], [(1,3) : -14 -&gt; -14], [(1,2,3) : -14 -&gt; -13], 
@@ -388,9 +399,27 @@ groupoid homomorphism :
 
 </pre></div>
 
+<p>This operation may also be used to provide a standard form for groupoids of type <code class="code">IsGroupoidByIsomorphisms</code> as described in subsection <code class="func">GroupoidByIsomorphisms</code> (<a href="chap4.html#X7B066DE28574A768"><span class="RefLink">4.6-1</span></a>).</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G2;</span>
+single piece groupoid with rays: &lt; Group( [ (1,2), (2,3) ] ), [ -7, -6, -5 ], 
+[ [ (), () ], [ (), &lt;identity&gt; of ... ], [ (), &lt;identity ...&gt; ] ] &gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isoG2 := IsomorphismStandardGroupoid( G2, [-17,-16,-15] ); </span>
+groupoid homomorphism : 
+[ [ [[ (1,2), (1,2) ] : -7 -&gt; -7], [[ (2,3), (2,3) ] : -7 -&gt; -7], 
+      [[ (), &lt;identity&gt; of ... ] : -7 -&gt; -6], [[ (), &lt;identity ...&gt; ] : -7 -&gt; 
+        -5] ], 
+  [ [(1,2) : -17 -&gt; -17], [(2,3) : -17 -&gt; -17], [() : -17 -&gt; -16], 
+      [() : -17 -&gt; -15] ] ]
+
+</pre></div>
+
 <p><a id="X7CF33CCD8278A904" name="X7CF33CCD8278A904"></a></p>
 
-<h5>5.3-4 IsomorphismPermGroupoid</h5>
+<h5>5.3-5 IsomorphismPermGroupoid</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPermGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismPcGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
@@ -548,6 +577,56 @@ images of objects: [ -36, -35, -34 ]
 root homomorphism: [ [ (5,6,7)(8,9) ], [ (15,16)(17,20)(18,19) ] ]
 images of objects: [ -35 ]
    images of rays: [ [() : -35 -&gt; -35] ]
+
+</pre></div>
+
+<p><a id="X7E2C6BCC7AAB25BE" name="X7E2C6BCC7AAB25BE"></a></p>
+
+<h5>5.5-2 IsomorphismGroupoids</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsomorphismGroupoids</code>( <var class="Arg">A</var>, <var class="Arg">B</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>When <span class="SimpleMath">A,B</span> are two single piece groupoids, they are isomorphic provided they have the same number of objects and the root groups are isomorphic.</p>
+
+<p>When <span class="SimpleMath">A=[A_1,...,A_n],~ B=[B_1,...,B_n]</span> are both unions of connected groupoids, they are isomorphic if there is a permutation <span class="SimpleMath">π</span> of <span class="SimpleMath">[1,...,n]</span> such that <span class="SimpleMath">A_i</span> is isomorphic to <span class="SimpleMath">B_π(i)</span> for all <span class="SimpleMath">i</span>.</p>
+
+
+<div class="example"><pre>
+
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3a := Group( (1,2,3), (2,3) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3b := Group( (4,6,8)(5,7,9), (4,9)(5,8)(6,7) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3c := Group( (4,6,8)(5,7,9), (5,9)(6,8) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Ga := SinglePieceGroupoid( s3a, [-23,-22,-21] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Ga, "Ga" ); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Gb := SinglePieceGroupoid( s3b, [-6,-5,-4] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Gb, "Gb" ); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Gc := SinglePieceGroupoid( s3c, [-9,-8,-7] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Gc, "Gc" ); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c6a := Group( (1,2,3,4,5,6) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c6b := Group( (7,8)(9,10,11) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c6c := Group( (12,13)(14,15)(16,17,18)(19,20,21)(22,23,24,25,26,27) );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Ha := SinglePieceGroupoid( c6a, [-3,-2,-1] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Ha, "Ha" ); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Hb := SinglePieceGroupoid( c6b, [-16,-15,-14] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Hb, "Hb" ); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Hc := SinglePieceGroupoid( c6c, [-19,-18,-17] );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( Hc, "Hc" ); </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsomorphismGroupoids( Ga, Gb ); </span>
+groupoid homomorphism : Ga -&gt; Gb
+[ [ [(1,2,3) : -23 -&gt; -23], [(2,3) : -23 -&gt; -23], [() : -23 -&gt; -22], 
+      [() : -23 -&gt; -21] ], 
+  [ [(4,6,8)(5,7,9) : -6 -&gt; -6], [(4,9)(5,8)(6,7) : -6 -&gt; -6], 
+      [() : -6 -&gt; -5], [() : -6 -&gt; -4] ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsomorphismGroupoids( Ga, Ha );</span>
+fail
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">A := UnionOfPieces( [ Ha, Gb, Gc, Hb ] ); </span>
+groupoid with 4 pieces:
+[ Hb, Gc, Gb, Ha ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">B := UnionOfPieces( [ Gc, Hb, Hc, Ga ] ); </span>
+groupoid with 4 pieces:
+[ Ga, Hc, Hb, Gc ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">iso := IsomorphismGroupoids( A, B );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Print( List( PiecesOfMapping(iso), p -&gt; [Source(p),Range(p)] ) );</span>
+[ [ Gc, Ga ], [ Hb, Hc ], [ Ha, Hb ], [ Gb, Gc ] ]
 
 </pre></div>
 
@@ -711,7 +790,9 @@ groupoid homomorphism : Hs3c -&gt; Hs3c
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroupOfGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NiceObjectAutoGroupGroupoid</code>( <var class="Arg">gpd</var>, <var class="Arg">aut</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
-<p>The <code class="code">AutomorphismGroup</code> of <span class="SimpleMath">G</span> is isomorphic to the quotient of <span class="SimpleMath">S_n × A × g^n</span> by a subgroup isomorphic to <span class="SimpleMath">g</span>, where <span class="SimpleMath">A</span> is the automorphism group of <span class="SimpleMath">g</span> and <span class="SimpleMath">S_n</span> is the symmetric group on the <span class="SimpleMath">n</span> objects. This is one of the main topics in <a href="chapBib.html#biBAlWe">[AW10]</a>.</p>
+<p>As above, let <span class="SimpleMath">G</span> be the direct product of a group <span class="SimpleMath">g</span> and a complete digraph with <span class="SimpleMath">n</span> objects. The <code class="code">AutomorphismGroup</code> <span class="SimpleMath">Aut(G)</span> of <span class="SimpleMath">G</span> is isomorphic to the quotient of <span class="SimpleMath">S_n × A × g^n</span> by a subgroup isomorphic to <span class="SimpleMath">g</span>, where <span class="SimpleMath">A</span> is the automorphism group of <span class="SimpleMath">g</span> and <span class="SimpleMath">S_n</span> is the symmetric group on the <span class="SimpleMath">n</span> objects. This is one of the main topics in <a href="chapBib.html#biBAlWe">[AW10]</a>.</p>
+
+<p>If <span class="SimpleMath">H</span> is the union of <span class="SimpleMath">k</span> groupoids, all isomorphic to <span class="SimpleMath">G</span>, then <span class="SimpleMath">Aut(H)</span> is isomorphic to <span class="SimpleMath">S_k ⋉ Aut(G)</span>.</p>
 
 <p>The function <code class="code">NiceObjectAutoGroupGroupoid</code> takes a groupoid and a subgroup of its automorphism group and retuns a <em>nice monomorphism</em> from this automorphism group to a pc-group, if one is available. The current implementation is experimental. Note that <code class="code">ImageElm</code> at present only works on generating elements.</p>
 
@@ -863,7 +944,9 @@ true
 <h5>5.6-6 AutomorphismGroupoidOfGroupoid</h5>
 
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AutomorphismGroupoidOfGroupoid</code>( <var class="Arg">gpd</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
-<p>If <span class="SimpleMath">G</span> is a single piece groupoid with automorphism group <span class="SimpleMath">A</span>, and if <span class="SimpleMath">H</span> is a homogeneous groupoid consisting of <span class="SimpleMath">n</span> copies of <span class="SimpleMath">G</span>, then the automorphism group of <span class="SimpleMath">H</span> is the wreath product of <span class="SimpleMath">A</span> with the symmetric group <span class="SimpleMath">S_n</span>. However, we find it more convenient to construct the <em>automorphism groupoid</em> of <span class="SimpleMath">H</span>. This is a single piece groupoid <span class="SimpleMath">mathrmAut(H)</span> with <span class="SimpleMath">n</span> objects -- the object lists of the pieces of <span class="SimpleMath">H</span> -- and root object <span class="SimpleMath">A</span>. The rays of <span class="SimpleMath">mathrmAut(H)</span> are given by <code class="code">IsomorphismNewObjects</code> applied to the first piece and the objects of the other pieces. For the example we use <code class="code">Hd8</code> constructed in subsection <code class="func">HomogeneousGroupoid</code> (<a href="chap4.html#X855F318181808814"><span class="RefLink">4.1-5</span></a>).</p>
+<p>If <span class="SimpleMath">G</span> is a single piece groupoid with automorphism group <span class="SimpleMath">Aut(G)</span>, and if <span class="SimpleMath">H</span> is the union of <span class="SimpleMath">k</span> pieces, all isomorphic to <span class="SimpleMath">G</span>, then the automorphism group of <span class="SimpleMath">H</span> is the wreath product <span class="SimpleMath">S_k ⋉ Aut(G)</span>. However, we find it more convenient to construct the <em>automorphism groupoid</em> of <span class="SimpleMath">H</span>. This is a single piece groupoid <span class="SimpleMath">Aut(H)</span> with <span class="SimpleMath">k</span> objects -- the object lists of the pieces of <span class="SimpleMath">H</span> -- and root group <span class="SimpleMath">Aut(G)</span>. Isomorphisms between the root groups of the <span class="SimpleMath">k</span> pieces may be applied to the generators of <span class="SimpleMath">Aut(G)</span> to construct automorphism groups of these pieces, and then isomorphisms between these automorphism groups. We then construct <span class="SimpleMath">AUT(H)</span> using <code class="code">GroupoidByIsomorphisms</code>.</p>
+
+<p>In the special case that <span class="SimpleMath">H</span> is homogeneous, there is no need to construct a collection of automorphism groups. Rather, the rays of <span class="SimpleMath">AUT(H)</span> are given by <code class="code">IsomorphismNewObjects</code>. For the example we use <code class="code">Hd8</code> constructed in subsection <code class="func">HomogeneousGroupoid</code> (<a href="chap4.html#X855F318181808814"><span class="RefLink">4.1-5</span></a>).</p>
 
 
 <div class="example"><pre>

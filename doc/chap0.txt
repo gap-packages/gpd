@@ -6,10 +6,10 @@
           [1X Calculations with finite groupoids and their homomorphisms [101X
   
   
-                                      1.65
+                                      1.66
   
   
-                                  5 March 2019
+                                  29 May 2019
   
   
                                  Emma J. Moore
@@ -22,7 +22,7 @@
       Email:    [7Xmailto:c.d.wensley@bangor.ac.uk[107X
       Homepage: [7Xhttp://pages.bangor.ac.uk/~mas023/[107X
       Address:  [33X[0;14YDr. C.D. Wensley[133X
-                [33X[0;14YSchool of Computer Science[133X
+                [33X[0;14YSchool of Computer Science and Electronic Engineering[133X
                 [33X[0;14YBangor University[133X
                 [33X[0;14YDean Street[133X
                 [33X[0;14YBangor[133X
@@ -68,7 +68,7 @@
   
   -------------------------------------------------------
   [1XCopyright[101X
-  [33X[0;0Y© 2000-2018, Emma Moore and Chris Wensley.[133X
+  [33X[0;0Y© 2000-2019, Emma Moore and Chris Wensley.[133X
   
   [33X[0;0YThe  [5Xgroupoids[105X  package  is  free  software;  you can redistribute it and/or
   modify  it under the terms of the GNU General Public License as published by
@@ -78,7 +78,7 @@
   
   -------------------------------------------------------
   [1XAcknowledgements[101X
-  [33X[0;0YThis  documentation  was  prepared with the [5XGAPDoc[105X [LN17] and [5XAutoDoc[105X [GH17]
+  [33X[0;0YThis  documentation  was prepared using the [5XGAPDoc[105X [LN17] and [5XAutoDoc[105X [GH17]
   packages.[133X
   
   [33X[0;0YThe   procedure   used   to   produce   new   releases   uses   the  package
@@ -140,9 +140,11 @@
     4.5 [33X[0;0YConjugation[133X
       4.5-1 \^
       4.5-2 ConjugateGroupoid
-    4.6 [33X[0;0YGroupoids whose objects form a monoid[133X
-      4.6-1 SinglePieceGroupoidWithRays
-      4.6-2 RightActionGroupoid
+    4.6 [33X[0;0YGroupoids formed using isomorphisms[133X
+      4.6-1 GroupoidByIsomorphisms
+    4.7 [33X[0;0YGroupoids whose objects form a monoid[133X
+      4.7-1 SinglePieceGroupoidWithRays
+      4.7-2 RightActionGroupoid
   5 [33X[0;0YHomomorphisms of Groupoids[133X
     5.1 [33X[0;0YHomomorphisms from a connected groupoid[133X
       5.1-1 GroupoidHomomorphismFromSinglePiece
@@ -157,12 +159,14 @@
       5.3-1 InclusionMappingGroupoids
       5.3-2 RestrictedMappingGroupoids
       5.3-3 IsomorphismNewObjects
-      5.3-4 IsomorphismPermGroupoid
+      5.3-4 IsomorphismStandardGroupoid
+      5.3-5 IsomorphismPermGroupoid
     5.4 [33X[0;0YHomomorphisms to a connected groupoid[133X
       5.4-1 HomomorphismToSinglePiece
       5.4-2 GroupoidHomomorphismFromHomogeneousDiscrete
     5.5 [33X[0;0YHomomorphisms to more than one piece[133X
       5.5-1 HomomorphismByUnion
+      5.5-2 IsomorphismGroupoids
     5.6 [33X[0;0YAutomorphisms of groupoids[133X
       5.6-1 GroupoidAutomorphismByObjectPerm
       5.6-2 [33X[0;0YAutomorphisms of a groupoid with rays[133X
