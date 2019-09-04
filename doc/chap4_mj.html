@@ -853,6 +853,7 @@ single piece groupoid with rays: &lt; Group( [ (1,3,2,4), (1,2) ] ),
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3a := Group( (1,2), (2,3) );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3b := Group( (4,6,8)(5,7,9), (4,9)(5,8)(6,7) );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3c := Group( (4,6,8)(5,7,9), (5,9)(6,8) );;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SetName( s3a, "s3a" );</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ida := IdentityMapping( s3a );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isoab := IsomorphismGroups( s3a, s3b );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isoac := IsomorphismGroups( s3a, s3c );;</span>
@@ -875,8 +876,9 @@ single piece groupoid with rays: &lt; Group( [ (1,3,2,4), (1,2) ] ),
 
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isopc := IsomorphismPcGroup( s3a );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3p := Image( isopc );;</span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isofp := IsomorphismFpGroup( s3a );; </span>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3f := Image( isofp );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">f2 := FreeGroup( 2 );; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">s3f := f2/[ f2.1^3, f2.2^2, (f2.1*f2.2)^2 ];; </span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isofp := GroupHomomorphismByImages(s3a,s3f,[(1,2,3),(2,3)],[s3f.1,s3f.2]);;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">isos2 := [ ida, isopc, isofp ];;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">G2 := GroupoidByIsomorphisms( s3a, [-7,-6,-5], isos2 );; </span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">gens2 := GeneratorsOfGroupoid( G2 );</span>
@@ -891,9 +893,9 @@ single piece groupoid with rays: &lt; Group( [ (1,3,2,4), (1,2) ] ),
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">y2 := ImageElm( isos2[2], (2,3) );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">z2 := ImageElm( isos2[3], (2,3) );;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b2 := Arrow( G2, [ y2, z2 ], -6, -5 );</span>
-[[ f1, F1 ] : -6 -&gt; -5]
+[[ f1, f2^-1 ] : -6 -&gt; -5]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">c2 := a2*b2; </span>
-[[ (1,3,2), F2^2 ] : -7 -&gt; -5]
+[[ (1,3,2), f1^2 ] : -7 -&gt; -5]
 
 </pre></div>
 

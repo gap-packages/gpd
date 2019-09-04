@@ -858,6 +858,7 @@
     [4X[25Xgap>[125X [27Xs3a := Group( (1,2), (2,3) );; [127X[104X
     [4X[25Xgap>[125X [27Xs3b := Group( (4,6,8)(5,7,9), (4,9)(5,8)(6,7) );;[127X[104X
     [4X[25Xgap>[125X [27Xs3c := Group( (4,6,8)(5,7,9), (5,9)(6,8) );;[127X[104X
+    [4X[25Xgap>[125X [27XSetName( s3a, "s3a" );[127X[104X
     [4X[25Xgap>[125X [27Xida := IdentityMapping( s3a );; [127X[104X
     [4X[25Xgap>[125X [27Xisoab := IsomorphismGroups( s3a, s3b );; [127X[104X
     [4X[25Xgap>[125X [27Xisoac := IsomorphismGroups( s3a, s3c );;[127X[104X
@@ -880,8 +881,9 @@
     [4X[28X[128X[104X
     [4X[25Xgap>[125X [27Xisopc := IsomorphismPcGroup( s3a );; [127X[104X
     [4X[25Xgap>[125X [27Xs3p := Image( isopc );;[127X[104X
-    [4X[25Xgap>[125X [27Xisofp := IsomorphismFpGroup( s3a );; [127X[104X
-    [4X[25Xgap>[125X [27Xs3f := Image( isofp );; [127X[104X
+    [4X[25Xgap>[125X [27Xf2 := FreeGroup( 2 );; [127X[104X
+    [4X[25Xgap>[125X [27Xs3f := f2/[ f2.1^3, f2.2^2, (f2.1*f2.2)^2 ];; [127X[104X
+    [4X[25Xgap>[125X [27Xisofp := GroupHomomorphismByImages(s3a,s3f,[(1,2,3),(2,3)],[s3f.1,s3f.2]);;[127X[104X
     [4X[25Xgap>[125X [27Xisos2 := [ ida, isopc, isofp ];;[127X[104X
     [4X[25Xgap>[125X [27XG2 := GroupoidByIsomorphisms( s3a, [-7,-6,-5], isos2 );; [127X[104X
     [4X[25Xgap>[125X [27Xgens2 := GeneratorsOfGroupoid( G2 );[127X[104X
@@ -896,9 +898,9 @@
     [4X[25Xgap>[125X [27Xy2 := ImageElm( isos2[2], (2,3) );;[127X[104X
     [4X[25Xgap>[125X [27Xz2 := ImageElm( isos2[3], (2,3) );;[127X[104X
     [4X[25Xgap>[125X [27Xb2 := Arrow( G2, [ y2, z2 ], -6, -5 );[127X[104X
-    [4X[28X[[ f1, F1 ] : -6 -> -5][128X[104X
+    [4X[28X[[ f1, f2^-1 ] : -6 -> -5][128X[104X
     [4X[25Xgap>[125X [27Xc2 := a2*b2; [127X[104X
-    [4X[28X[[ (1,3,2), F2^2 ] : -7 -> -5][128X[104X
+    [4X[28X[[ (1,3,2), f1^2 ] : -7 -> -5][128X[104X
     [4X[28X[128X[104X
   [4X[32X[104X
   
